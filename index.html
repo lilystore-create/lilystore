@@ -6,6 +6,7 @@
 <title>LilyStore</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,114 +15,155 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(to bottom,#ffd6e7,#fff);
+background:linear-gradient(to bottom,#ffe3ef,#fff);
 color:#333;
-padding-bottom:50px;
 }
 
 header{
-background:#ffc1da;
-padding:30px 20px;
+background:linear-gradient(to right,#ff85b8,#ff5ca8);
+padding:40px 20px;
 text-align:center;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+color:white;
+border-bottom-left-radius:30px;
+border-bottom-right-radius:30px;
+box-shadow:0 5px 15px rgba(255,105,180,0.3);
 }
 
 header h1{
-font-size:40px;
-color:#ff2d7a;
+font-size:42px;
 margin-bottom:10px;
 }
 
 header p{
-font-size:14px;
-}
-
-.search{
-padding:20px;
-}
-
-.search input{
-width:100%;
-padding:15px;
-border:none;
-border-radius:20px;
-box-shadow:0 0 10px rgba(255,105,180,0.2);
 font-size:16px;
 }
 
-.section{
-padding:0 20px;
+.hero{
+padding:20px;
+}
+
+.hero-box{
+background:white;
+padding:30px 20px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 0 15px rgba(255,105,180,0.2);
+}
+
+.hero-box h2{
+font-size:32px;
+color:#ff2d7a;
+margin-bottom:10px;
+}
+
+.hero-box p{
+font-size:16px;
+line-height:1.6;
+}
+
+.badges{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
 margin-top:20px;
 }
 
-.dropdown{
-background:white;
-border-radius:25px;
-margin-bottom:20px;
-box-shadow:0 0 20px rgba(255,105,180,0.2);
-overflow:hidden;
+.badges span{
+background:#ffe6f2;
+padding:10px 15px;
+border-radius:20px;
+font-size:14px;
 }
 
-.dropdown button{
-width:100%;
+.menu-home{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
 padding:20px;
-border:none;
-background:#fff;
-font-size:20px;
-font-weight:bold;
-text-align:left;
+}
+
+.menu-card{
+background:white;
+padding:25px 15px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 15px rgba(255,105,180,0.2);
+cursor:pointer;
+transition:0.3s;
+}
+
+.menu-card:hover{
+transform:scale(1.03);
+}
+
+.menu-card h3{
 color:#ff2d7a;
+margin-bottom:10px;
+font-size:22px;
 }
 
 .content{
 display:none;
 padding:20px;
-border-top:1px solid #eee;
+}
+
+.back{
+display:inline-block;
+background:white;
+padding:10px 20px;
+border-radius:20px;
+margin-bottom:20px;
+color:#ff2d7a;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 0 10px rgba(255,105,180,0.15);
 }
 
 .card{
-background:#fff0f6;
-padding:20px;
-border-radius:20px;
-margin-bottom:20px;
+background:white;
+padding:25px;
+border-radius:30px;
+margin-bottom:25px;
+box-shadow:0 0 15px rgba(255,105,180,0.15);
 }
 
 .card h3{
 color:#ff2d7a;
-margin-bottom:15px;
+margin-bottom:20px;
+font-size:28px;
 }
 
 .price{
-padding:10px 0;
-border-bottom:1px solid #ffd6e7;
+padding:14px 0;
+border-bottom:1px solid #ffd2e5;
+font-size:18px;
 }
 
 .detail{
-font-size:13px;
-margin-top:15px;
-line-height:1.7;
+margin-top:20px;
+line-height:1.8;
+font-size:15px;
 }
 
 .btn{
 display:inline-block;
-margin-top:15px;
-padding:12px 20px;
-background:#ff2d7a;
+margin-top:20px;
+background:linear-gradient(to right,#ff5ca8,#ff2d7a);
 color:white;
+padding:14px 28px;
+border-radius:30px;
 text-decoration:none;
-border-radius:25px;
 font-weight:bold;
 }
 
 footer{
 text-align:center;
 padding:30px;
-margin-top:40px;
 font-size:14px;
+color:#777;
 }
+
 </style>
 </head>
 
@@ -132,18 +174,63 @@ font-size:14px;
 <p>Tampil Percaya Diri Dengan Banyak Follower, Like, And Premium 💖</p>
 </header>
 
-<div class="search">
-<input type="text" placeholder="Cari produk LilyStore...">
+<div class="hero">
+<div class="hero-box">
+
+<h2>Welcome To LilyStore ✨</h2>
+
+<p>
+Trusted Social Media & Premium Apps Store 💖
+</p>
+
+<div class="badges">
+<span>⚡ Fast Process</span>
+<span>🛡️ Non Drop</span>
+<span>💎 Premium</span>
+<span>🔒 Aman</span>
 </div>
 
-<div class="section">
+</div>
+</div>
 
-<div class="dropdown">
-<button onclick="toggleMenu('tiktok')">🎵 TikTok Services ▼</button>
+<!-- HOME -->
+
+<div id="home">
+
+<div class="menu-home">
+
+<div class="menu-card" onclick="showContent('tiktok')">
+<h3>🎵 TikTok</h3>
+<p>Followers, Likes, Share & Views</p>
+</div>
+
+<div class="menu-card" onclick="showContent('instagram')">
+<h3>📸 Instagram</h3>
+<p>Followers, Likes & Views</p>
+</div>
+
+<div class="menu-card" onclick="showContent('facebook')">
+<h3>👥 Facebook</h3>
+<p>Followers, Fanpage & Likes</p>
+</div>
+
+<div class="menu-card" onclick="showContent('premium')">
+<h3>🎬 Premium Apps</h3>
+<p>Netflix, Spotify, Canva & More</p>
+</div>
+
+</div>
+</div>
+
+<!-- TIKTOK -->
+
 <div class="content" id="tiktok">
+
+<a class="back" onclick="goHome()">← Back</a>
 
 <div class="card">
 <h3>TikTok Followers</h3>
+
 <div class="price">500 Followers — Rp 9.000</div>
 <div class="price">1.000 Followers — Rp 15.000</div>
 <div class="price">2.000 Followers — Rp 29.000</div>
@@ -156,144 +243,368 @@ font-size:14px;
 • Wajib akun publik
 </div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
 </div>
 
 <div class="card">
 <h3>TikTok Likes</h3>
+
 <div class="price">500 Likes — Rp 1.000</div>
 <div class="price">1.000 Likes — Rp 1.500</div>
 <div class="price">2.000 Likes — Rp 3.000</div>
 <div class="price">4.000 Likes — Rp 5.000</div>
 <div class="price">5.000 Likes — Rp 7.000</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+</div>
+
+<div class="card">
+<h3>TikTok Share</h3>
+
+<div class="price">1.000 Share — Rp 1.500</div>
+<div class="price">2.000 Share — Rp 3.000</div>
+<div class="price">3.000 Share — Rp 4.000</div>
+<div class="price">4.000 Share — Rp 5.000</div>
+<div class="price">6.000 Share — Rp 6.000</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+</div>
+
+<div class="card">
+<h3>TikTok Views</h3>
+
+<div class="price">2.000 Views — Rp 500</div>
+<div class="price">4.000 Views — Rp 1.500</div>
+<div class="price">6.000 Views — Rp 2.000</div>
+<div class="price">7.000 Views — Rp 3.000</div>
+<div class="price">10.000 Views — Rp 4.000</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
 </div>
 
 </div>
-</div>
 
-<div class="dropdown">
-<button onclick="toggleMenu('instagram')">📸 Instagram Services ▼</button>
+<!-- INSTAGRAM -->
+
 <div class="content" id="instagram">
+
+<a class="back" onclick="goHome()">← Back</a>
 
 <div class="card">
 <h3>Instagram Followers</h3>
+
 <div class="price">500 Followers — Rp 7.000</div>
 <div class="price">1.000 Followers — Rp 14.000</div>
 <div class="price">2.000 Followers — Rp 27.000</div>
 <div class="price">3.000 Followers — Rp 40.000</div>
 <div class="price">4.000 Followers — Rp 55.000</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
 </div>
 
 <div class="card">
 <h3>Instagram Likes</h3>
+
 <div class="price">500 Likes — Rp 1.500</div>
 <div class="price">1.000 Likes — Rp 2.500</div>
 <div class="price">2.000 Likes — Rp 4.000</div>
 <div class="price">3.000 Likes — Rp 7.000</div>
 <div class="price">4.000 Likes — Rp 9.000</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+</div>
+
+<div class="card">
+<h3>Instagram Views</h3>
+
+<div class="price">2.000 Views — Rp 1.000</div>
+<div class="price">4.000 Views — Rp 3.000</div>
+<div class="price">6.000 Views — Rp 5.000</div>
+<div class="price">8.000 Views — Rp 7.000</div>
+<div class="price">10.000 Views — Rp 9.000</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
 </div>
 
 </div>
-</div>
 
-<div class="dropdown">
-<button onclick="toggleMenu('facebook')">👥 Facebook Services ▼</button>
+<footer>
+© LilyStore Official 💖
+</footer>
+
+<script>
+
+function showContent(id){
+
+document.getElementById("home").style.display="none";
+
+document.querySelectorAll(".content").forEach(el=>{
+el.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
+}
+
+function goHome(){
+
+document.getElementById("home").style.display="block";
+
+document.querySelectorAll(".content").forEach(el=>{
+el.style.display="none";
+});
+}
+
+</script>
+
+</body>
+  </html>
+  <!-- FACEBOOK -->
+
 <div class="content" id="facebook">
+
+<a class="back" onclick="goHome()">← Back</a>
 
 <div class="card">
 <h3>Facebook Followers</h3>
+
 <div class="price">500 Followers — Rp 2.500</div>
 <div class="price">1.000 Followers — Rp 4.500</div>
 <div class="price">3.000 Followers — Rp 13.000</div>
 <div class="price">5.000 Followers — Rp 22.000</div>
 <div class="price">6.000 Followers — Rp 26.000</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="detail">
+• Proses cepat<br>
+• Non drop system<br>
+• Wajib akun publik
 </div>
 
-</div>
-</div>
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
 
-<div class="dropdown">
-<button onclick="toggleMenu('premium')">🎬 Premium Apps ▼</button>
-<div class="content" id="premium">
+</div>
 
 <div class="card">
-<h3>Netflix Premium</h3>
+<h3>Facebook Fanpage</h3>
+
+<div class="price">500 Fanpage — Rp 12.000</div>
+<div class="price">1.000 Fanpage — Rp 24.000</div>
+<div class="price">2.000 Fanpage — Rp 47.000</div>
+<div class="price">4.000 Fanpage — Rp 94.000</div>
+<div class="price">6.000 Fanpage — Rp 143.000</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+
+</div>
+
+<div class="card">
+<h3>Facebook Likes</h3>
+
+<div class="price">1.000 Likes — Rp 6.000</div>
+<div class="price">2.000 Likes — Rp 12.000</div>
+<div class="price">4.000 Likes — Rp 23.000</div>
+<div class="price">6.000 Likes — Rp 34.000</div>
+<div class="price">10.000 Likes — Rp 59.000</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+
+</div>
+
+<div class="card">
+<h3>Facebook Video Views</h3>
+
+<div class="price">1.000 Views — Rp 1.000</div>
+<div class="price">2.000 Views — Rp 1.500</div>
+<div class="price">4.000 Views — Rp 2.500</div>
+<div class="price">6.000 Views — Rp 3.500</div>
+<div class="price">10.000 Views — Rp 5.000</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+
+</div>
+
+</div>
+
+<!-- PREMIUM APPS -->
+
+<div class="content" id="premium">
+
+<a class="back" onclick="goHome()">← Back</a>
+
+<div class="card">
+
+<h3>📺 YouTube Premium</h3>
+
+<div class="price">INDPLAN 1 Bulan — Rp 8.000</div>
+<div class="price">FAMHEAD 1 Bulan — Rp 9.000</div>
+<div class="price">MIXPLAN 3 Bulan — Rp 17.000</div>
+
+<div class="detail">
+• Include YouTube Music<br>
+• Full garansi<br>
+• Data login dari admin
+</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🎵 Spotify Premium</h3>
+
+<div class="price">FamPlan 1 Bulan — Rp 22.000</div>
+<div class="price">FamPlan 2 Bulan — Rp 32.000</div>
+<div class="price">FamPlan 3 Bulan — Rp 42.000</div>
+
+<div class="detail">
+• Bisa perpanjang<br>
+• Full garansi<br>
+• Support all device
+</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🎬 Netflix Premium</h3>
+
 <div class="price">1 User — Rp 37.000</div>
 <div class="price">Semi Private — Rp 42.000</div>
 
 <div class="detail">
-• Full Garansi<br>
 • Support all device<br>
-• Data login dari admin
+• Anti limit screen<br>
+• Full garansi
 </div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
-</div>
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
 
-<div class="card">
-<h3>Spotify Premium</h3>
-<div class="price">1 Bulan — Rp 22.000</div>
-<div class="price">2 Bulan — Rp 32.000</div>
-<div class="price">3 Bulan — Rp 42.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
 </div>
 
 <div class="card">
-<h3>Canva Pro</h3>
+
+<h3>🎨 Canva Pro</h3>
+
 <div class="price">1 Tahun — Rp 5.000</div>
 <div class="price">Lifetime — Rp 20.000</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="detail">
+• Invite via email<br>
+• Tanpa password<br>
+• Aman digunakan
 </div>
 
-</div>
-</div>
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
 
-<div class="dropdown">
-<button onclick="toggleMenu('payment')">💳 Payment ▼</button>
-<div class="content" id="payment">
+</div>
 
 <div class="card">
-<h3>Payment Methods</h3>
+
+<h3>🤖 ChatGPT Premium</h3>
+
+<div class="price">ChatGPT Plus 1 Bulan — Rp 24.000</div>
+<div class="price">ChatGPT GO 3 Bulan — Rp 20.000</div>
 
 <div class="detail">
-• DANA : 087738176402<br>
-• GOPAY : 087738176402<br>
-• OVO : 087738176402<br>
-• SeaBank : 901533224071<br>
-• A/N Diana Ayu Pratiwi<br>
-• QRIS Available
+• Private account<br>
+• Support all device<br>
+• Wajib mengikuti S&K
 </div>
 
-</div>
-</div>
-</div>
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
 
 </div>
 
-<footer>
-© 2026 LilyStore • Premium Aesthetic Store 💖
-</footer>
+<div class="card">
 
-<script>
-function toggleMenu(id){
-var menu=document.getElementById(id);
-if(menu.style.display==='block'){
-menu.style.display='none';
-}else{
-menu.style.display='block';
-}
-}
-</script>
+<h3>🎬 Prime Video</h3>
 
-</body>
-  </html>
+<div class="price">1 Bulan Private — Rp 12.000</div>
+<div class="price">1 Bulan Sharing — Rp 8.000</div>
+
+<div class="detail">
+• Full garansi<br>
+• Support all device<br>
+• Akun dari admin
+</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>✂️ CapCut Pro</h3>
+
+<div class="price">21 Day Private — Rp 7.000</div>
+<div class="price">28 Day Private — Rp 8.000</div>
+<div class="price">35 Day Private — Rp 10.000</div>
+
+<div class="detail">
+• Support 2 device<br>
+• Akses fitur Pro<br>
+• Garansi sesuai produk
+</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📚 WIBUKU Premium</h3>
+
+<div class="price">1 Bulan Sharing — Rp 14.000</div>
+<div class="price">3 Bulan Sharing — Rp 19.000</div>
+
+<div class="detail">
+• Garansi sesuai S&K<br>
+• Wajib tanyakan stok<br>
+• No rush
+</div>
+
+<a class="btn" href="https://wa.me/6287781304392">
+Order Now
+</a>
+
+</div>
+
+</div>
