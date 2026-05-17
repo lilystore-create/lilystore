@@ -1,59 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LilyStore</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-font-family:Arial;
-background:#ffd6e7;
+background:linear-gradient(to bottom,#ffd6e7,#fff);
+color:#333;
+}
+
+header{
+padding:40px 20px;
+text-align:center;
+background:#ffc1da;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1{
+font-size:38px;
+color:#ff2d7a;
+margin-bottom:10px;
+}
+
+header p{
+font-size:14px;
+}
+
+.search{
 padding:20px;
 }
 
-h1{
-text-align:center;
-color:#ff4f93;
+.search input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:20px;
+outline:none;
+font-size:16px;
+box-shadow:0 0 10px rgba(255,105,180,0.2);
+}
+
+.section-title{
+padding:10px 20px;
+font-size:24px;
+font-weight:bold;
+color:#ff2d7a;
+}
+
+.container{
+padding:20px;
 }
 
 .card{
 background:white;
+border-radius:25px;
 padding:20px;
-border-radius:20px;
 margin-bottom:20px;
-box-shadow:0 0 10px pink;
+box-shadow:0 0 20px rgba(255,105,180,0.2);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.02);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#ff2d7a;
 }
 
 .price{
-padding:10px;
+padding:12px 0;
 border-bottom:1px solid #eee;
+font-size:15px;
 }
 
-button{
-background:#ff4f93;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:20px;
+.btn{
+display:inline-block;
 margin-top:15px;
+padding:12px 20px;
+background:#ff2d7a;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+.badge{
+display:inline-block;
+background:#ff2d7a;
+color:white;
+padding:5px 12px;
+border-radius:20px;
+font-size:12px;
+margin-bottom:10px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+margin-top:30px;
+background:#fff;
+font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
+<header>
 <h1>🌸 LilyStore</h1>
+<p>Tampil Percaya Diri Dengan Banyak Follower, Like, And Premium 💖</p>
+</header>
+
+<div class="search">
+<input type="text" placeholder="Cari produk...">
+</div>
+
+<div class="section-title">🔥 TikTok Services</div>
+
+<div class="container">
 
 <div class="card">
-<h2>🔥 TikTok Followers</h2>
+<div class="badge">Best Seller</div>
+<h2>🎵 TikTok Followers</h2>
 
 <div class="price">50 Followers — Rp 2K</div>
 <div class="price">100 Followers — Rp 4K</div>
 <div class="price">500 Followers — Rp 25K</div>
 <div class="price">1000 Followers — Rp 30K</div>
+<div class="price">2000 Followers — Rp 60K</div>
 
-<a href="https://wa.me/6287781304392">
-<button>Order Now</button>
-</a>
+<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
 </div>
 
 <div class="card">
@@ -61,12 +151,95 @@ margin-top:15px;
 
 <div class="price">500 Likes — Rp 2K</div>
 <div class="price">1000 Likes — Rp 4K</div>
+<div class="price">2000 Likes — Rp 8K</div>
 <div class="price">5000 Likes — Rp 15K</div>
+<div class="price">7000 Likes — Rp 25K</div>
 
-<a href="https://wa.me/6287781304392">
-<button>Order Now</button>
-</a>
+<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
 </div>
+
+<div class="card">
+<h2>👀 TikTok Views</h2>
+
+<div class="price">50 Views — Rp 50</div>
+<div class="price">100 Views — Rp 100</div>
+<div class="price">500 Views — Rp 500</div>
+<div class="price">1000 Views — Rp 1K</div>
+<div class="price">50000 Views — Rp 6K</div>
+
+<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+</div>
+
+</div>
+
+<div class="section-title">📸 Instagram Services</div>
+
+<div class="container">
+
+<div class="card">
+<div class="badge">Trending</div>
+<h2>📈 Instagram Followers</h2>
+
+<div class="price">500 Followers — Rp 9K</div>
+<div class="price">1000 Followers — Rp 17K</div>
+<div class="price">2000 Followers — Rp 31K</div>
+<div class="price">5000 Followers — Rp 73K</div>
+<div class="price">7000 Followers — Rp 100K</div>
+
+<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+</div>
+
+<div class="card">
+<h2>❤️ Instagram Likes</h2>
+
+<div class="price">1000 Likes — Rp 1K</div>
+<div class="price">2000 Likes — Rp 2K</div>
+<div class="price">5000 Likes — Rp 4K</div>
+<div class="price">7000 Likes — Rp 6K</div>
+
+<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+</div>
+
+</div>
+
+<div class="section-title">🎬 Premium Apps</div>
+
+<div class="container">
+
+<div class="card">
+<div class="badge">Hot</div>
+<h2>🎥 Netflix Premium</h2>
+
+<div class="price">1 User — Rp 37K</div>
+<div class="price">Semi Private — Rp 42K</div>
+
+<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+</div>
+
+<div class="card">
+<h2>🎵 Spotify Premium</h2>
+
+<div class="price">1 Bulan — Rp 22K</div>
+<div class="price">2 Bulan — Rp 32K</div>
+<div class="price">3 Bulan — Rp 42K</div>
+
+<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+</div>
+
+<div class="card">
+<h2>🤖 ChatGPT Plus</h2>
+
+<div class="price">1 Bulan — Rp 24K</div>
+<div class="price">GO 3 Bulan — Rp 20K</div>
+
+<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+</div>
+
+</div>
+
+<footer>
+© 2026 LilyStore • Premium Aesthetic Store 💖
+</footer>
 
 </body>
 </html>
