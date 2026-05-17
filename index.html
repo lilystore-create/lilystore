@@ -6,120 +6,100 @@
 <title>LilyStore Official</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+text-decoration:none;
 }
 
 body{
-background:linear-gradient(to bottom,#ffe3ef,#fff);
+background:#fff1f7;
 color:#333;
+padding:20px;
 }
 
-header{
-background:linear-gradient(to right,#ff4f9a,#ff85b8);
-padding:40px 20px;
-text-align:center;
-color:white;
-border-bottom-left-radius:35px;
-border-bottom-right-radius:35px;
-box-shadow:0 5px 20px rgba(255,105,180,0.3);
-}
-
-header h1{
-font-size:42px;
-margin-bottom:10px;
+.container{
+max-width:500px;
+margin:auto;
 }
 
 .hero{
-padding:20px;
-}
-
-.hero-box{
 background:white;
-padding:30px 20px;
+padding:35px 20px;
 border-radius:30px;
 text-align:center;
-box-shadow:0 0 15px rgba(255,105,180,0.2);
+box-shadow:0 0 20px rgba(255,105,180,.12);
+margin-bottom:30px;
 }
 
-.hero-box h2{
-color:#ff2d7a;
+.hero h1{
+font-size:50px;
+color:#ff2d8d;
 margin-bottom:10px;
-font-size:30px;
 }
 
 .badges{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
 margin-top:20px;
 }
 
-.badges span{
-background:#ffe6f2;
-padding:10px 15px;
-border-radius:20px;
-font-size:14px;
+.badge{
+background:#ffe4f1;
+padding:14px;
+border-radius:18px;
+font-weight:bold;
+text-align:center;
 }
 
-.menu-home{
+.menu-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-padding:20px;
+grid-template-columns:1fr 1fr;
+gap:18px;
 }
 
 .menu-card{
 background:white;
-padding:25px 15px;
+padding:30px 15px;
 border-radius:25px;
 text-align:center;
-box-shadow:0 0 15px rgba(255,105,180,0.15);
+box-shadow:0 0 15px rgba(255,105,180,.10);
 cursor:pointer;
-transition:0.3s;
 }
 
-.menu-card:hover{
-transform:scale(1.03);
-}
-
-.menu-card h3{
-color:#ff2d7a;
+.menu-card h2{
+color:#ff2d8d;
 margin-bottom:10px;
-font-size:22px;
+font-size:24px;
 }
 
 .content{
 display:none;
-padding:20px;
 }
 
 .back{
 display:inline-block;
 margin-bottom:20px;
 background:white;
-padding:10px 20px;
+padding:12px 20px;
 border-radius:20px;
-text-decoration:none;
-color:#ff2d7a;
 font-weight:bold;
+color:#ff2d8d;
 }
 
 .card{
 background:white;
-padding:25px;
-border-radius:30px;
+padding:25px 20px;
+border-radius:28px;
 margin-bottom:25px;
-box-shadow:0 0 15px rgba(255,105,180,0.15);
+box-shadow:0 0 15px rgba(255,105,180,.10);
 }
 
 .card h3{
-color:#ff2d7a;
+color:#ff2d8d;
 margin-bottom:20px;
 font-size:28px;
 }
@@ -130,28 +110,17 @@ justify-content:space-between;
 align-items:center;
 gap:10px;
 padding:14px 0;
-border-bottom:1px solid #ffd1e5;
-font-size:14px;
-}
-
-.price-box span{
-text-decoration:none;
+border-bottom:1px solid #ffd6e8;
+font-size:15px;
 }
 
 .order-btn{
-background:linear-gradient(to right,#ff5ca8,#ff2d7a);
+background:linear-gradient(to right,#ff4da6,#ff2d8d);
 color:white;
-padding:10px 16px;
-border-radius:20px;
-text-decoration:none;
-font-size:12px;
+padding:10px 18px;
+border-radius:18px;
+font-size:13px;
 font-weight:bold;
-}
-
-.detail{
-margin-top:20px;
-line-height:1.8;
-font-size:14px;
 }
 
 .qris{
@@ -160,419 +129,480 @@ border-radius:20px;
 margin-top:20px;
 }
 
-footer{
+.footer{
 text-align:center;
-padding:30px;
-font-size:14px;
+padding:30px 0;
 color:#777;
 }
-
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>🌸 LilyStore</h1>
-<p>Premium Social Media & Apps Store 💖</p>
-</header>
-
-<div class="hero">
-<div class="hero-box">
-
-<h2>Welcome To LilyStore ✨</h2>
-
-<p>
-Trusted Store Social Media & Premium Apps
-</p>
-
-<div class="badges">
-<span>⚡ Fast Process</span>
-<span>💎 Premium</span>
-<span>🛡️ Full Garansi</span>
-<span>📱 All Device</span>
-</div>
-
-</div>
-</div>
+<div class="container">
 
 <div id="home">
 
-<div class="menu-home">
+<div class="hero">
+<h1>LilyStore ✨</h1>
+<p>Premium Social Media & Apps Store</p>
+
+<div class="badges">
+<div class="badge">⚡ Fast Process</div>
+<div class="badge">💎 Premium</div>
+<div class="badge">🛡 Garansi</div>
+<div class="badge">📱 All Device</div>
+</div>
+</div>
+
+<div class="menu-grid">
 
 <div class="menu-card" onclick="showContent('tiktok')">
-<h3>🎵 TikTok</h3>
+<h2>🎵 TikTok</h2>
 <p>Followers, Likes, Share & Views</p>
 </div>
 
 <div class="menu-card" onclick="showContent('instagram')">
-<h3>📸 Instagram</h3>
+<h2>📸 Instagram</h2>
 <p>Followers, Likes & Views</p>
 </div>
 
 <div class="menu-card" onclick="showContent('facebook')">
-<h3>👥 Facebook</h3>
+<h2>👥 Facebook</h2>
 <p>Followers, Fanpage & Likes</p>
 </div>
 
 <div class="menu-card" onclick="showContent('premium')">
-<h3>🎬 Premium Apps</h3>
+<h2>🎬 Premium Apps</h2>
 <p>Netflix, Spotify & More</p>
 </div>
 
 <div class="menu-card" onclick="showContent('payment')">
-<h3>💳 Payment</h3>
-<p>QRIS, Dana, OVO & Gopay</p>
+<h2>💳 Payment</h2>
+<p>QRIS & E-Wallet</p>
 </div>
 
 </div>
 </div>
 
 <!-- TIKTOK -->
-
 <div class="content" id="tiktok">
-
 <a class="back" onclick="goHome()">← Back</a>
 
 <div class="card">
-<h3>TikTok Followers</h3>
-
+<h3>🎵 TikTok Followers</h3>
 <div class="price-box"><span>500 Followers — Rp 9.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 500 Followers">Order</a></div>
 <div class="price-box"><span>1.000 Followers — Rp 15.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 1000 Followers">Order</a></div>
 <div class="price-box"><span>2.000 Followers — Rp 29.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 2000 Followers">Order</a></div>
 <div class="price-box"><span>3.000 Followers — Rp 44.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 3000 Followers">Order</a></div>
 <div class="price-box"><span>5.000 Followers — Rp 73.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 5000 Followers">Order</a></div>
-
 </div>
 
 <div class="card">
-<h3>TikTok Likes</h3>
-
+<h3>❤️ TikTok Likes</h3>
 <div class="price-box"><span>500 Likes — Rp 1.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 500 Likes">Order</a></div>
 <div class="price-box"><span>1.000 Likes — Rp 1.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 1000 Likes">Order</a></div>
 <div class="price-box"><span>2.000 Likes — Rp 3.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 2000 Likes">Order</a></div>
-<div class="price-box"><span>4.000 Likes — Rp 5.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 4000 Likes">Order</a></div>
-<div class="price-box"><span>5.000 Likes — Rp 7.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 5000 Likes">Order</a></div>
-
 </div>
 
 <div class="card">
-<h3>TikTok Share</h3>
-
+<h3>🔁 TikTok Share</h3>
 <div class="price-box"><span>1.000 Share — Rp 1.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 1000 Share">Order</a></div>
 <div class="price-box"><span>2.000 Share — Rp 3.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 2000 Share">Order</a></div>
-<div class="price-box"><span>3.000 Share — Rp 4.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 3000 Share">Order</a></div>
-<div class="price-box"><span>4.000 Share — Rp 5.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 4000 Share">Order</a></div>
-<div class="price-box"><span>6.000 Share — Rp 6.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 6000 Share">Order</a></div>
-
 </div>
 
 <div class="card">
-<h3>TikTok Views</h3>
-
+<h3>👀 TikTok Views</h3>
 <div class="price-box"><span>2.000 Views — Rp 500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 2000 Views">Order</a></div>
-<div class="price-box"><span>4.000 Views — Rp 1.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 4000 Views">Order</a></div>
-<div class="price-box"><span>6.000 Views — Rp 2.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 6000 Views">Order</a></div>
-<div class="price-box"><span>7.000 Views — Rp 3.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 7000 Views">Order</a></div>
 <div class="price-box"><span>10.000 Views — Rp 4.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order TikTok 10000 Views">Order</a></div>
-
+</div>
 </div>
 
-</div>
-
+<!-- INSTAGRAM -->
 <div class="content" id="instagram">
-
 <a class="back" onclick="goHome()">← Back</a>
 
 <div class="card">
-<h3>Instagram Followers</h3>
-
+<h3>📸 Instagram Followers</h3>
 <div class="price-box"><span>500 Followers — Rp 7.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 500 Followers">Order</a></div>
 <div class="price-box"><span>1.000 Followers — Rp 14.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 1000 Followers">Order</a></div>
 <div class="price-box"><span>2.000 Followers — Rp 27.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 2000 Followers">Order</a></div>
-<div class="price-box"><span>3.000 Followers — Rp 40.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 3000 Followers">Order</a></div>
-<div class="price-box"><span>4.000 Followers — Rp 55.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 4000 Followers">Order</a></div>
-
 </div>
 
 <div class="card">
-<h3>Instagram Likes</h3>
-
+<h3>❤️ Instagram Likes</h3>
 <div class="price-box"><span>500 Likes — Rp 1.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 500 Likes">Order</a></div>
 <div class="price-box"><span>1.000 Likes — Rp 2.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 1000 Likes">Order</a></div>
 <div class="price-box"><span>2.000 Likes — Rp 4.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 2000 Likes">Order</a></div>
 <div class="price-box"><span>3.000 Likes — Rp 7.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 3000 Likes">Order</a></div>
 <div class="price-box"><span>4.000 Likes — Rp 9.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 4000 Likes">Order</a></div>
-
 </div>
 
 <div class="card">
-<h3>Instagram Views</h3>
-
+<h3>👀 Instagram Views</h3>
 <div class="price-box"><span>2.000 Views — Rp 1.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 2000 Views">Order</a></div>
 <div class="price-box"><span>4.000 Views — Rp 3.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 4000 Views">Order</a></div>
 <div class="price-box"><span>6.000 Views — Rp 5.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 6000 Views">Order</a></div>
 <div class="price-box"><span>8.000 Views — Rp 7.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 8000 Views">Order</a></div>
 <div class="price-box"><span>10.000 Views — Rp 9.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Instagram 10000 Views">Order</a></div>
-
+</div>
+</div>
 </div>
 
-</div>
-
+<!-- FACEBOOK -->
 <div class="content" id="facebook">
-
 <a class="back" onclick="goHome()">← Back</a>
 
 <div class="card">
-<h3>Facebook Followers</h3>
-
+<h3>👥 Facebook Followers</h3>
 <div class="price-box"><span>500 Followers — Rp 2.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 500 Followers">Order</a></div>
 <div class="price-box"><span>1.000 Followers — Rp 4.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 1000 Followers">Order</a></div>
 <div class="price-box"><span>3.000 Followers — Rp 13.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 3000 Followers">Order</a></div>
 <div class="price-box"><span>5.000 Followers — Rp 22.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 5000 Followers">Order</a></div>
 <div class="price-box"><span>6.000 Followers — Rp 26.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 6000 Followers">Order</a></div>
-
 </div>
 
 <div class="card">
-<h3>Facebook Fanpage</h3>
-
+<h3>📄 Facebook Fanpage</h3>
 <div class="price-box"><span>500 Fanpage — Rp 12.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 500 Fanpage">Order</a></div>
 <div class="price-box"><span>1.000 Fanpage — Rp 24.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 1000 Fanpage">Order</a></div>
 <div class="price-box"><span>2.000 Fanpage — Rp 47.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 2000 Fanpage">Order</a></div>
 <div class="price-box"><span>4.000 Fanpage — Rp 94.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 4000 Fanpage">Order</a></div>
 <div class="price-box"><span>6.000 Fanpage — Rp 143.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 6000 Fanpage">Order</a></div>
-
 </div>
 
 <div class="card">
-<h3>Facebook Likes</h3>
-
+<h3>❤️ Facebook Likes</h3>
 <div class="price-box"><span>1.000 Likes — Rp 6.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 1000 Likes">Order</a></div>
 <div class="price-box"><span>2.000 Likes — Rp 12.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 2000 Likes">Order</a></div>
 <div class="price-box"><span>4.000 Likes — Rp 23.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 4000 Likes">Order</a></div>
 <div class="price-box"><span>6.000 Likes — Rp 34.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 6000 Likes">Order</a></div>
 <div class="price-box"><span>10.000 Likes — Rp 59.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 10000 Likes">Order</a></div>
-
 </div>
 
 <div class="card">
-<h3>Facebook Video Views</h3>
-
+<h3>🎥 Facebook Video Views</h3>
 <div class="price-box"><span>1.000 Views — Rp 1.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 1000 Views">Order</a></div>
 <div class="price-box"><span>2.000 Views — Rp 1.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 2000 Views">Order</a></div>
 <div class="price-box"><span>4.000 Views — Rp 2.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 4000 Views">Order</a></div>
 <div class="price-box"><span>6.000 Views — Rp 3.500</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 6000 Views">Order</a></div>
 <div class="price-box"><span>10.000 Views — Rp 5.000</span><a class="order-btn" href="https://wa.me/6287781304392?text=Order Facebook 10000 Views">Order</a></div>
-
 </div>
-
-</div>
-
-
-<div class="price-box">
-<s>
-
-</div>
-
 </div>
 
 <!-- PREMIUM -->
-
 <div class="content" id="premium">
-
 <a class="back" onclick="goHome()">← Back</a>
 
 <div class="card">
-<h3>YouTube Premium</h3>
+<h3>🎬 Premium Apps</h3>
+
+<div class="card">
+
+<h3>🎬 YouTube Premium</h3>
+
+<div class="detail">
+• INDPLAN & FAMHEAD<br>
+• 1 Bulan Premium<br>
+• Anti Invite Expired<br>
+• Garansi Aktif Masa Paket<br>
+• Support All Device
+</div>
 
 <div class="price-box">
 <span>INDPLAN 1 Bulan — Rp 8.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order YouTube Premium">
+Order
+</a>
 </div>
 
 <div class="price-box">
 <span>FAMHEAD 1 Bulan — Rp 9.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order YouTube Premium">
+Order
+</a>
 </div>
 
 </div>
 
 <div class="card">
-<h3>Spotify Premium</h3>
 
-<div class="price-box">
-<span>FamPlan 1 Bulan — Rp 22.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<h3>🎧 Spotify Premium</h3>
+
+<div class="detail">
+• FamPlan / INDPLAN<br>
+• 1 Bulan Premium<br>
+• Anti Limit<br>
+• Full Garansi<br>
+• Login Aman
 </div>
 
 <div class="price-box">
-<span>INDPLAN 1 Bulan — Rp 22.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<span>Spotify FamPlan — Rp 22.000</span>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order Spotify Premium">
+Order
+</a>
+</div>
+
+<div class="price-box">
+<span>Spotify INDPLAN — Rp 22.000</span>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order Spotify Premium">
+Order
+</a>
 </div>
 
 </div>
 
 <div class="card">
-<h3>Netflix Premium</h3>
+
+<h3>🎥 Netflix Premium</h3>
+
+<div class="detail">
+• Semi Private / 1 User<br>
+• Full HD / UHD<br>
+• Anti Limit Screen<br>
+• Garansi Sesuai Paket<br>
+• Bisa Login TV & HP
+</div>
 
 <div class="price-box">
 <span>1 User — Rp 37.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order Netflix Premium">
+Order
+</a>
 </div>
 
 <div class="price-box">
 <span>Semi Private — Rp 42.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order Netflix Premium">
+Order
+</a>
 </div>
 
 </div>
 
 <div class="card">
-<h3>Canva Pro</h3>
+
+<h3>🎨 Canva Pro</h3>
+
+<div class="detail">
+• Invite Canva Pro<br>
+• Full Fitur Premium<br>
+• Bisa Edit Semua Template<br>
+• Anti Remove Selama Masa Aktif
+</div>
 
 <div class="price-box">
 <span>1 Tahun — Rp 5.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order Canva Pro">
+Order
+</a>
 </div>
 
 <div class="price-box">
 <span>Lifetime — Rp 20.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order Canva Pro Lifetime">
+Order
+</a>
 </div>
 
 </div>
 
 <div class="card">
-<h3>ChatGPT Plus</h3>
 
-<div class="price-box">
-<span>Via Invite 1 Bulan — Rp 37.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<h3>🤖 ChatGPT Plus</h3>
+
+<div class="detail">
+• GPT-4 Access<br>
+• Fast Response<br>
+• Support Prompt Premium<br>
+• Cocok Untuk Tugas & Kerja
 </div>
 
 <div class="price-box">
-<span>GO Private 1 Tahun — Rp 20.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<span>Via Invite — Rp 37.000</span>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order ChatGPT Plus">
+Order
+</a>
+</div>
+
+<div class="price-box">
+<span>GO Private — Rp 20.000</span>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order ChatGPT GO">
+Order
+</a>
 </div>
 
 </div>
 
 <div class="card">
-<h3>Prime Video</h3>
+
+<h3>🎬 Prime Video</h3>
+
+<div class="detail">
+• Private / Sharing Account<br>
+• Full HD Streaming<br>
+• Support Semua Device<br>
+• Garansi Sesuai Paket
+</div>
 
 <div class="price-box">
 <span>1 Bulan Private — Rp 12.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order Prime Video Private">
+Order
+</a>
 </div>
 
 <div class="price-box">
 <span>1 Bulan Sharing — Rp 8.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order Prime Video Sharing">
+Order
+</a>
 </div>
 
 </div>
 
 <div class="card">
-<h3>VIU Premium</h3>
+
+<h3>📺 VIU Premium</h3>
+
+<div class="detail">
+• Bebas Nonton Premium<br>
+• No Iklan<br>
+• Support Semua Device<br>
+• Full Garansi
+</div>
 
 <div class="price-box">
 <span>1 Tahun — Rp 5.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order VIU Premium">
+Order
+</a>
 </div>
 
 <div class="price-box">
 <span>Lifetime — Rp 10.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order VIU Lifetime">
+Order
+</a>
 </div>
 
 </div>
 
 <div class="card">
-<h3>CapCut Pro</h3>
 
-<div class="price-box">
-<span>21 Day Private — Rp 7.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<h3>✂️ CapCut Pro</h3>
+
+<div class="detail">
+• Full Template Premium<br>
+• No Watermark<br>
+• Full Effect & Font<br>
+• Support Editing HD
 </div>
 
 <div class="price-box">
-<span>35 Day Private — Rp 10.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<span>21 Day — Rp 7.000</span>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order CapCut Pro">
+Order
+</a>
+</div>
+
+<div class="price-box">
+<span>35 Day — Rp 10.000</span>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order CapCut Pro">
+Order
+</a>
 </div>
 
 </div>
 
 <div class="card">
-<h3>WIBUKU Sharing</h3>
+
+<h3>📚 WIBUKU Sharing</h3>
+
+<div class="detail">
+• Sharing Account<br>
+• Akses Banyak Buku Premium<br>
+• Cocok Untuk Pelajar<br>
+• Full Garansi
+</div>
 
 <div class="price-box">
 <span>1 Bulan — Rp 14.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order WIBUKU">
+Order
+</a>
 </div>
 
 <div class="price-box">
 <span>3 Bulan — Rp 19.000</span>
-<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+<a class="order-btn"
+href="https://wa.me/6287781304392?text=Order WIBUKU">
+Order
+</a>
 </div>
 
 </div>
 
+  </div>
+
+</div>
+</div>
 </div>
 
 <!-- PAYMENT -->
-
 <div class="content" id="payment">
-
 <a class="back" onclick="goHome()">← Back</a>
 
 <div class="card">
-
-<h3>💳 Payment LilyStore</h3>
-
-<div class="detail">
-DANA / GOPAY / OVO<br>
-087738176402<br><br>
-
-SeaBank<br>
-901533224071<br>
-A/N Diana Ayu Pratiwi
-</div>
+<h3>💳 Payment</h3>
+<p>DANA / GOPAY / OVO<br>087738176402</p>
 
 <img class="qris" src="https://files.catbox.moe/5w5m5q.png">
-
+</div>
 </div>
 
-</div>
-
-<footer>
+<div class="footer">
 © LilyStore Official 💖
-</footer>
+</div>
+
+</div>
 
 <script>
-
 function showContent(id){
-
-document.getElementById("home").style.display="none";
-
-document.querySelectorAll(".content").forEach(function(el){
-el.style.display="none";
+document.getElementById('home').style.display='none';
+document.querySelectorAll('.content').forEach(content=>{
+content.style.display='none';
 });
-
-document.getElementById(id).style.display="block";
+document.getElementById(id).style.display='block';
+window.scrollTo(0,0);
 }
 
 function goHome(){
-
-document.getElementById("home").style.display="block";
-
-document.querySelectorAll(".content").forEach(function(el){
-el.style.display="none";
+document.getElementById('home').style.display='block';
+document.querySelectorAll('.content').forEach(content=>{
+content.style.display='none';
 });
-
+window.scrollTo(0,0);
 }
-
 </script>
 
 </body>
-</html>
+                                                                </html>
