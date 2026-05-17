@@ -15,7 +15,7 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(to bottom,#ffe0ef,#fff);
+background:linear-gradient(to bottom,#ffe3ef,#fff);
 color:#333;
 }
 
@@ -34,10 +34,6 @@ font-size:42px;
 margin-bottom:10px;
 }
 
-header p{
-font-size:16px;
-}
-
 .hero{
 padding:20px;
 }
@@ -52,8 +48,8 @@ box-shadow:0 0 15px rgba(255,105,180,0.2);
 
 .hero-box h2{
 color:#ff2d7a;
-font-size:30px;
 margin-bottom:10px;
+font-size:30px;
 }
 
 .badges{
@@ -112,7 +108,6 @@ border-radius:20px;
 text-decoration:none;
 color:#ff2d7a;
 font-weight:bold;
-box-shadow:0 0 10px rgba(255,105,180,0.2);
 }
 
 .card{
@@ -129,27 +124,36 @@ margin-bottom:20px;
 font-size:28px;
 }
 
-.price{
+.price-box{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
 padding:14px 0;
 border-bottom:1px solid #ffd1e5;
-font-size:18px;
+font-size:14px;
+}
+
+.order-btn{
+background:linear-gradient(to right,#ff5ca8,#ff2d7a);
+color:white;
+padding:10px 16px;
+border-radius:20px;
+text-decoration:none;
+font-size:12px;
+font-weight:bold;
 }
 
 .detail{
 margin-top:20px;
 line-height:1.8;
-font-size:15px;
+font-size:14px;
 }
 
-.btn{
-display:inline-block;
+.qris{
+width:100%;
+border-radius:20px;
 margin-top:20px;
-background:linear-gradient(to right,#ff5ca8,#ff2d7a);
-color:white;
-padding:14px 28px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
 }
 
 footer{
@@ -166,7 +170,7 @@ color:#777;
 
 <header>
 <h1>🌸 LilyStore</h1>
-<p>Tampil Percaya Diri Dengan Banyak Followers, Likes & Premium Apps 💖</p>
+<p>Premium Social Media & Apps Store 💖</p>
 </header>
 
 <div class="hero">
@@ -187,8 +191,6 @@ Trusted Store Social Media & Premium Apps
 
 </div>
 </div>
-
-<!-- HOME -->
 
 <div id="home">
 
@@ -211,7 +213,12 @@ Trusted Store Social Media & Premium Apps
 
 <div class="menu-card" onclick="showContent('premium')">
 <h3>🎬 Premium Apps</h3>
-<p>Netflix, Spotify, Canva & More</p>
+<p>Netflix, Spotify & More</p>
+</div>
+
+<div class="menu-card" onclick="showContent('payment')">
+<h3>💳 Payment</h3>
+<p>QRIS, Dana, OVO & Gopay</p>
 </div>
 
 </div>
@@ -226,55 +233,51 @@ Trusted Store Social Media & Premium Apps
 <div class="card">
 <h3>TikTok Followers</h3>
 
-<div class="price">500 Followers — Rp 9.000</div>
-<div class="price">1.000 Followers — Rp 15.000</div>
-<div class="price">2.000 Followers — Rp 29.000</div>
-<div class="price">3.000 Followers — Rp 44.000</div>
-<div class="price">5.000 Followers — Rp 73.000</div>
-
-<div class="detail">
-• Proses cepat<br>
-• Non drop system<br>
-• Wajib akun publik
+<div class="price-box">
+<span>500 Followers — Rp 9.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order TikTok 500 Followers">Order</a>
 </div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>1.000 Followers — Rp 15.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order TikTok 1000 Followers">Order</a>
+</div>
+
+<div class="price-box">
+<span>2.000 Followers — Rp 29.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order TikTok 2000 Followers">Order</a>
+</div>
+
+<div class="price-box">
+<span>3.000 Followers — Rp 44.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order TikTok 3000 Followers">Order</a>
+</div>
+
+<div class="price-box">
+<span>5.000 Followers — Rp 73.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order TikTok 5000 Followers">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>TikTok Likes</h3>
 
-<div class="price">500 Likes — Rp 1.000</div>
-<div class="price">1.000 Likes — Rp 1.500</div>
-<div class="price">2.000 Likes — Rp 3.000</div>
-<div class="price">4.000 Likes — Rp 5.000</div>
-<div class="price">5.000 Likes — Rp 7.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>500 Likes — Rp 1.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order TikTok 500 Likes">Order</a>
 </div>
 
-<div class="card">
-<h3>TikTok Share</h3>
-
-<div class="price">1.000 Share — Rp 1.500</div>
-<div class="price">2.000 Share — Rp 3.000</div>
-<div class="price">3.000 Share — Rp 4.000</div>
-<div class="price">4.000 Share — Rp 5.000</div>
-<div class="price">6.000 Share — Rp 6.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>1.000 Likes — Rp 1.500</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order TikTok 1000 Likes">Order</a>
 </div>
 
-<div class="card">
-<h3>TikTok Views</h3>
+<div class="price-box">
+<span>2.000 Likes — Rp 3.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order TikTok 2000 Likes">Order</a>
+</div>
 
-<div class="price">2.000 Views — Rp 500</div>
-<div class="price">4.000 Views — Rp 1.500</div>
-<div class="price">6.000 Views — Rp 2.000</div>
-<div class="price">7.000 Views — Rp 3.000</div>
-<div class="price">10.000 Views — Rp 4.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
 </div>
 
 </div>
@@ -288,37 +291,21 @@ Trusted Store Social Media & Premium Apps
 <div class="card">
 <h3>Instagram Followers</h3>
 
-<div class="price">500 Followers — Rp 7.000</div>
-<div class="price">1.000 Followers — Rp 14.000</div>
-<div class="price">2.000 Followers — Rp 27.000</div>
-<div class="price">3.000 Followers — Rp 40.000</div>
-<div class="price">4.000 Followers — Rp 55.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>500 Followers — Rp 7.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order Instagram 500 Followers">Order</a>
 </div>
 
-<div class="card">
-<h3>Instagram Likes</h3>
-
-<div class="price">500 Likes — Rp 1.500</div>
-<div class="price">1.000 Likes — Rp 2.500</div>
-<div class="price">2.000 Likes — Rp 4.000</div>
-<div class="price">3.000 Likes — Rp 7.000</div>
-<div class="price">4.000 Likes — Rp 9.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>1.000 Followers — Rp 14.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order Instagram 1000 Followers">Order</a>
 </div>
 
-<div class="card">
-<h3>Instagram Views</h3>
+<div class="price-box">
+<span>2.000 Followers — Rp 27.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order Instagram 2000 Followers">Order</a>
+</div>
 
-<div class="price">2.000 Views — Rp 1.000</div>
-<div class="price">4.000 Views — Rp 3.000</div>
-<div class="price">6.000 Views — Rp 5.000</div>
-<div class="price">8.000 Views — Rp 7.000</div>
-<div class="price">10.000 Views — Rp 9.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
 </div>
 
 </div>
@@ -332,49 +319,16 @@ Trusted Store Social Media & Premium Apps
 <div class="card">
 <h3>Facebook Followers</h3>
 
-<div class="price">500 Followers — Rp 2.500</div>
-<div class="price">1.000 Followers — Rp 4.500</div>
-<div class="price">3.000 Followers — Rp 13.000</div>
-<div class="price">5.000 Followers — Rp 22.000</div>
-<div class="price">6.000 Followers — Rp 26.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>500 Followers — Rp 2.500</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order Facebook 500 Followers">Order</a>
 </div>
 
-<div class="card">
-<h3>Facebook Fanpage</h3>
-
-<div class="price">500 Fanpage — Rp 12.000</div>
-<div class="price">1.000 Fanpage — Rp 24.000</div>
-<div class="price">2.000 Fanpage — Rp 47.000</div>
-<div class="price">4.000 Fanpage — Rp 94.000</div>
-<div class="price">6.000 Fanpage — Rp 143.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>1.000 Followers — Rp 4.500</span>
+<a class="order-btn" href="https://wa.me/6287781304392?text=Halo admin saya ingin order Facebook 1000 Followers">Order</a>
 </div>
 
-<div class="card">
-<h3>Facebook Likes</h3>
-
-<div class="price">1.000 Likes — Rp 6.000</div>
-<div class="price">2.000 Likes — Rp 12.000</div>
-<div class="price">4.000 Likes — Rp 23.000</div>
-<div class="price">6.000 Likes — Rp 34.000</div>
-<div class="price">10.000 Likes — Rp 59.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
-</div>
-
-<div class="card">
-<h3>Facebook Video Views</h3>
-
-<div class="price">1.000 Views — Rp 1.000</div>
-<div class="price">2.000 Views — Rp 1.500</div>
-<div class="price">4.000 Views — Rp 2.500</div>
-<div class="price">6.000 Views — Rp 3.500</div>
-<div class="price">10.000 Views — Rp 5.000</div>
-
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
 </div>
 
 </div>
@@ -388,96 +342,161 @@ Trusted Store Social Media & Premium Apps
 <div class="card">
 <h3>YouTube Premium</h3>
 
-<div class="price">INDPLAN 1 Bulan — Rp 8.000</div>
-<div class="price">FAMHEAD 1 Bulan — Rp 9.000</div>
-<div class="price">MIXPLAN 3 Bulan — Rp 17.000</div>
+<div class="price-box">
+<span>INDPLAN 1 Bulan — Rp 8.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>FAMHEAD 1 Bulan — Rp 9.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>Spotify Premium</h3>
 
-<div class="price">FamPlan 1 Bulan — Rp 22.000</div>
-<div class="price">FamPlan 2 Bulan — Rp 32.000</div>
-<div class="price">FamPlan 3 Bulan — Rp 42.000</div>
-<div class="price">INDPLAN 1 Bulan — Rp 22.000</div>
-<div class="price">INDPLAN Nogar — Rp 15.000</div>
-<div class="price">INDPLAN Garansi — Rp 13.000</div>
+<div class="price-box">
+<span>FamPlan 1 Bulan — Rp 22.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>INDPLAN 1 Bulan — Rp 22.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>Netflix Premium</h3>
 
-<div class="price">1 User — Rp 37.000</div>
-<div class="price">Semi Private — Rp 42.000</div>
+<div class="price-box">
+<span>1 User — Rp 37.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>Semi Private — Rp 42.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>Canva Pro</h3>
 
-<div class="price">1 Tahun — Rp 5.000</div>
-<div class="price">Lifetime — Rp 20.000</div>
+<div class="price-box">
+<span>1 Tahun — Rp 5.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>Lifetime — Rp 20.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>ChatGPT Plus</h3>
 
-<div class="price">Via Invite 1 Bulan — Rp 37.000</div>
-<div class="price">Head Team 1 Bulan — Rp 60.000</div>
-<div class="price">GO Private 1 Tahun — Rp 20.000</div>
+<div class="price-box">
+<span>Via Invite 1 Bulan — Rp 37.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>GO Private 1 Tahun — Rp 20.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>Prime Video</h3>
 
-<div class="price">1 Bulan Private — Rp 12.000</div>
-<div class="price">1 Bulan Sharing — Rp 8.000</div>
-<div class="price">(10 Akun) Private — Rp 70.000</div>
+<div class="price-box">
+<span>1 Bulan Private — Rp 12.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>1 Bulan Sharing — Rp 8.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>VIU Premium</h3>
 
-<div class="price">1 Tahun — Rp 5.000</div>
-<div class="price">Lifetime — Rp 10.000</div>
-<div class="price">100 Akun 1 Tahun Private — Rp 20.000</div>
-<div class="price">100 Akun Lifetime Private — Rp 30.000</div>
+<div class="price-box">
+<span>1 Tahun — Rp 5.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>Lifetime — Rp 10.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>CapCut Pro</h3>
 
-<div class="price">35 Day Private — Rp 10.000</div>
-<div class="price">28 Day Private — Rp 8.000</div>
-<div class="price">21 Day Private — Rp 7.000</div>
-<div class="price">42 Day Anti BF — Rp 20.000</div>
-<div class="price">35 Day Anti BF — Rp 15.000</div>
-<div class="price">28 Day Anti BF — Rp 12.000</div>
-<div class="price">21 Day Anti BF — Rp 10.000</div>
+<div class="price-box">
+<span>21 Day Private — Rp 7.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>35 Day Private — Rp 10.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
 </div>
 
 <div class="card">
 <h3>WIBUKU Sharing</h3>
 
-<div class="price">1 Bulan — Rp 14.000</div>
-<div class="price">3 Bulan — Rp 19.000</div>
+<div class="price-box">
+<span>1 Bulan — Rp 14.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
 
-<a class="btn" href="https://wa.me/6287781304392">Order Now</a>
+<div class="price-box">
+<span>3 Bulan — Rp 19.000</span>
+<a class="order-btn" href="https://wa.me/6287781304392">Order</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- PAYMENT -->
+
+<div class="content" id="payment">
+
+<a class="back" onclick="goHome()">← Back</a>
+
+<div class="card">
+
+<h3>💳 Payment LilyStore</h3>
+
+<div class="detail">
+DANA / GOPAY / OVO<br>
+087738176402<br><br>
+
+SeaBank<br>
+901533224071<br>
+A/N Diana Ayu Pratiwi
+</div>
+
+<img class="qris" src="https://files.catbox.moe/5w5m5q.png">
+
 </div>
 
 </div>
@@ -512,4 +531,4 @@ el.style.display="none";
 </script>
 
 </body>
-  </html>
+</html>
