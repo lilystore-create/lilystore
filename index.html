@@ -660,13 +660,70 @@ Order
 <div class="content" id="payment">
 <a class="back" onclick="goHome()">← Back</a>
 
-<div class="card">
-<h3>💳 Payment</h3>
-<p>DANA / GOPAY / OVO<br>087738176402</p>
+<style>
+.pay-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:12px 0;
+gap:10px;
+}
 
-<img class="qris" src="https://files.catbox.moe/5w5m5q.png">
+.copy-btn{
+background:linear-gradient(to right,#ff4fa3,#ff79c6);
+border:none;
+color:white;
+padding:8px 14px;
+border-radius:15px;
+font-size:12px;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+
+<div class="detail">
+
+<div class="pay-row">
+<span>• DANA : 087738176402</span>
+<button onclick="copyText('087738176402')" class="copy-btn">
+Salin
+</button>
 </div>
+
+<div class="pay-row">
+<span>• GOPAY : 087738176402</span>
+<button onclick="copyText('087738176402')" class="copy-btn">
+Salin
+</button>
 </div>
+
+<div class="pay-row">
+<span>• OVO : 087738176402</span>
+<button onclick="copyText('087738176402')" class="copy-btn">
+Salin
+</button>
+</div>
+
+<div class="pay-row">
+<span>• SeaBank : 901533224071</span>
+<button onclick="copyText('901533224071')" class="copy-btn">
+Salin
+</button>
+</div>
+
+<p style="margin-top:15px;">
+• Payment via QRIS (Chat Admin)<br>
+• Kirim Bukti Transfer ke Admin
+</p>
+
+</div>
+
+<script>
+function copyText(text){
+navigator.clipboard.writeText(text);
+alert("Nomor berhasil disalin!");
+}
+</script>
 
 <div class="footer">
 © LilyStore Official 💖
