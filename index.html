@@ -1325,15 +1325,11 @@ item.style.display='none';
 
 document.getElementById(categoryId).style.display='block';
 
-const categoryMenu =
-document.querySelector('.category-grid');
+document.querySelector('.category-grid').remove();
 
-categoryMenu.style.display='none';
-
-document.querySelector('.menu-title').style.display='none';
+document.querySelector('.menu-title').remove();
 
 }
-
 function openSub(subId){
 
 const allSub =
