@@ -1335,6 +1335,20 @@ document.querySelector('.category-grid').style.display='none';
 document.querySelector('.menu-title').style.display='none';
 
   }
+  function backMenu(){
+
+document.querySelector('.category-grid').style.display='grid';
+
+document.querySelector('.menu-title').style.display='block';
+
+const allCategory =
+document.querySelectorAll('.service-content');
+
+allCategory.forEach(item=>{
+item.style.display='none';
+});
+
+  }
 function openSub(subId){
 
 const allSub =
