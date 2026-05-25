@@ -1325,10 +1325,9 @@ item.style.display='none';
 
 document.getElementById(categoryId).style.display='block';
 
-window.scrollTo({
-top: document.getElementById(categoryId).offsetTop - 120,
-behavior:'smooth'
-});
+document.querySelector('.category-grid').style.display='none';
+
+  }
 
   }
 document.getElementById(categoryId).style.display='block';
