@@ -1325,6 +1325,14 @@ item.style.display='none';
 
 document.getElementById(categoryId).style.display='block';
 
+window.scrollTo({
+top: document.getElementById(categoryId).offsetTop - 120,
+behavior:'smooth'
+});
+
+  }
+document.getElementById(categoryId).style.display='block';
+
 }
 
 function openSub(subId){
