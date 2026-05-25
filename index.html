@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,164 +7,283 @@
 
 <title>LilyStore Official</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
-text-decoration:none;
+font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:#fff5f9;
+background:#fff5fa;
 color:#333;
-padding:20px;
+overflow-x:hidden;
+}
+
+header{
+padding:22px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+border-bottom:2px solid #ffd6eb;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:#ff4fa3;
+}
+
+.logo span{
+color:#ff9ec9;
+}
+
+nav{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+padding:12px 18px;
+border-radius:14px;
+background:#fff0f7;
+color:#ff4fa3;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+background:#ff4fa3;
+color:white;
 }
 
 .container{
-max-width:520px;
-margin:auto;
+padding:40px 7%;
 }
 
 .hero{
-background:white;
-padding:35px 25px;
-border-radius:30px;
+background:linear-gradient(135deg,#ffd6eb,#fff);
+padding:60px 30px;
+border-radius:35px;
 text-align:center;
-box-shadow:0 0 20px rgba(255,105,180,.12);
-margin-bottom:25px;
+margin-bottom:40px;
 }
 
 .hero h1{
-font-size:48px;
-color:#ff2d8d;
-margin-bottom:10px;
+font-size:55px;
+color:#ff4fa3;
+font-weight:800;
+margin-bottom:15px;
 }
 
 .hero p{
 color:#777;
-font-size:15px;
-}
-
-.badges{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-margin-top:22px;
-}
-
-.badge{
-background:#ffe6f1;
-padding:14px;
-border-radius:18px;
-font-size:14px;
-font-weight:bold;
-}
-
-.section-title{
-font-size:30px;
-color:#ff2d8d;
-margin:30px 0 20px;
-font-weight:bold;
-}
-
-.card{
-background:white;
-padding:22px;
-border-radius:28px;
+font-size:17px;
 margin-bottom:25px;
-box-shadow:0 0 15px rgba(255,105,180,.10);
 }
 
-.card h3{
-color:#ff2d8d;
-margin-bottom:20px;
-font-size:25px;
-}
-
-.price-box{
+.search-box{
 display:flex;
-justify-content:space-between;
-gap:12px;
-padding:16px 0;
-border-bottom:1px solid #ffe0ec;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
 }
 
-.price-box:last-child{
-border-bottom:none;
+.search-box input{
+padding:16px;
+width:320px;
+border-radius:15px;
+border:2px solid #ffd6eb;
+outline:none;
 }
 
-.price-box b{
-color:#ff2d8d;
-}
-
-.order-btn{
-background:linear-gradient(to right,#ff4fa3,#ff2d8d);
-color:white;
-padding:10px 18px;
-border-radius:18px;
-font-size:13px;
-font-weight:bold;
-display:inline-block;
-margin-top:10px;
+.search-box button{
+padding:16px 24px;
 border:none;
+border-radius:15px;
+background:#ff4fa3;
+color:white;
+font-weight:700;
 cursor:pointer;
 }
 
-.hemat-box{
-background:#fff2f7;
-padding:18px;
-border-radius:22px;
-margin-top:20px;
+.menu-section{
+margin-top:50px;
 }
 
-.hemat-title{
-color:#ff2d8d;
-font-size:20px;
-margin-bottom:15px;
-font-weight:bold;
+.menu-title{
+font-size:35px;
+font-weight:800;
+color:#ff4fa3;
+margin-bottom:25px;
 }
 
-.menu-grid{
+.category-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 margin-bottom:30px;
 }
 
-.menu-card{
+.category-btn{
+padding:25px;
+border:none;
+border-radius:25px;
+background:white;
+border:2px solid #ffd6eb;
+font-size:20px;
+font-weight:700;
+color:#ff4fa3;
+cursor:pointer;
+transition:.3s;
+}
+
+.category-btn:hover{
+transform:translateY(-5px);
+background:#ff4fa3;
+color:white;
+}
+
+.service-content{
+display:none;
+margin-top:30px;
+}
+
+.service-header{
+font-size:28px;
+font-weight:800;
+color:#ff4fa3;
+margin-bottom:25px;
+}
+
+.subcategory-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-bottom:30px;
+}
+
+.subcategory-btn{
+padding:18px;
+border:none;
+border-radius:18px;
+background:#fff0f7;
+font-size:17px;
+font-weight:700;
+color:#ff4fa3;
+cursor:pointer;
+transition:.3s;
+}
+
+.subcategory-btn:hover{
+background:#ff4fa3;
+color:white;
+}
+
+.price-list{
+display:none;
+gap:20px;
+}
+
+.price-card{
 background:white;
 padding:22px;
 border-radius:22px;
-text-align:center;
-box-shadow:0 0 12px rgba(255,105,180,.10);
+border:2px solid #ffd6eb;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:18px;
+gap:15px;
 }
 
-.menu-card h2{
-font-size:22px;
-color:#ff2d8d;
-margin-bottom:8px;
+.price-card b{
+font-size:18px;
+color:#ff4fa3;
+}
+
+.price-card p{
+font-size:13px;
+color:#777;
+margin-top:5px;
+}
+
+.order-btn{
+padding:12px 18px;
+border-radius:14px;
+background:#ff4fa3;
+color:white;
+font-size:14px;
+font-weight:700;
+text-decoration:none;
+white-space:nowrap;
+}
+
+.payment-section{
+margin-top:70px;
+}
+
+.payment-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
 .payment-card{
 background:white;
-padding:18px;
-border-radius:20px;
-margin-bottom:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 0 12px rgba(255,105,180,.10);
+padding:25px;
+border-radius:22px;
+border:2px solid #ffd6eb;
+text-align:center;
+}
+
+.payment-card h3{
+color:#ff4fa3;
+margin-bottom:10px;
 }
 
 .footer{
+margin-top:70px;
+padding:35px;
 text-align:center;
-padding:35px 0;
+background:#fff0f7;
+border-radius:30px 30px 0 0;
 color:#777;
-font-size:14px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+header{
+flex-direction:column;
+gap:15px;
+padding:20px 5%;
+}
+
+.container{
+padding:25px 5%;
+}
+
+.menu-title{
+font-size:28px;
+}
+
 }
 
 </style>
@@ -174,4302 +292,286 @@ font-size:14px;
 
 <body>
 
-<div class="container">
+<header>
 
-<!-- HERO -->
+<div class="logo">
+Lily<span>Store</span>
+</div>
+
+<nav>
+<a href="#sosmed">Sosmed</a>
+<a href="#premium">Premium Apps</a>
+<a href="#payment">Payment</a>
+</nav>
+
+</header>
+
+<div class="container">
 
 <div class="hero">
 
-<h1>LilyStore ✨</h1>
+<h1>LilyStore Official ✨</h1>
 
-<p>Premium Social Media & Apps Store</p>
+<p>
+Premium Apps & Social Media Services
+</p>
 
-<div class="badges">
+<div class="search-box">
 
-<div class="badge">⚡ Fast Process</div>
-<div class="badge">💎 Premium Service</div>
-<div class="badge">🛡 Full Garansi</div>
-<div class="badge">📱 All Device</div>
+<input type="text"
+id="searchInput"
+placeholder="Cari layanan...">
 
-</div>
+<button>
+Cari
+</button>
 
-</div>
-
-<!-- MENU -->
-
-<div class="menu-grid">
-
-<div class="menu-card">
-<h2>🎵 TikTok</h2>
-<p>Followers, Likes & Views</p>
-</div>
-
-<div class="menu-card">
-<h2>📸 Instagram</h2>
-<p>Followers, Likes & Views</p>
-</div>
-
-<div class="menu-card">
-<h2>👥 Facebook</h2>
-<p>Followers, Fanpage & Likes</p>
-</div>
-
-<div class="menu-card">
-<h2>🎬 Premium Apps</h2>
-<p>Netflix, Spotify & More</p>
 </div>
 
 </div>
 
-<!-- TIKTOK -->
+<section class="menu-section" id="sosmed">
 
-<div class="section-title">
+<div class="menu-title">
+📱 Kebutuhan Sosmed
+</div>
+
+<div class="category-grid">
+
+<button class="category-btn" onclick="openCategory('tiktok')">
+🎵 TikTok Services
+</button>
+
+<button class="category-btn" onclick="openCategory('instagram')">
+📸 Instagram Services
+</button>
+
+<button class="category-btn" onclick="openCategory('facebook')">
+📘 Facebook Services
+</button>
+
+</div><!-- TIKTOK -->
+
+<div id="tiktok" class="service-content">
+
+<div class="service-header">
 🎵 TikTok Services
 </div>
 
-<div class="card">
+<div class="subcategory-grid">
 
-<h3>👥 TikTok Followers</h3>
+<button class="subcategory-btn" onclick="openSub('ttfollowers')">
+👥 Followers
+</button>
 
-<div class="price-box">
+<button class="subcategory-btn" onclick="openSub('ttlikes')">
+❤️ Likes
+</button>
 
-<div>
+<button class="subcategory-btn" onclick="openSub('ttviews')">
+👀 Views
+</button>
 
-<b>500 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 9.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 500 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 1000 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 29.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 2000 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div><div class="card">
-
-<h3>❤️ TikTok Likes</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>500 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Non Drop
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 1.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 500 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Non Drop
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 1.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 1000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 3.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 2000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>4.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 4000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>5.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 5000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- TIKTOK SHARE -->
-
-<div class="card">
-
-<h3>🔁 TikTok Share</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Share</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 1.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 1000 Share">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Share</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 3.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 2000 Share">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>3.000 Share</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 4.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 3000 Share">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>6.000 Share</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 6.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 6000 Share">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div><!-- TIKTOK VIEWS -->
-
-<div class="card">
-
-<h3>👀 TikTok Views</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality Views
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 2000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>4.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality Views
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 1.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 4000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>6.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 2.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 6000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>7.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality Views
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 3.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 7000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>10.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 4.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order TikTok 10000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- INSTAGRAM -->
-
-<div class="section-title">
-📸 Instagram Services
-</div>
-
-<!-- INSTAGRAM FOLLOWERS -->
-
-<div class="card">
-
-<h3>👥 Instagram Followers</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>500 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 500 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 14.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 1000 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Real User Mix<br>
-• Fast Process<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 27.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 2000 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- INSTAGRAM LIKES -->
-
-<div class="card">
-
-<h3>❤️ Instagram Likes</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>500 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Non Drop
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 1.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 500 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 2.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 1000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Real User Mix<br>
-• High Quality<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 4.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 2000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>3.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 3000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>4.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• High Quality<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 9.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 4000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- INSTAGRAM VIEWS -->
-
-<div class="card">
-
-<h3>👀 Instagram Views</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality Views
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 1.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 2000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>4.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 3.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 4000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>6.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• High Quality Views<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 6000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>8.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Real User Mix<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 8000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>10.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality Views
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 9.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Instagram 10000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div><!-- FACEBOOK -->
-
-<div class="section-title">
-👥 Facebook Services
-</div>
-
-<!-- FACEBOOK FOLLOWERS -->
-
-<div class="card">
-
-<h3>👥 Facebook Followers</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>500 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 2.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 500 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 4.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 1000 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>3.000 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 13.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 3000 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>5.000 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 22.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 5000 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>6.000 Followers</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 26.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 6000 Followers">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- FACEBOOK FANPAGE -->
-
-<div class="card">
-
-<h3>📄 Facebook Fanpage</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>500 Fanpage</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality Fanpage
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 500 Fanpage">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Fanpage</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 24.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 1000 Fanpage">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Fanpage</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• High Quality<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 47.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 2000 Fanpage">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div><!-- FACEBOOK LIKES -->
-
-<div class="card">
-
-<h3>❤️ Facebook Likes</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality<br>
-• Non Drop
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 6.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 1000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• High Quality<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 2000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>4.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 23.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 4000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>6.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• High Quality<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 34.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 6000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>10.000 Likes</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Real User Mix<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 59.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 10000 Likes">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- FACEBOOK VIDEO VIEWS -->
-
-<div class="card">
-
-<h3>🎥 Facebook Video Views</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>1.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality Views
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 1.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 1000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>2.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 1.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 2000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>4.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• High Quality Views<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 2.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 4000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>6.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• Real User Mix
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 3.500</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 6000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>10.000 Views</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Fast Process<br>
-• High Quality Views
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Facebook 10000 Views">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PREMIUM APPS -->
-
-<div class="section-title">
-🎬 Premium Apps
-</div>
-
-<!-- YOUTUBE PREMIUM -->
-
-<div class="card">
-
-<h3>🎬 YouTube Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 INDPLAN PRIVATE</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Fast Process 1-10 Menit<br>
-• Anti Invite Expired<br>
-• Garansi Aktif Masa Paket<br>
-• Support All Device
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 8.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order YouTube INDPLAN PRIVATE">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 FAMHEAD PRIVATE</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Invite Aman<br>
-• Full Garansi<br>
-• Support All Device
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 9.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order YouTube FAMHEAD PRIVATE">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>📅 MIXPLAN PRIVATE</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 3 Bulan Premium<br>
-• Fast Process<br>
-• Private Account<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 17.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order YouTube MIXPLAN PRIVATE">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!--
-
-  <!-- CANVA HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Canva Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 INVITE HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot Team
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 3.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Canva Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 PRIVATE HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 2 Bulan<br>
-• Garansi Aktif<br>
-• Full Premium
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Canva Private Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- DISNEY -->
-
-<div class="card">
-
-<h3>🏰 Disney+ Hotstar</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Full HD<br>
-• Garansi Aktif<br>
-• Support All Device
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 25.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Disney Private">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Disney Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- DISNEY HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Disney Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Disney Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 PRIVATE HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 3 Bulan<br>
-• Garansi Aktif<br>
-• Full HD
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 20.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Disney Private Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div><!-- LOKLOK -->
-
-<div class="card">
-
-<h3>📺 Loklok Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• No Iklan<br>
-• Fast Process<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Loklok Private">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Loklok Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- LOKLOK HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Loklok Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Loklok Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- VIU -->
-
-<div class="card">
-
-<h3>📺 VIU Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• No Iklan<br>
-• Full HD<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VIU Private">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Garansi Aktif<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VIU Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- VIU HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 VIU Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VIU Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- CAPCUT -->
-
-<div class="card">
-
-<h3>✂️ CapCut Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Full Fitur Pro<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order CapCut Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👑 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Private Account<br>
-• Full Premium<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 20.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order CapCut Private">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div><!-- CAPCUT HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 CapCut Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 8.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order CapCut Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 PRIVATE HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 2 Bulan<br>
-• Garansi Aktif<br>
-• Full Premium
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order CapCut Private Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- SCRIBD -->
-
-<div class="card">
-
-<h3>📚 Scribd Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Unlimited Download<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Scribd Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Scribd Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- SCRIBD HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Scribd Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Scribd Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- TERABOX -->
-
-<div class="card">
-
-<h3>📦 Terabox Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Unlimited Storage<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Terabox Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Garansi Aktif<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Terabox Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-  </div>
-
-  <!-- TERABOX HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Terabox Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Terabox Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- BSTATION -->
-
-<div class="card">
-
-<h3>📺 Bstation Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• No Iklan<br>
-• Full HD<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Bstation Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 8.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Bstation Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- BSTATION HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Bstation Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Bstation Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- GROK AI -->
-
-<div class="card">
-
-<h3>🤖 Grok AI Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Full AI Access<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 25.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Grok AI Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Garansi Aktif<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 18.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Grok AI Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- GROK HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Grok AI Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Grok AI Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div><!-- WINK -->
-
-<div class="card">
-
-<h3>✨ Wink Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Full Fitur Pro<br>
-• Fast Process<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Wink Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Wink Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- WINK HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Wink Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Wink Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ALIGHT MOTION -->
-
-<div class="card">
-
-<h3>🎞 Alight Motion Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun Premium<br>
-• No Watermark<br>
-• Full Fitur Pro
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 18.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Alight Motion Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Alight Motion Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- ALIGHT HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Alight Motion Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Alight Motion Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- REmini -->
-
-<div class="card">
-
-<h3>📸 Remini Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• HD Enhance<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Remini Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Remini Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div><!-- REMINI HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Remini Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Remini Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- BSTATION -->
-
-<div class="card">
-
-<h3>📺 Bstation Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• No Iklan<br>
-• Full HD<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Bstation Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 8.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Bstation Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- BSTATION HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Bstation Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Bstation Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- VIDIO -->
-
-<div class="card">
-
-<h3>🎬 Vidio Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• Platinum Access<br>
-• Full HD<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 20.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Vidio Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Vidio Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- VIDIO HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Vidio Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 8.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Vidio Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div><!-- IQIYI -->
-
-<div class="card">
-
-<h3>🎥 iQIYI Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• No Iklan<br>
-• Full HD<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order IQIYI Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Garansi Aktif<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order IQIYI Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- IQIYI HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 iQIYI Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order IQIYI Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- WETV -->
-
-<div class="card">
-
-<h3>📺 WeTV Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• No Iklan<br>
-• Full HD<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order WeTV Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order WeTV Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- WETV HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 WeTV Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order WeTV Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-  </div><!-- VIU -->
-
-<div class="card">
-
-<h3>📺 VIU Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan Premium<br>
-• No Iklan<br>
-• Full HD<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VIU Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 8.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VIU Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- VIU HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 VIU Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Bulan<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VIU Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- VIDEOSTAR -->
-
-<div class="card">
-
-<h3>🌟 VideoStar Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun Premium<br>
-• Full Fitur Pro<br>
-• No Watermark
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 20.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VideoStar Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 12.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VideoStar Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- VIDEOSTAR HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 VideoStar Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 8.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VideoStar Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div><!-- ALIGHT MOTION -->
-
-<div class="card">
-
-<h3>🎞 Alight Motion Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun Premium<br>
-• No Watermark<br>
-• Full Fitur Pro<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 18.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Alight Motion Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Alight Motion Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- ALIGHT HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Alight Motion Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Alight Motion Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PICSART -->
-
-<div class="card">
-
-<h3>🎨 PicsArt Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun Premium<br>
-• Full Fitur Gold<br>
-• No Watermark
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order PicsArt Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Garansi Aktif<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 9.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order PicsArt Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- PICSART HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 PicsArt Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 6.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order PicsArt Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div><!-- VSCO -->
-
-<div class="card">
-
-<h3>📸 VSCO Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun Premium<br>
-• Full Filter Premium<br>
-• No Watermark<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 14.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VSCO Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 8.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VSCO Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- VSCO HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 VSCO Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order VSCO Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PICSPLAY -->
-
-<div class="card">
-
-<h3>🎞 PicsPlay Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun Premium<br>
-• Full Fitur Pro<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 13.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order PicsPlay Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Garansi Aktif<br>
-• Fast Process
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order PicsPlay Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- PICSPLAY HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 PicsPlay Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 5.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order PicsPlay Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MEITU -->
-
-<div class="card">
-
-<h3>✨ Meitu Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun Premium<br>
-• Full Beauty Filter<br>
-• AI Enhance Premium
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 15.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Meitu Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 9.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Meitu Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- MEITU HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Meitu Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 6.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Meitu Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div><!-- PREQUEL -->
-
-<div class="card">
-
-<h3>🎬 Prequel Premium</h3>
-
-<div class="price-box">
-
-<div>
-
-<b>💎 PRIVATE PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun Premium<br>
-• Full Effect Premium<br>
-• AI Filter Unlock<br>
-• Garansi Aktif
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 16.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Prequel Premium">
-Order
-</a>
-
-</div>
-
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>👥 SHARING PLAN</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• Sharing Account<br>
-• Fast Process<br>
-• Full Garansi
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 10.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Prequel Sharing">
-Order
-</a>
-
-</div>
-
-</div>
-
-<!-- PREQUEL HEMAT -->
-
-<div class="hemat-box">
-
-<div class="hemat-title">
-🌸 Prequel Hemat
-</div>
-
-<div class="price-box">
-
-<div>
-
-<b>🌸 SHARING HEMAT</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-• 1 Tahun<br>
-• Slow Process<br>
-• Menunggu Slot
-
-</span>
-
-</div>
-
-<div>
-
-<b>Rp 7.000</b><br>
-
-<a class="order-btn"
-href="https://wa.me/6281337415395?text=Order Prequel Hemat">
-Order
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PAYMENT -->
-
-<div class="section-title">
-💳 Payment LilyStore
-</div>
-
-<div class="payment-card">
-
-<div>
-
-<b>💖 DANA</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-087738176402
-
-</span>
-
-</div>
-
-<button class="order-btn"
-onclick="copyText('087738176402')">
-
-Salin
-
+<button class="subcategory-btn" onclick="openSub('ttshares')">
+🔁 Shares
 </button>
 
 </div>
 
-<div class="payment-card">
+<!-- TIKTOK FOLLOWERS -->
 
+<div id="ttfollowers" class="price-list">
+
+<div class="price-card">
 <div>
-
-<b>🛍 ShopeePay</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-087738176402
-
-</span>
-
-</div>
-
-<button class="order-btn"
-onclick="copyText('087738176402')">
-
-Salin
-
-</button>
-
-</div>
-
-<div class="payment-card">
-
-<div>
-
-<b>💚 GoPay</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-087738176402
-
-</span>
-
-</div>
-
-<button class="order-btn"
-onclick="copyText('087738176402')">
-
-Salin
-
-</button>
-
-</div>
-
-<div class="payment-card">
-
-<div>
-
-<b>🏦 SeaBank</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-901533224071
-
-</span>
-
-</div>
-
-<button class="order-btn"
-onclick="copyText('901533224071')">
-
-Salin
-
-</button>
-
-</div>
-
-<div class="payment-card">
-
-<div>
-
-<b>📷 QRIS</b><br>
-
-<span style="font-size:13px;color:#777;">
-
-Chat Admin Untuk QRIS
-
-</span>
-
+<b>500 Followers</b>
+<p>Fast Process</p>
 </div>
 
 <a class="order-btn"
-href="https://wa.me/6281337415395?text=Halo Admin Saya Mau QRIS">
-
-Chat
-
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Followers 500 - Rp 9.000">
+Rp 9.000
 </a>
+</div>
+
+<div class="price-card">
+<div>
+<b>1.000 Followers</b>
+<p>Recommended</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Followers 1000 - Rp 15.000">
+Rp 15.000
+</a>
+</div>
+
+<div class="price-card">
+<div>
+<b>2.000 Followers</b>
+<p>High Quality</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Followers 2000 - Rp 29.000">
+Rp 29.000
+</a>
+</div>
+
+<div class="price-card">
+<div>
+<b>3.000 Followers</b>
+<p>Premium</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Followers 3000 - Rp 44.000">
+Rp 44.000
+</a>
+</div>
+
+<div class="price-card">
+<div>
+<b>5.000 Followers</b>
+<p>Best Seller</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Followers 5000 - Rp 73.000">
+Rp 73.000
+</a>
+</div>
 
 </div>
 
-<!-- FOOTER -->
+<!-- TIKTOK LIKES -->
 
-<div class="footer">
+<div id="ttlikes" class="price-list">
 
-© LilyStore Official 💖<br><br>
+<div class="price-card">
+<div>
+<b>500 Likes</b>
+<p>Fast Process</p>
+</div>
 
-WhatsApp Admin :<br>
-+62 813-3741-5395
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Likes 500 - Rp 1.000">
+Rp 1.000
+</a>
+</div>
 
+<div class="price-card">
+<div>
+<b>1.000 Likes</b>
+<p>Recommended</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Likes 1000 - Rp 1.500">
+Rp 1.500
+</a>
+</div>
+
+<div class="price-card">
+<div>
+<b>2.000 Likes</b>
+<p>High Quality</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Likes 2000 - Rp 3.000">
+Rp 3.000
+</a>
+</div>
+
+<div class="price-card">
+<div>
+<b>4.000 Likes</b>
+<p>Premium</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Likes 4000 - Rp 5.000">
+Rp 5.000
+</a>
+</div>
+
+<div class="price-card">
+<div>
+<b>5.000 Likes</b>
+<p>Best Seller</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Likes 5000 - Rp 7.000">
+Rp 7.000
+</a>
 </div>
 
 </div>
 
-<script>
+<!-- TIKTOK VIEWS -->
 
-function copyText(text){
+<div id="ttviews" class="price-list">
 
-navigator.clipboard.writeText(text);
+<div class="price-card">
+<div>
+<b>2.000 Views</b>
+<p>Fast Process</p>
+</div>
 
-alert("Berhasil Disalin : " + text);
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Views 2000 - Rp 500">
+Rp 500
+</a>
+</div>
 
-}
+<div class="price-card">
+<div>
+<b>4.000 Views</b>
+<p>Recommended</p>
+</div>
 
-</script>
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Views 4000 - Rp 1.500">
+Rp 1.500
+</a>
+</div>
 
-</body>
-  </html>
+<div class="price-card">
+<div>
+<b>6.000 Views</b>
+<p>High Quality</p>
+</div>
 
-  
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Views 6000 - Rp 2.000">
+Rp 2.000
+</a>
+</div>
+
+<div class="price-card">
+<div>
+<b>7.000 Views</b>
+<p>Premium</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Views 7000 - Rp 3.000">
+Rp 3.000
+</a>
+</div>
+
+<div class="price-card">
+<div>
+<b>10.000 Views</b>
+<p>Best Seller</p>
+</div>
+
+<a class="order-btn"
+href="https://wa.me/6281337415395?text=Halo kak saya mau order TikTok Views 10000 - Rp 4.000">
+Rp 4.000
+</a>
+</div>
+
+</div>
