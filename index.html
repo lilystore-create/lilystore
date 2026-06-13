@@ -907,11 +907,22 @@ onclick="window.open('https://wa.me/6281337415395?text=Halo%20kak,%20saya%20ingi
 </div>
 
 <script>
+function openPage(pageId) {
+    // sembunyikan semua halaman
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.style.display = "none";
+    });
 
-document.querySelectorAll(".menu-btn")[1].onclick=function(){
-openPage("premium");
+    // tampilkan halaman yang dipilih
+    document.getElementById(pageId).style.display = "block";
+
+    // scroll ke atas
+    window.scrollTo(0, 0);
+}
+
+document.querySelectorAll(".menu-btn")[1].onclick = function() {
+    openPage("premium");
 };
-
 </script>
 
 <div id="youtube" class="page">
