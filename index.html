@@ -501,7 +501,24 @@ onclick="orderWA('TikTok Shares','5000 Shares','Rp 25.000')">
 </div>
 
 </div>
+<script>
 
+document.querySelectorAll("#tiktok .card")[1]
+.onclick=function(){
+openPage("ttlikes");
+};
+
+document.querySelectorAll("#tiktok .card")[2]
+.onclick=function(){
+openPage("ttviews");
+};
+
+document.querySelectorAll("#tiktok .card")[3]
+.onclick=function(){
+openPage("ttshares");
+};
+
+</script>
 <div id="instagram" class="page">
 
 <button class="back-btn"
