@@ -164,6 +164,9 @@ function searchApps(){
     let filter = input.value.toUpperCase();
 
     let cards = document.querySelectorAll("#premium .card");
+
+    cards.forEach(function(card){
+
         let text = card.innerText.toUpperCase();
 
         if(text.indexOf(filter) > -1){
@@ -174,10 +177,10 @@ function searchApps(){
 
     });
 
-    }
-
-</script>
+}
     
+</script>
+        
 </head>
 
 <body>
