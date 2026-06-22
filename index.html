@@ -80,6 +80,37 @@ color:#ff4fa3;
 margin-bottom:20px;
 }
 
+.search-box{
+    display:flex;
+    align-items:center;
+    background:#fff;
+    border:2px solid #ffd1e8;
+    border-radius:30px;
+    padding:0 15px;
+    margin:15px auto 25px;
+    max-width:430px;
+    box-shadow:0 6px 15px rgba(255,105,180,.15);
+}
+
+.search-box span{
+    font-size:20px;
+    margin-right:10px;
+}
+
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    padding:15px 0;
+    font-size:16px;
+    color:#555;
+}
+
+.search-box input::placeholder{
+    color:#aaa;
+}
+
 .card{
 background:white;
 max-width:430px;
@@ -1937,11 +1968,14 @@ Tersedia 60+ aplikasi premium.<br>
 Gunakan kolom pencarian untuk menemukan aplikasi dengan cepat.
 </p>
 
-<input
-type="text"
-id="searchApps"
-placeholder="🔍 Cari aplikasi..."
-onkeyup="searchApps()">
+<div class="search-box">
+    <span>🔍</span>
+    <input
+        type="text"
+        id="searchApps"
+        placeholder="Cari aplikasi..."
+        onkeyup="searchApps()">
+</div>
     
 <div class="card"
 onclick="window.open('https://wa.me/6281337415395?text=Halo%20kak,%20saya%20ingin%20bertanya%20mengenai%20Premium%20Apps%20LilyStore.','_blank')">
