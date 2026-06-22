@@ -163,9 +163,7 @@ function searchApps(){
     let input = document.getElementById("searchApps");
     let filter = input.value.toUpperCase();
 
-    let cards = document.querySelectorAll("#PremiumApps .card");
-    cards.forEach(function(card){
-
+    let cards = document.querySelectorAll("#premium .card");
         let text = card.innerText.toUpperCase();
 
         if(text.indexOf(filter) > -1){
