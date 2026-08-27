@@ -5,275 +5,57 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>LilyStore Official</title>
  <style>
- *{
- margin:0;
- padding:0;
- box-sizing:border-box;
- font-family:Arial,sans-serif;
- }
- body{
- background:linear-gradient(to bottom,#f9dbe8,#f7d8e5,#f5d3e1);
- min-height:100vh;
- padding:30px 20px;
- }
- .container{
- max-width:400px;
- margin:0 auto;
- text-align:center;
- padding-top:20px;
- }
- .flower{
- font-size:65px;
- margin-bottom:10px;
- }
- h1{
- font-size:52px;
- color:#ff4fa3;
- font-weight:900;
- margin-bottom:8px;
- }
- .subtitle{
- color:#666;
- font-size:18px;
- margin-bottom:20px;
- }
- .tagline{
- background:#ffe5f0;
- color:#ff4fa3;
- padding:12px 20px;
- border-radius:50px;
- font-weight:700;
- display:inline-block;
- margin-bottom:25px;
- }
- .features{
- display:flex;
- justify-content:space-around;
- background:#fff;
- border-radius:20px;
- padding:15px 10px;
- margin:0 10px 30px;
- box-shadow:0 4px 12px rgba(0,0,0,.08);
- }
- .feature-item{
- text-align:center;
- color:#666;
- font-size:14px;
- font-weight:600;
- }
- .feature-item span{
- font-size:20px;
- display:block;
- margin-bottom:4px;
- }
- .menu-btn{
- width:100%;
- max-width:400px;
- display:block;
- margin:15px auto;
- padding:18px;
- border:none;
- border-radius:18px;
- background:#ff5ca8;
- color:white;
- font-size:20px;
- font-weight:bold;
- cursor:pointer;
- box-shadow:0 6px 15px rgba(0,0,0,.12);
- transition:all .2s ease;
- }
- .menu-btn:hover{
- transform:translateY(-2px);
- background:#ff4fa3;
- }
- .menu-btn small{
- font-size:14px;
- font-weight:normal;
- opacity:.9;
- display:block;
- margin-top:4px;
- }
+ *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+ body{background:linear-gradient(to bottom,#f9dbe8,#f7d8e5,#f5d3e1);min-height:100vh;padding:30px 20px;}
+ .page{display:none;}
+ .active{display:block;}
+ .home-container{max-width:420px;margin:0 auto;text-align:center;}
+ h1{font-size:52px;color:#ff40a0;font-weight:900;}
+ .subtitle{color:#777;font-size:18px;margin:10px 0 25px;}
+ .tagline{background:#ffe6f2;color:#ff40a0;padding:15px 25px;border-radius:50px;font-weight:bold;font-size:18px;display:inline-block;margin-bottom:30px;}
+ .features{display:flex;justify-content:space-around;background:#fff;border-radius:20px;padding:20px 10px;margin-bottom:35px;box-shadow:0 4px 12px rgba(0,0,0,.05);}
+ .feat-item{text-align:center;color:#666;font-size:16px;font-weight:600;}
+ .feat-item span{font-size:24px;display:block;margin-bottom:5px;}
+ .btn{width:100%;background:#ff40a0;color:#fff;border:none;border-radius:16px;padding:20px;font-size:22px;font-weight:bold;cursor:pointer;margin-bottom:18px;text-align:left;padding-left:30px;box-shadow:0 6px 15px rgba(255,64,160,.25);transition:transform .2s;}
+ .btn:active{transform:scale(0.98);}
+ .btn small{display:block;font-size:15px;font-weight:normal;margin-top:5px;opacity:0.9;}
+ .footer{margin-top:40px;color:#ff40a0;font-size:16px;}
+ .back-btn{background:#fff;color:#333;border:none;padding:10px 20px;border-radius:10px;font-size:16px;font-weight:bold;cursor:pointer;margin-bottom:20px;}
+ .title{font-size:36px;color:#ff40a0;font-weight:900;text-align:center;margin-bottom:25px;}
+ .card{background:#fff;border-radius:16px;padding:20px;margin-bottom:15px;cursor:pointer;}
+ .card h2{color:#ff40a0;margin-bottom:8px;font-size:20px;}
  </style>
-  
- <script>
- function openPage(id){
- document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
- document.getElementById(id).classList.add("active");
- }
- </script>
-         
  </head>
  <body>
  <div id="home" class="page active">
-   <div style="text-align:center;padding:25px 20px 10px;">
-     <div style="font-size:65px;">🌸</div>
-     <h1 style="color:#ff4fa3;font-size:52px;margin-top:-10px;margin-bottom:10px;font-weight:900;">LilyStore</h1>
-     <p style="color:#666;font-size:18px;margin-bottom:18px;">Premium Apps & Sosmed Services</p>
-     <div style="background:#ffe5f0;color:#ff4fa3;padding:10px;border-radius:20px;margin:0 10px 20px;font-weight:700;">✨ Solusi Premium Apps & Sosmed Services Terpercaya ✨</div>
-     <div style="display:flex;justify-content:space-around;background:white;border-radius:20px;padding:15px 10px;margin:15px 10px 25px;box-shadow:0 4px 12px rgba(0,0,0,.08);color:#666;font-size:14px;font-weight:600;">
-
-
-
-</style>
-
-<script>
-
-function openPage(id){
-document.querySelectorAll(".page").forEach(function(x){
-x.classList.remove("active");
-});
-document.getElementById(id).classList.add("active");
-}
-
-function orderWA(produk,paket,harga){
-
-let text=
-"Halo kak, saya ingin order.%0A%0A"+
-"📦 Produk : "+produk+"%0A"+
-"📋 Paket : "+paket+"%0A"+
-"💰 Harga : "+harga+"%0A%0A"+
-"Saya akan melakukan pembayaran melalui QRIS.";
-
-window.open(
-"https://wa.me/6281337415395?text="+text,
-"_blank");
-
-}
-
-function searchApps(){
-
-    let input = document.getElementById("searchApps");
-    let filter = input.value.toUpperCase();
-
-    let cards = document.querySelectorAll("#premium .card");
-
-    cards.forEach(function(card){
-
-        let text = card.innerText.toUpperCase();
-
-        if(text.indexOf(filter) > -1){
-            card.style.display = "";
-        }else{
-            card.style.display = "none";
-        }
-
-    });
-
-}
-    
-</script>
-        
-</head>
-
-<body>
-
-<div id="home" class="page" style="display:block;">
-
-  <div style="text-align:center;padding:25px 20px 10px;">
-    <div style="font-size:65px;">🌸</div>
-
-    <h1 style="
-      color:#ff4fa3;
-      font-size:52px;
-      margin-top:-10px;
-      margin-bottom:10px;
-      font-weight:900;
-    ">
-      LilyStore
-    </h1>
-
-    <p style="
-      color:#666;
-      font-size:18px;
-      margin-bottom:18px;
-    ">
-      Premium Apps & Sosmed Services
-    </p>
-
-    <div style="
-      background:#ffe5f0;
-      color:#ff4fa3;
-      padding:10px;
-      border-radius:20px;
-      margin:0 10px 20px;
-      font-weight:700;
-    ">
-      ✨ Solusi Premium Apps & Sosmed Services Terpercaya ✨
-    </div>
-
-    <div style="
-      display:flex;
-      justify-content:space-around;
-      background:white;
-      border-radius:20px;
-      padding:15px 10px;
-      margin:15px 10px 25px;
-      box-shadow:0 4px 12px rgba(0,0,0,.08);
-      color:#666;
-      font-size:14px;
-      font-weight:600;
-    ">
-      <div>⚡<br>Fast Process</div>
-      <div>🛡️<br>Garansi</div>
-      <div>💰<br>Best Price</div>
-    </div>
-  </div>
-
-  <button class="menu-btn" onclick="openPage('sosmed')">
-    📈 Sosmed Services<br>
-    <small style="font-size:14px;font-weight:normal;">
-      Followers • Likes • Views • Subscriber
-    </small>
-  </button>
-
-  <button class="menu-btn" onclick="openPage('premium')">
-    👑 Premium Apps<br>
-    <small style="font-size:14px;font-weight:normal;">
-      Netflix • Spotify • YouTube • Bstation • dll
-    </small>
-  </button>
-
-   <button class="menu-btn" onclick="openPage('rahasia')">
-🔐 Layanan Rahasia<br>
-<small style="font-size:14px;font-weight:normal;">
-Layanan tambahan yang tidak ditampilkan
-</small>
-</button>
-
-  <button class="menu-btn" onclick="openPage('payment')">
-    💳 Payment<br>
-    <small style="font-size:14px;font-weight:normal;">
-      QRIS • DANA • GoPay • ShopeePay • SeaBank
-    </small>
-  </button>
-
-  <button class="menu-btn"
-    onclick="window.open('https://wa.me/6281337415395','_blank')">
-    📞 Contact Admin<br>
-    <small style="font-size:14px;font-weight:normal;">
-      Fast Response 08.00 - 22.00 WIB
-    </small>
-  </button>
-
-  <div class="card"
-    onclick="window.open('https://wa.me/6281337415395','_blank')">
-    <h2>🎉 PROMO & INFORMASI</h2>
-    <p>✅ Proses cepat & terpercaya</p>
-    <p>✅ Garansi sesuai ketentuan</p>
-    <p>✅ Pembayaran lengkap & mudah</p>
-    <p>💬 Klik kartu ini untuk chat Admin LilyStore</p>
-  </div>
-
-  <div style="
-    text-align:center;
-    color:#ff4fa3;
-    padding:20px;
-    font-size:14px;
-    margin-top:15px;
-  ">
-    Terima kasih telah mempercayai LilyStore 💖<br>
-    © 2020 LilyStore Official
-  </div>
+   <div class="home-container">
+     <h1>LilyStore</h1>
+     <p class="subtitle">Premium Apps & Sosmed Services</p>
+     <p class="tagline">✨ Solusi Premium Apps & Sosmed Services Terpercaya ✨</p>
+     <div class="features">
+       <div class="feat-item"><span>⚡</span>Fast Process</div>
+       <div class="feat-item"><span>🛡️</span>Garansi</div>
+       <div class="feat-item"><span>💰</span>Best Price</div>
+     </div>
+     <button class="btn" onclick="openPage('sosmed')">
+       📈 Sosmed Services
+       <small>Followers • Likes • Views • Subscriber</small>
+     </button>
+     <button class="btn" onclick="openPage('premium')">
+       👑 Premium Apps
+       <small>Netflix • Spotify • YouTube • Bstation • dll</small>
+     </button>
+     <button class="btn" onclick="openPage('payment')">
+       💳 Payment
+       <small>QRIS • DANA • GoPay • ShopeePay • SeaBank</small>
+     </button>
+     <button class="btn" onclick="window.open('https://wa.me/6281337415395','_blank')">
+       📞 Contact Admin
+       <small>Fast Response 08.00 - 22.00 WIB</small>
+     </button>
+     <div class="footer">
+       Terima kasih telah mempercayai LilyStore 💖<br>© 2026 LilyStore Official
+     </div>
 
 </div>
 
