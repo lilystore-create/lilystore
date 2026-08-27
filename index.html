@@ -1,367 +1,192 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LilyStore Official</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-    
-body{
-  background: linear-gradient(to bottom,#f9dbe8,#f7d8e5,#f5d3e1);
-  color:#333;
-}
-
-    
-
-.page{
-display:none;
-padding:20px;
-}
-
-.active{
-display:block;
-}
-
-.logo{
-text-align:center;
-margin-top:30px;
-margin-bottom:30px;
-}
-
-.logo h1{
-font-size:40px;
-color:#ff4fa3;
-}
-
-.logo p{
-margin-top:8px;
-color:#666;
-}
-
-.menu-btn{
-width:100%;
-max-width:420px;
-display:block;
-margin:15px auto;
-padding:18px;
-border:none;
-border-radius:18px;
-background:#ff5ca8;
-color:white;
-font-size:20px;
-font-weight:bold;
-cursor:pointer;
-box-shadow:0 6px 15px rgba(0,0,0,.12);
-}
-
-.back-btn{
-padding:12px 18px;
-border:none;
-border-radius:14px;
-background:#666;
-color:white;
-font-weight:bold;
-cursor:pointer;
-margin-bottom:20px;
-}
-
-.title{
-text-align:center;
-color:#ff4fa3;
-margin-bottom:20px;
-}
-
-.subcat{
-  text-align:center;
-  color:#555;
-  font-weight:bold;
-  margin:28px 0 14px;
-  font-size:17px;
-}
-
-.grid{
-  max-width:420px;
-  margin:0 auto;
-  display:grid;
-  gap:14px;
-}
-.grid.col2{
-  grid-template-columns:1fr 1fr;
-}
-
-.back-btn {
-  background: #777;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-
-.back-btn:hover {
-  background: #666;
-}
-
-.title {
-  color: #ff40a0;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.alert-box {
-  background: #fff;
-  border-radius: 20px;
-  padding: 15px 20px;
-  margin-bottom: 25px;
-  border-left: 4px solid #ff40a0;
-  box-shadow: 0 2px 8px rgba(255, 64, 160, 0.1);
-}
-
-.alert-box p {
-  margin: 5px 0;
-  color: #444;
-  font-size: 15px;
-}
-
-.cat {
-  text-align: center;
-  color: #555;
-  font-size: 20px;
-  margin: 30px 0 15px;
-  font-weight: 600;
-}
-
-.grid2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.grid1 {
-  margin: 0 5px;
-}
-
-.btn-w {
-  background: #fff;
-  color: #ff40a0;
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(255, 64, 160, 0.15);
-  transition: all 0.2s ease;
-}
-
-.btn-w:hover {
-  background: #fff0f6;
-  transform: translateY(-2px);
-}
-
-.btn-p {
-  background: #ff40a0;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(255, 64, 160, 0.3);
-  transition: all 0.2s ease;
-}
-
-.btn-p:hover {
-  background: #ff66b2;
-  transform: translateY(-2px);
-}
-
-.btn-w-full {
-  width: 100%;
-  background: #fff;
-  color: #ff40a0;
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(255, 64, 160, 0.15);
-  transition: all 0.2s ease;
-}
-
-.btn-w-full:hover {
-  background: #fff0f6;
-  transform: translateY(-2px);
-}
-
-.paket-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.paket-satu {
-  margin: 0 5px 15px;
-}
-
-.notice-box {
-  background: #fff0f6;
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 2px solid #ff40a0;
-}
-
-.notice-title {
-  color: #ff40a0;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.notice-line {
-  color: #800060;
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 8px 0;
-}
-
-.menu-card {
-  background: #fff0f6;
-  border-radius: 20px;
-  padding: 18px 22px;
-  margin-bottom: 12px;
-  border: 2px solid #ff40a0;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.menu-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 64, 160, 0.2);
-}
-
-.menu-title {
-  color: #800060;
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 4px;
-}
-
-.menu-sub {
-  color: #800060;
-  font-size: 15px;
-  opacity: 0.8;
-}
-
-.info-box {
-  background: #fff0f6;
-  border-radius: 20px;
-  padding: 20px;
-  border: 2px solid #ff40a0;
-  margin-bottom: 25px;
-}
-
-.info-header {
-  color: #ff40a0;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.info-h {
-  color: #ff40a0;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 18px 0 10px;
-}
-
-.info-p {
-  color: #800060;
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 4px 0;
-}
-
-.info-warning {
-  color: #ff40a0;
-  font-weight: bold;
-  font-size: 15px;
-  margin: 15px 0;
-}
-
-.garis {
-  border: none;
-  border-top: 2px solid #ff40a0;
-  margin: 15px 0;
-}
-
-.info-note {
-  color: #ff40a0;
-  font-size: 14px;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.btn-p-full {
-  width: 100%;
-  background: #ff40a0;
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  font-weight: bold;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 64, 160, 0.35);
-  transition: all 0.2s ease;
-}
-
-.btn-p-full:hover {
-  background: #ff66b2;
-  transform: translateY(-2px);
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>LilyStore Official</title>
+ <style>
+ *{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:Arial,sans-serif;
  }
-    
-.card-small{
-  background: #fff0f7;
-  border-radius: 20px;
-  padding: 14px 18px;  /* ← lebih kecil */
-  margin: 10px;
-  border: 2px solid #ff99cc;
-}
-.card-small h3{
-  color: #c2185b;
-  font-size: 16px;  /* ← tulisan lebih kecil */
-  margin-bottom: 8px;
-}
-.card-small p{
-  color: #ad1457;
-  font-size: 14px;  /* ← lebih kecil */
-  line-height: 1.5;
-  margin: 4px 0;
-}
-.card-small hr{
-  border: none;
-  border-top: 1px solid #ff99cc;
-  margin: 8px 0;
-}
+ body{
+ background:linear-gradient(to bottom,#f9dbe8,#f7d8e5,#f5d3e1);
+ color:#333;
+ }
+ .page{
+ display:none;
+ padding:20px;
+ }
+ .active{
+ display:block;
+ }
+ .logo{
+ text-align:center;
+ margin-top:30px;
+ margin-bottom:30px;
+ }
+ .logo h1{
+ font-size:40px;
+ color:#ff4fa3;
+ }
+ .logo p{
+ margin-top:8px;
+ color:#666;
+ }
+ .menu-btn{
+ width:100%;
+ max-width:420px;
+ display:block;
+ margin:15px auto;
+ padding:18px;
+ border:none;
+ border-radius:18px;
+ background:#ff5ca8;
+ color:white;
+ font-size:20px;
+ font-weight:bold;
+ cursor:pointer;
+ box-shadow:0 6px 15px rgba(0,0,0,.12);
+ }
+ .back-btn{
+ background:#777;
+ color:#fff;
+ border:none;
+ padding:10px 20px;
+ border-radius:8px;
+ font-size:16px;
+ margin-bottom:20px;
+ cursor:pointer;
+ }
+ .back-btn:hover{
+ background:#666;
+ }
+ .title{
+ text-align:center;
+ color:#ff4fa3;
+ margin-bottom:20px;
+ font-size:28px;
+ font-weight:bold;
+ }
+ .card{
+ background:#fff;
+ border-radius:18px;
+ padding:18px;
+ margin-bottom:15px;
+ cursor:pointer;
+ transition:transform .2s;
+ }
+ .card:hover{
+ transform:translateY(-2px);
+ }
+ .card h2{
+ color:#ff4fa3;
+ margin-bottom:10px;
+ font-size:18px;
+ }
+ .card p{
+ color:#555;
+ font-size:15px;
+ line-height:1.6;
+ }
+ .alert-box{
+ background:#fff;
+ border-radius:20px;
+ padding:15px 20px;
+ margin-bottom:25px;
+ border-left:4px solid #ff40a0;
+ }
+ .alert-box p{
+ margin:5px 0;
+ color:#444;
+ font-size:15px;
+ }
+ .cat{
+ text-align:center;
+ color:#555;
+ font-size:20px;
+ margin:30px 0 15px;
+ font-weight:600;
+ }
+ .grid2{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+ margin-bottom:10px;
+ }
+ .grid1{
+ margin:0 5px;
+ }
+ .btn-w{
+ background:#fff;
+ color:#ff40a0;
+ border:none;
+ border-radius:50px;
+ padding:15px;
+ font-weight:bold;
+ font-size:16px;
+ cursor:pointer;
+ box-shadow:0 2px 6px rgba(255,64,160,.15);
+ transition:all .2s ease;
+ }
+ .btn-w:hover{
+ background:#fff0f6;
+ transform:translateY(-2px);
+ }
+ .btn-p{
+ background:#ff40a0;
+ color:#fff;
+ border:none;
+ border-radius:50px;
+ padding:15px;
+ font-weight:bold;
+ font-size:16px;
+ cursor:pointer;
+ box-shadow:0 4px 10px rgba(255,64,160,.3);
+ transition:all .2s ease;
+ }
+ .btn-p:hover{
+ background:#ff66b2;
+ transform:translateY(-2px);
+ }
+ .btn-w-full{
+ width:100%;
+ background:#fff;
+ color:#ff40a0;
+ border:none;
+ border-radius:50px;
+ padding:15px;
+ font-weight:bold;
+ font-size:16px;
+ cursor:pointer;
+ box-shadow:0 2px 6px rgba(255,64,160,.15);
+ transition:all .2s ease;
+ }
+ .btn-w-full:hover{
+ background:#fff0f6;
+ transform:translateY(-2px);
+ }
+ </style>
+ <script>
+ function openPage(id){
+ document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ }
+ </script>
+         
+ </head>
+ <body>
+ <div id="home" class="page active">
+   <div style="text-align:center;padding:25px 20px 10px;">
+     <div style="font-size:65px;">🌸</div>
+     <h1 style="color:#ff4fa3;font-size:52px;margin-top:-10px;margin-bottom:10px;font-weight:900;">LilyStore</h1>
+     <p style="color:#666;font-size:18px;margin-bottom:18px;">Premium Apps & Sosmed Services</p>
+     <div style="background:#ffe5f0;color:#ff4fa3;padding:10px;border-radius:20px;margin:0 10px 20px;font-weight:700;">✨ Solusi Premium Apps & Sosmed Services Terpercaya ✨</div>
+     <div style="display:flex;justify-content:space-around;background:white;border-radius:20px;padding:15px 10px;margin:15px 10px 25px;box-shadow:0 4px 12px rgba(0,0,0,.08);color:#666;font-size:14px;font-weight:600;">
+
+
 
 </style>
 
