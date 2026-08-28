@@ -1,781 +1,481 @@
 <!DOCTYPE html>
 <html lang="id">
- <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>LilyStore Official</title>
- <style>
- *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
- body{background:linear-gradient(to bottom,#f9dbe8,#f7d8e5,#f5d3e1);min-height:100vh;padding:30px 20px;}
- .page{display:none;}
- .active{display:block;}
- .home-container{max-width:420px;margin:0 auto;text-align:center;}
- h1{font-size:52px;color:#ff40a0;font-weight:900;}
- .subtitle{color:#777;font-size:18px;margin:10px 0 25px;}
- .tagline{background:#ffe6f2;color:#ff40a0;padding:15px 25px;border-radius:50px;font-weight:bold;font-size:18px;display:inline-block;margin-bottom:30px;}
- .features{display:flex;justify-content:space-around;background:#fff;border-radius:20px;padding:20px 10px;margin-bottom:35px;box-shadow:0 4px 12px rgba(0,0,0,.05);}
- .feat-item{text-align:center;color:#666;font-size:16px;font-weight:600;}
- .feat-item span{font-size:24px;display:block;margin-bottom:5px;}
- .btn{width:100%;background:#ff40a0;color:#fff;border:none;border-radius:16px;padding:20px;font-size:22px;font-weight:bold;cursor:pointer;margin-bottom:18px;text-align:left;padding-left:30px;box-shadow:0 6px 15px rgba(255,64,160,.25);transition:transform .2s;}
- .btn:active{transform:scale(0.98);}
- .btn small{display:block;font-size:15px;font-weight:normal;margin-top:5px;opacity:0.9;}
- .footer{margin-top:40px;color:#ff40a0;font-size:16px;}
- .back-btn{background:#fff;color:#333;border:none;padding:10px 20px;border-radius:10px;font-size:16px;font-weight:bold;cursor:pointer;margin-bottom:20px;}
- .title{font-size:36px;color:#ff40a0;font-weight:900;text-align:center;margin-bottom:25px;}
- .card{background:#fff;border-radius:16px;padding:20px;margin-bottom:15px;cursor:pointer;}
- .card h2{color:#ff40a0;margin-bottom:8px;font-size:20px;}
- </style>
- </head>
- <body>
- <div id="home" class="page active">
-   <div class="home-container">
-     <h1>LilyStore</h1>
-     <p class="subtitle">Premium Apps & Sosmed Services</p>
-     <p class="tagline">✨ Solusi Premium Apps & Sosmed Services Terpercaya ✨</p>
-     <div class="features">
-       <div class="feat-item"><span>⚡</span>Fast Process</div>
-       <div class="feat-item"><span>🛡️</span>Garansi</div>
-       <div class="feat-item"><span>💰</span>Best Price</div>
-     </div>
-     <button class="btn" onclick="openPage('sosmed')">
-       📈 Sosmed Services
-       <small>Followers • Likes • Views • Subscriber</small>
-     </button>
-     <button class="btn" onclick="openPage('premium')">
-       👑 Premium Apps
-       <small>Netflix • Spotify • YouTube • Bstation • dll</small>
-     </button>
-     <button class="btn" onclick="openPage('payment')">
-       💳 Payment
-       <small>QRIS • DANA • GoPay • ShopeePay • SeaBank</small>
-     </button>
-     <button class="btn" onclick="window.open('https://wa.me/6281337415395','_blank')">
-       📞 Contact Admin
-       <small>Fast Response 08.00 - 22.00 WIB</small>
-     </button>
-     <div class="footer">
-       Terima kasih telah mempercayai LilyStore 💖<br>© 2026 LilyStore Official
-     </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LilyStore Official</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:linear-gradient(to bottom,#fcd9ec,#fbcfe4,#f9cde2);min-height:100vh;padding:20px;}
+.page{display:none;}
+.active{display:block;}
 
+.back-btn{background:#e0e0e0;color:#333;border:none;border-radius:10px;padding:10px 20px;font-size:16px;cursor:pointer;margin-bottom:25px;}
+.page-title{font-size:30px;color:#ff40a0;font-weight:bold;text-align:center;margin-bottom:20px;}
+.section-title{font-size:20px;color:#666;font-weight:bold;margin:35px 0 15px;}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:5px;}
+.grid-1{display:grid;grid-template-columns:1fr;gap:12px;}
+
+.btn-white{background:#fff;color:#ff40a0;border:none;border-radius:50px;padding:14px 10px;font-size:16px;font-weight:bold;cursor:pointer;box-shadow:0 2px 5px rgba(0,0,0,.06);transition:transform .2s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-white:active{transform:scale(0.97);}
+.btn-pink{background:#ff40a0;color:#fff;border:none;border-radius:50px;padding:14px 10px;font-size:16px;font-weight:bold;cursor:pointer;box-shadow:0 3px 8px rgba(255,64,160,.25);transition:transform .2s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-pink:active{transform:scale(0.97);}
+
+.paket-item{background:#fff;border-radius:16px;padding:16px;margin-bottom:10px;cursor:pointer;box-shadow:0 2px 6px rgba(255,64,160,.08);transition:transform .2s;}
+.paket-item:hover{transform:translateY(-2px);}
+.paket-jumlah{font-size:17px;font-weight:bold;color:#444;margin-bottom:4px;}
+.paket-harga{font-size:15px;color:#666;}
+
+.home-wrap{max-width:420px;margin:0 auto;text-align:center;}
+.home-wrap h1{font-size:42px;color:#ff40a0;margin:30px 0 10px;}
+.home-wrap p.desc{color:#777;font-size:16px;margin-bottom:30px;}
+.home-btn{width:100%;background:#ff40a0;color:#fff;border:none;border-radius:14px;padding:18px;font-size:18px;font-weight:bold;cursor:pointer;margin-bottom:15px;text-align:left;padding-left:25px;box-shadow:0 4px 10px rgba(255,64,160,.2);}
+.home-btn small{display:block;font-size:13px;opacity:.85;margin-top:4px;}
+.footer{margin-top:40px;color:#ff40a0;font-size:14px;}
+</style>
+</head>
+<body>
+
+<div id="home" class="page active">
+  <div class="home-wrap">
+    <h1>💖 LilyStore</h1>
+    <p class="desc">Premium Apps & Sosmed Services Terpercaya</p>
+    <button class="home-btn" onclick="openPage('sosmed')">
+      📈 Sosmed Services
+      <small>TikTok • IG • FB • YouTube • Telegram • X</small>
+    </button>
+    <button class="home-btn" onclick="openPage('premium')">
+      👑 Premium Apps
+      <small>Netflix • Spotify • YouTube Premium • dll</small>
+    </button>
+    <button class="home-btn" onclick="window.open('https://wa.me/6281337415395','_blank')">
+      💬 Hubungi Admin
+      <small>0813-3741-5395 • Fast Response</small>
+    </button>
+    <div class="footer">© 2026 LilyStore Official</div>
+  </div>
 </div>
 
 <div id="sosmed" class="page">
-
-<button class="back-btn"
-onclick="openPage('home')">
-⬅️ Kembali
-</button>
-
-<h1 class="title">
-📈 Sosmed Services
-</h1>
-
-<div class="card">
-    <h2>📢 INFORMASI HARGA</h2>
- <p>Harga layanan Sosmed Services dapat berubah sewaktu-waktu.</p>
- <p>💖 Kadang harga bisa lebih murah atau lebih mahal mengikuti market.</p>
- <p>Silakan cek harga terbaru pada setiap layanan.</p>
-
-</div>
-<div class="card"
-onclick="openPage('tiktok')">
-<h2>🎵 TikTok</h2>
-<p>Followers • Likes • Views • Shares • likeStory •</p>
-</div>
-
-<div class="card"
-onclick="openPage('instagram')">
-<h2>📸 Instagram</h2>
-<p>Followers • Likes • Views</p>
-</div>
-
-<div class="card"
-onclick="openPage('facebook')">
-<h2>📘 Facebook</h2>
-<p>Followers • Likes • Fanpage • Video Views</p>
-</div>
-
-<div class="card"
-onclick="openPage('YoutubeSosmed')">
-<h2>▶️ YouTube</h2>
-<p>Subscriber • Views • Likes • Watch Hours</p>
-</div>
-
-<div class="card"
-onclick="openPage('telegram')">
-<h2>✈️ Telegram</h2>
-<p>Member • Views • Reactions</p>
-</div>
-
-<div class="card"
-onclick="openPage('whatsapp')">
-<h2>💬 WhatsApp Channel</h2>
-<p>Followers • Views • Reactions</p>
-</div>
-
-<div class="card"
-onclick="openPage('twitter')">
-<h2>🐦 X / Twitter</h2>
-<p>Followers • Likes • Retweets • Views</p>
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Admin%20LilyStore,%20saya%20ingin%20menanyakan%20layanan%20lainnya')">
-
-<h2>🚀 Layanan Lainnya</h2>
-
-<p>
-Tidak menemukan layanan yang dicari?
-<br><br>
-💖 Chat Admin untuk cek ketersediaan layanan lainnya.
-</p>
-
-</div>
-    
-</div>
-    
-<div id="tiktok" class="page">
-
-<button class="back-btn"
-onclick="openPage('sosmed')">
-⬅️ Kembali
-</button>
-
-<h1 class="title">
-🎵 TikTok Services
-</h1>
-
-<div class="card">
-
-<h2>⚠️ TikTok Notice</h2>
-
-<p>
-📈 Follower & View saat ini lebih rawan drop karena update sistem TikTok.
-<br><br>
-
-⏳ Layanan Like dapat mengalami keterlambatan proses.
-<br><br>
-
-🛡️ Garansi min. Rp100.000
-<br>
-💖 Refill maks. 20%
-<br>
-📊 Drop mengikuti server pusat.
-</p>
-
+  <button class="back-btn" onclick="openPage('home')">← Kembali</button>
+  <h2 class="page-title">📈 Sosmed Services</h2>
+  <div class="grid-1" style="margin-top:20px;">
+    <button class="btn-white" style="justify-content:flex-start;padding:16px 20px;border-radius:16px;" onclick="openPage('tiktok')">🎵 TikTok Services</button>
+    <button class="btn-white" style="justify-content:flex-start;padding:16px 20px;border-radius:16px;" onclick="openPage('instagram')">📸 Instagram</button>
+    <button class="btn-white" style="justify-content:flex-start;padding:16px 20px;border-radius:16px;" onclick="openPage('facebook')">📘 Facebook</button>
+    <button class="btn-white" style="justify-content:flex-start;padding:16px 20px;border-radius:16px;" onclick="openPage('youtube')">▶️ YouTube</button>
+    <button class="btn-white" style="justify-content:flex-start;padding:16px 20px;border-radius:16px;" onclick="openPage('telegram')">✈️ Telegram</button>
+    <button class="btn-white" style="justify-content:flex-start;padding:16px 20px;border-radius:16px;" onclick="openPage('twitter')">🐦 X / Twitter</button>
+  </div>
 </div>
 
 <div id="tiktok" class="page">
-  <button class="back-btn">⬅️ Kembali</button>
-  <h1 class="title">🎵 TIKTOK SERVICES</h1>
+  <button class="back-btn" onclick="openPage('sosmed')">← Kembali</button>
+  <h2 class="page-title">🎵 TikTok Services</h2>
 
-  <div class="alert-box">
-    <p>⚠️ Harga dapat berubah mengikuti pasar.</p>
-    <p>Garansi sesuai ketentuan berlaku.</p>
+  <h3 class="section-title">👥 FOLLOWERS</h3>
+  <div class="grid-2">
+    <button class="btn-white" onclick="openPage('foll-indo')">🇮🇩 Indonesia</button>
+    <button class="btn-pink" onclick="openPage('foll-indo-premium')">💎 Premium Indo</button>
+    <button class="btn-white" onclick="openPage('foll-luar')">🌍 Luar Negeri</button>
+    <button class="btn-pink" onclick="openPage('foll-luar-premium')">💎 Premium Luar</button>
   </div>
 
-  <h3 class="cat">👥 FOLLOWERS</h3>
-  <div class="grid2">
-    <button class="btn-w" onclick="openPage('foll-indo')">🇮🇩 Indonesia</button>
-    <button class="btn-p" onclick="openPage('foll-indo-premium')">💎 Premium Indo</button>
-    <button class="btn-w" onclick="openPage('foll-luar')">🌍 Luar Negeri</button>
-    <button class="btn-p" onclick="openPage('foll-luar-premium')">💎 Premium Luar</button>
+  <h3 class="section-title">❤️ LIKES</h3>
+  <div class="grid-2">
+    <button class="btn-white" onclick="openPage('likes-indo')">🇮🇩 Biasa</button>
+    <button class="btn-pink" onclick="openPage('likes-indo-premium')">💎 Premium</button>
+    <button class="btn-white" onclick="openPage('likes-luar')">🌍 Luar Negeri</button>
+    <button class="btn-pink" onclick="openPage('likes-luar-premium')">💎 Premium Luar</button>
   </div>
 
-  <h3 class="cat">❤️ LIKES</h3>
-  <div class="grid2">
-    <button class="btn-w" onclick="openPage('likes-biasa')">🇮🇩 Biasa</button>
-    <button class="btn-p" onclick="openPage('likes-premium')">💎 Premium</button>
+  <h3 class="section-title">👀 VIEWS</h3>
+  <div class="grid-2">
+    <button class="btn-white" onclick="openPage('views-standar')">⚡ Standar</button>
+    <button class="btn-pink" onclick="openPage('views-premium')">💎 Premium</button>
   </div>
 
-  <h3 class="cat">👀 VIEWS</h3>
-  <div class="grid2">
-    <button class="btn-w" onclick="openPage('views-standar')">⚡ Standar</button>
-    <button class="btn-p" onclick="openPage('views-premium')">💎 Premium</button>
+  <h3 class="section-title">🔁 SHARES</h3>
+  <div class="grid-1">
+    <button class="btn-white" onclick="openPage('shares-standar')">🔁 Standar</button>
   </div>
 
-  <h3 class="cat">🔁 SHARES</h3>
-  <div class="grid1">
-    <button class="btn-w-full" onclick="openPage('shares')">Standar</button>
+  <h3 class="section-title">💕 LIKE STORY</h3>
+  <div class="grid-1">
+    <button class="btn-white" onclick="openPage('likestory')">💕 Standar</button>
   </div>
+</div>
 
-  <h3 class="cat">💕 LIKE STORY</h3>
-  <div class="grid1">
-    <button class="btn-w-full" onclick="openPage('likestory')">Standar</button>
+<div id="foll-indo" class="page">
+  <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+  <h2 class="page-title">🇮🇩 Followers Indonesia</h2>
+  <div class="grid-1">
+    <div class="paket-item" onclick="orderWA('Followers Indonesia','100 Followers','Rp6.000')">
+      <div class="paket-jumlah">👥 100</div>
+      <div class="paket-harga">Rp6.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Indonesia','200 Followers','Rp12.000')">
+      <div class="paket-jumlah">👥 200</div>
+      <div class="paket-harga">Rp12.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Indonesia','900 Followers','Rp54.000')">
+      <div class="paket-jumlah">👥 900</div>
+      <div class="paket-harga">Rp54.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Indonesia','1.000 Followers','Rp60.000')">
+      <div class="paket-jumlah">👥 1.000</div>
+      <div class="paket-harga">Rp60.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Indonesia','3.000 Followers','Rp180.000')">
+      <div class="paket-jumlah">👥 3.000</div>
+      <div class="paket-harga">Rp180.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Indonesia','7.000 Followers','Rp420.000')">
+      <div class="paket-jumlah">👥 7.000</div>
+      <div class="paket-harga">Rp420.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Indonesia','8.000 Followers','Rp480.000')">
+      <div class="paket-jumlah">👥 8.000</div>
+      <div class="paket-harga">Rp480.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Indonesia','10.000 Followers','Rp600.000')">
+      <div class="paket-jumlah">👥 10.000</div>
+      <div class="paket-harga">Rp600.000</div>
+    </div>
   </div>
-    
 </div>
 
-<div id="ttfollowers" class="page">
-
-<button class="back-btn"
-onclick="openPage('tiktok')">
-⬅️ Kembali
-</button>
-
-<h1 class="title">
-👥 TikTok Followers
-</h1>
-
- <div class="card"><h2>📢 INFORMASI PAKET</h2><p>⚡ HEMAT (LOW QUALITY)
-
-<br><br>
-
-• Persentase drop tinggi
-<br>
-• Proses cenderung lebih lambat
-<br>
-• Harga lebih terjangkau
-
-<br><br>
-
-⚠️ PAKAI LAYANAN LAIN JIKA MEMBUTUHKAN PROSES YANG CEPAT!
-
-<br><br>
-
-━━━━━━━━━━━━
-
-<br><br>
-
-💎 PREMIUM (HIGH QUALITY)
-
-<br><br>
-
-• Kualitas lebih stabil
-<br>
-• Risiko drop lebih rendah
-<br>
-• Proses lebih cepat
-<br>
-• Cocok untuk penggunaan jangka panjang
-
-<br><br>
-
-✨ KHUSUS TERSEDIA UNTUK PAKET 1000 FOLLOWERS
-
-</p>
-     
+<div id="foll-indo-premium" class="page">
+  <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+  <h2 class="page-title">💎 Followers Premium Indo</h2>
+  <div class="grid-1">
+    <div class="paket-item" onclick="orderWA('Followers Premium Indo','100 Followers','Rp8.500')">
+      <div class="paket-jumlah">💎 100</div>
+      <div class="paket-harga">Rp8.500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Indo','200 Followers','Rp17.000')">
+      <div class="paket-jumlah">💎 200</div>
+      <div class="paket-harga">Rp17.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Indo','900 Followers','Rp76.500')">
+      <div class="paket-jumlah">💎 900</div>
+      <div class="paket-harga">Rp76.500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Indo','1.000 Followers','Rp85.000')">
+      <div class="paket-jumlah">💎 1.000</div>
+      <div class="paket-harga">Rp85.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Indo','3.000 Followers','Rp255.000')">
+      <div class="paket-jumlah">💎 3.000</div>
+      <div class="paket-harga">Rp255.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Indo','7.000 Followers','Rp595.000')">
+      <div class="paket-jumlah">💎 7.000</div>
+      <div class="paket-harga">Rp595.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Indo','8.000 Followers','Rp680.000')">
+      <div class="paket-jumlah">💎 8.000</div>
+      <div class="paket-harga">Rp680.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Indo','10.000 Followers','Rp850.000')">
+      <div class="paket-jumlah">💎 10.000</div>
+      <div class="paket-harga">Rp850.000</div>
+    </div>
+  </div>
 </div>
 
-<div class="card">
-
-<h2>🌱 PAKET PEMULA</h2>
-
-<p>
-Cocok untuk akun baru atau yang ingin menambah followers sedikit demi sedikit.
-</p>
-
+<div id="foll-luar" class="page">
+  <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+  <h2 class="page-title">🌍 Followers Luar Negeri</h2>
+  <div class="grid-1">
+    <div class="paket-item" onclick="orderWA('Followers Luar Negeri','100 Followers','Rp2.800')">
+      <div class="paket-jumlah">🌍 100</div>
+      <div class="paket-harga">Rp2.800</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Luar Negeri','200 Followers','Rp5.600')">
+      <div class="paket-jumlah">🌍 200</div>
+      <div class="paket-harga">Rp5.600</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Luar Negeri','900 Followers','Rp25.200')">
+      <div class="paket-jumlah">🌍 900</div>
+      <div class="paket-harga">Rp25.200</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Luar Negeri','1.000 Followers','Rp28.000')">
+      <div class="paket-jumlah">🌍 1.000</div>
+      <div class="paket-harga">Rp28.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Luar Negeri','3.000 Followers','Rp84.000')">
+      <div class="paket-jumlah">🌍 3.000</div>
+      <div class="paket-harga">Rp84.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Luar Negeri','7.000 Followers','Rp196.000')">
+      <div class="paket-jumlah">🌍 7.000</div>
+      <div class="paket-harga">Rp196.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Luar Negeri','8.000 Followers','Rp224.000')">
+      <div class="paket-jumlah">🌍 8.000</div>
+      <div class="paket-harga">Rp224.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Luar Negeri','10.000 Followers','Rp280.000')">
+      <div class="paket-jumlah">🌍 10.000</div>
+      <div class="paket-harga">Rp280.000</div>
+    </div>
+  </div>
 </div>
 
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20100%20Followers%20TikTok')">
-
-<h2>👥 100 Followers</h2>
-
-<p>
-💰 Rp2.000
-</p>
-
+<div id="foll-luar-premium" class="page">
+  <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+  <h2 class="page-title">💎 Followers Premium Luar</h2>
+  <div class="grid-1">
+    <div class="paket-item" onclick="orderWA('Followers Premium Luar','100 Followers','Rp3.500')">
+      <div class="paket-jumlah">💎 100</div>
+      <div class="paket-harga">Rp3.500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Luar','200 Followers','Rp7.000')">
+      <div class="paket-jumlah">💎 200</div>
+      <div class="paket-harga">Rp7.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Luar','900 Followers','Rp31.500')">
+      <div class="paket-jumlah">💎 900</div>
+      <div class="paket-harga">Rp31.500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Luar','1.000 Followers','Rp35.000')">
+      <div class="paket-jumlah">💎 1.000</div>
+      <div class="paket-harga">Rp35.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Luar','3.000 Followers','Rp105.000')">
+      <div class="paket-jumlah">💎 3.000</div>
+      <div class="paket-harga">Rp105.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Luar','7.000 Followers','Rp245.000')">
+      <div class="paket-jumlah">💎 7.000</div>
+      <div class="paket-harga">Rp245.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Luar','8.000 Followers','Rp280.000')">
+      <div class="paket-jumlah">💎 8.000</div>
+      <div class="paket-harga">Rp280.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Followers Premium Luar','10.000 Followers','Rp350.000')">
+      <div class="paket-jumlah">💎 10.000</div>
+      <div class="paket-harga">Rp350.000</div>
+    </div>
+  </div>
 </div>
 
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20200%20Followers%20TikTok')">
-
-<h2>👥 200 Followers</h2>
-
-<p>
-💰 Rp4.500
-</p>
-
+<div id="likes-indo" class="page">
+  <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+  <h2 class="page-title">❤️ Likes Biasa (Indo)</h2>
+  <div class="grid-1">
+    <div class="paket-item" onclick="orderWA('Likes Biasa Indo','100 Likes','Rp500')">
+      <div class="paket-jumlah">❤️ 100</div>
+      <div class="paket-harga">Rp500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Biasa Indo','500 Likes','Rp2.500')">
+      <div class="paket-jumlah">❤️ 500</div>
+      <div class="paket-harga">Rp2.500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Biasa Indo','1.000 Likes','Rp5.000')">
+      <div class="paket-jumlah">❤️ 1.000</div>
+      <div class="paket-harga">Rp5.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Biasa Indo','2.000 Likes','Rp10.000')">
+      <div class="paket-jumlah">❤️ 2.000</div>
+      <div class="paket-harga">Rp10.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Biasa Indo','5.000 Likes','Rp25.000')">
+      <div class="paket-jumlah">❤️ 5.000</div>
+      <div class="paket-harga">Rp25.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Biasa Indo','10.000 Likes','Rp50.000')">
+      <div class="paket-jumlah">❤️ 10.000</div>
+      <div class="paket-harga">Rp50.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Biasa Indo','20.000 Likes','Rp100.000')">
+      <div class="paket-jumlah">❤️ 20.000</div>
+      <div class="paket-harga">Rp100.000</div>
+    </div>
+  </div>
 </div>
 
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20300%20Followers%20TikTok')">
-
-<h2>👥 300 Followers</h2>
-
-<p>
-💰 Rp6.500
-</p>
-
+<div id="likes-indo-premium" class="page">
+  <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+  <h2 class="page-title">💎 Likes Premium Indo</h2>
+  <div class="grid-1">
+    <div class="paket-item" onclick="orderWA('Likes Premium Indo','100 Likes','Rp800')">
+      <div class="paket-jumlah">💎 100</div>
+      <div class="paket-harga">Rp800</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Indo','500 Likes','Rp4.000')">
+      <div class="paket-jumlah">💎 500</div>
+      <div class="paket-harga">Rp4.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Indo','1.000 Likes','Rp8.000')">
+      <div class="paket-jumlah">💎 1.000</div>
+      <div class="paket-harga">Rp8.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Indo','2.000 Likes','Rp16.000')">
+      <div class="paket-jumlah">💎 2.000</div>
+      <div class="paket-harga">Rp16.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Indo','5.000 Likes','Rp40.000')">
+      <div class="paket-jumlah">💎 5.000</div>
+      <div class="paket-harga">Rp40.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Indo','10.000 Likes','Rp80.000')">
+      <div class="paket-jumlah">💎 10.000</div>
+      <div class="paket-harga">Rp80.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Indo','20.000 Likes','Rp160.000')">
+      <div class="paket-jumlah">💎 20.000</div>
+      <div class="paket-harga">Rp160.000</div>
+    </div>
+  </div>
 </div>
 
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20400%20Followers%20TikTok')">
-
-<h2>👥 400 Followers</h2>
-
-<p>
-💰 Rp8.500
-</p>
-
+<div id="likes-luar" class="page">
+  <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+  <h2 class="page-title">❤️ Likes Luar Negeri</h2>
+  <div class="grid-1">
+    <div class="paket-item" onclick="orderWA('Likes Luar Negeri','100 Likes','Rp350')">
+      <div class="paket-jumlah">❤️ 100</div>
+      <div class="paket-harga">Rp350</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Luar Negeri','500 Likes','Rp1.750')">
+      <div class="paket-jumlah">❤️ 500</div>
+      <div class="paket-harga">Rp1.750</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Luar Negeri','1.000 Likes','Rp3.500')">
+      <div class="paket-jumlah">❤️ 1.000</div>
+      <div class="paket-harga">Rp3.500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Luar Negeri','2.000 Likes','Rp7.000')">
+      <div class="paket-jumlah">❤️ 2.000</div>
+      <div class="paket-harga">Rp7.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Luar Negeri','5.000 Likes','Rp17.500')">
+      <div class="paket-jumlah">❤️ 5.000</div>
+      <div class="paket-harga">Rp17.500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Luar Negeri','10.000 Likes','Rp35.000')">
+      <div class="paket-jumlah">❤️ 10.000</div>
+      <div class="paket-harga">Rp35.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Luar Negeri','20.000 Likes','Rp70.000')">
+      <div class="paket-jumlah">❤️ 20.000</div>
+      <div class="paket-harga">Rp70.000</div>
+    </div>
+  </div>
 </div>
 
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20500%20Followers%20TikTok')">
-
-<h2>👥 500 Followers</h2>
-
-<p>
-💰 Rp10.000
-</p>
-
+<div id="likes-luar-premium" class="page">
+  <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+  <h2 class="page-title">💎 Likes Premium Luar</h2>
+  <div class="grid-1">
+    <div class="paket-item" onclick="orderWA('Likes Premium Luar','100 Likes','Rp500')">
+      <div class="paket-jumlah">💎 100</div>
+      <div class="paket-harga">Rp500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Luar','500 Likes','Rp2.500')">
+      <div class="paket-jumlah">💎 500</div>
+      <div class="paket-harga">Rp2.500</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Luar','1.000 Likes','Rp5.000')">
+      <div class="paket-jumlah">💎 1.000</div>
+      <div class="paket-harga">Rp5.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Luar','2.000 Likes','Rp10.000')">
+      <div class="paket-jumlah">💎 2.000</div>
+      <div class="paket-harga">Rp10.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Luar','5.000 Likes','Rp25.000')">
+      <div class="paket-jumlah">💎 5.000</div>
+      <div class="paket-harga">Rp25.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Luar','10.000 Likes','Rp50.000')">
+      <div class="paket-jumlah">💎 10.000</div>
+      <div class="paket-harga">Rp50.000</div>
+    </div>
+    <div class="paket-item" onclick="orderWA('Likes Premium Luar','20.000 Likes','Rp100.000')">
+      <div class="paket-jumlah">💎 20.000</div>
+      <div class="paket-harga">Rp100.000</div>
+    </div>
 </div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20600%20Followers%20TikTok')">
-
-<h2>👥 600 Followers</h2>
-
-<p>
-💰 Rp12.500
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20700%20Followers%20TikTok')">
-
-<h2>👥 700 Followers</h2>
-
-<p>
-💰 Rp14.500
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20800%20Followers%20TikTok')">
-
-<h2>👥 800 Followers</h2>
-
-<p>
-💰 Rp16.500
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20900%20Followers%20TikTok')">
-
-<h2>👥 900 Followers</h2>
-
-<p>
-💰 Rp18.500
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%201000%20Followers%20TikTok%20Hemat')">
-<h2>👥 1000 Followers</h2>
-<p>⚡ Hemat<br>💰 Rp20.000</p>
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%201000%20Followers%20TikTok%20Premium')">
-<h2>💎 1000 Followers Premium</h2>
-<p>💰 Rp80.000</p>
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%202000%20Followers%20TikTok')">
-<h2>👥 2000 Followers</h2>
-<p>💰 Rp39.000</p>
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%204000%20Followers%20TikTok')">
-<h2>👥 4000 Followers</h2>
-<p>💰 Rp79.000</p>
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%206000%20Followers%20TikTok')">
-<h2>👥 6000 Followers</h2>
-<p>💰 Rp119.000</p>
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%2010000%20Followers%20TikTok')">
-<h2>👥 10.000 Followers</h2>
-<p>💰 Rp199.000</p>
-</div>
-    
-</div>
-    
-<div id="ttlikes" class="page">
-
-<button class="back-btn"
-onclick="openPage('tiktok')">
-⬅️ Kembali
-</button>
-
-<h1 class="title">
-❤️ TikTok Likes
-</h1>
-
-<div class="card"><h2>📢 INFORMASI PAKET</h2><p>⚡ HEMAT (LOW QUALITY)
-
-<br><br>
-
-• Persentase drop tinggi
-<br>
-• Proses cenderung lebih lambat
-<br>
-• Harga lebih terjangkau
-
-<br><br>
-
-⚠️ PAKAI LAYANAN LAIN JIKA MEMBUTUHKAN PROSES YANG CEPAT!
-
-<br><br>
-
-━━━━━━━━━━━━
-
-<br><br>
-
-💎 PREMIUM (HIGH QUALITY)
-
-<br><br>
-
-• Kualitas lebih stabil
-<br>
-• Risiko drop lebih rendah
-<br>
-• Proses lebih cepat
-<br>
-• Cocok untuk penggunaan jangka panjang
-
-<br><br>
-
-✨ KHUSUS TERSEDIA UNTUK PAKET 1000 FOLLOWERS
-
-</p>
-     
-</div>
-
-<div class="card" onclick="orderWA('TikTok Likes','500 Likes','Rp1.500')">
-    <h2>❤️ 500 Likes</h2>
-    <p>💰 Rp1.500</p>
-</div>
-
-<div class="card" onclick="orderWA('TikTok Likes','600 Likes','Rp1.800')">
-    <h2>❤️ 600 Likes</h2>
-    <p>💰 Rp1.800</p>
-</div>
-
-<div class="card" onclick="orderWA('TikTok Likes','700 Likes','Rp2.000')">
-    <h2>❤️ 700 Likes</h2>
-    <p>💰 Rp2.000</p>
-</div>
-
-<div class="card" onclick="orderWA('TikTok Likes','800 Likes','Rp2.300')">
-    <h2>❤️ 800 Likes</h2>
-    <p>💰 Rp2.300</p>
-</div>
-
-<div class="card" onclick="orderWA('TikTok Likes','900 Likes','Rp2.500')">
-    <h2>❤️ 900 Likes</h2>
-    <p>💰 Rp2.500</p>
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%201000%20Likes%20TikTok%20Hemat')">
-
-<h2>❤️ 1000 Likes</h2>
-
-<p>
-⚡ Hemat
-<br>
-💰 Rp2.500
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%201000%20Likes%20TikTok%20Premium')">
-
-<h2>💎 1000 Likes Premium</h2>
-
-<p>
-💰 Rp7.000
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%202000%20Likes%20TikTok')">
-
-<h2>❤️ 2000 Likes</h2>
-
-<p>
-💰 Rp4.500
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%204000%20Likes%20TikTok')">
-
-<h2>❤️ 4000 Likes</h2>
-
-<p>
-💰 Rp8.000
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%208000%20Likes%20TikTok')">
-
-<h2>❤️ 8000 Likes</h2>
-
-<p>
-💰 Rp19.000
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%2010000%20Likes%20TikTok')">
-
-<h2>❤️ 10.000 Likes</h2>
-
-<p>
-💰 Rp24.000
-</p>
-
-</div>
-
-</div>
-
-<div id="ttviews" class="page">
-
-<button class="back-btn"
-onclick="openPage('tiktok')">
-⬅️ Kembali
-</button>
-
-<h1 class="title">
-👀 TikTok Views
-</h1>
-
-<div class="card"><h2>📢 INFORMASI PAKET</h2><p>⚡ HEMAT (LOW QUALITY)
-
-<br><br>
-
-• Persentase drop tinggi
-<br>
-• Proses cenderung lebih lambat
-<br>
-• Harga lebih terjangkau
-
-<br><br>
-
-⚠️ PAKAI LAYANAN LAIN JIKA MEMBUTUHKAN PROSES YANG CEPAT!
-
-<br><br>
-
-━━━━━━━━━━━━
-
-<br><br>
-
-💎 PREMIUM (HIGH QUALITY)
-
-<br><br>
-
-• Kualitas lebih stabil
-<br>
-• Risiko drop lebih rendah
-<br>
-• Proses lebih cepat
-<br>
-• Cocok untuk penggunaan jangka panjang
-
-<br><br>
-
-✨ KHUSUS TERSEDIA UNTUK PAKET 1000 FOLLOWERS
-
-</p>
-     
-</div>
-
-<div class="card" onclick="orderWA('TikTok Views','700 Views','Rp800')">
-    <h2>👀 700 Views</h2>
-    <p>💰 Rp800</p>
-</div>
-
-<div class="card" onclick="orderWA('TikTok Views','800 Views','Rp900')">
-    <h2>👀 800 Views</h2>
-    <p>💰 Rp900</p>
-</div>
-
-<div class="card" onclick="orderWA('TikTok Views','900 Views','Rp1.000')">
-    <h2>👀 900 Views</h2>
-    <p>💰 Rp1.000</p>
-</div>
-    
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%201000%20Views%20TikTok%20Hemat')">
-
-<h2>👀 1000 Views</h2>
-
-<p>
-⚡ Hemat
-<br>
-💰 Rp1.000
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%201000%20Views%20TikTok%20Premium')">
-
-<h2>💎 1000 Views Premium</h2>
-
-<p>
-💰 Rp2.000
-</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%205000%20Views%20TikTok')">
-
-<h2>👀 5000 Views</h2>
-
-<p>💰 Rp4.000</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%2010000%20Views%20TikTok')">
-
-<h2>👀 10.000 Views</h2>
-
-<p>💰 Rp8.000</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%2015000%20Views%20TikTok')">
-
-<h2>👀 15.000 Views</h2>
-
-<p>💰 Rp14.000</p>
-
-</div>
-
-<div class="card"
-onclick="window.open('https://wa.me/6281337415395?text=Halo%20Kak,%20saya%20mau%20order%20100000%20Views%20TikTok')">
-
-<h2>👀 100.000 Views</h2>
-
-<p>💰 Rp20.000</p>
-
-</div>
-
-</div>
-
-<div id="ttshares" class="page">
-
-<button class="back-btn"
-onclick="openPage('tiktok')">
-⬅️ Kembali
-</button>
-
-<h1 class="title">
-🔁 TikTok Shares
-</h1>
-
-<div class="card"><h2>📢 INFORMASI PAKET</h2><p>⚡ HEMAT (LOW QUALITY)
-
-<br><br>
-
-• Persentase drop tinggi
-<br>
-• Proses cenderung lebih lambat
-<br>
-• Harga lebih terjangkau
-
-<br><br>
-
-⚠️ PAKAI LAYANAN LAIN JIKA MEMBUTUHKAN PROSES YANG CEPAT!
-
-<br><br>
-
-━━━━━━━━━━━━
-
-<br><br>
-
-💎 PREMIUM (HIGH QUALITY)
-
-<br><br>
-
-• Kualitas lebih stabil
-<br>
-• Risiko drop lebih rendah
-<br>
-• Proses lebih cepat
-<br>
-• Cocok untuk penggunaan jangka panjang
-
-<br><br>
-
-✨ KHUSUS TERSEDIA UNTUK PAKET 1000 FOLLOWERS
-
-</p>
-     
-</div>
-
-<div class="card" onclick="orderWA('TikTok Shares','700 Shares','Rp1.400')">
-    <h2>🔄 700 Shares</h2>
-    <p>💰 Rp1.400</p>
-</div>
-
-<div class="card" onclick="orderWA('TikTok Shares','800 Shares','Rp1.700')">
-    <h2>🔄 800 Shares</h2>
-    <p>💰 Rp1.700</p>
-</div>
-
-<div class="card" onclick="orderWA('TikTok Shares','900 Shares','Rp1.900')">
-    <h2>🔄 900 Shares</h2>
-    <p>💰 Rp1.900</p>
-</div>
-    
-<div class="card"
-onclick="orderWA('TikTok Shares','1000 Shares','Rp 2.000')">
-<h2>1000 Shares</h2>
-<p class="price">Rp 2.000</p>
-</div>
-
-<div class="card"
-onclick="orderWA('TikTok Shares','2000 Shares','Rp 2.500')">
-<h2>2000 Shares</h2>
-<p class="price">Rp 2.500</p>
-</div>
-
-<div class="card"
-onclick="orderWA('TikTok Shares','3000 Shares','Rp 3.500')">
-<h2>4000 Shares</h2>
-<p class="price">Rp 3.500</p>
-</div>
-
-<div class="card"
-onclick="orderWA('TikTok Shares','4000 Shares','Rp 6.000')">
-<h2>7000 Shares</h2>
-<p class="price">Rp 6.000</p>
-</div>
-
-<div class="card"
-onclick="orderWA('TikTok Shares','5000 Shares','Rp 8.000')">
-<h2>10.000 Shares</h2>
-<p class="price">Rp 8.000</p>
-</div>
-
-</div>
-    
+ <div id="shares-standar" class="page">
+   <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+   <h2 class="page-title">🔁 Shares Standar</h2>
+   <div class="grid-1">
+     <div class="paket-item" onclick="orderWA('Shares Standar','100 Shares','Rp200')">
+       <div class="paket-jumlah">🔁 100</div>
+       <div class="paket-harga">Rp200</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Shares Standar','200 Shares','Rp400')">
+       <div class="paket-jumlah">🔁 200</div>
+       <div class="paket-harga">Rp400</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Shares Standar','300 Shares','Rp600')">
+       <div class="paket-jumlah">🔁 300</div>
+       <div class="paket-harga">Rp600</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Shares Standar','1.000 Shares','Rp2.000')">
+       <div class="paket-jumlah">🔁 1.000</div>
+       <div class="paket-harga">Rp2.000</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Shares Standar','7.000 Shares','Rp14.000')">
+       <div class="paket-jumlah">🔁 7.000</div>
+       <div class="paket-harga">Rp14.000</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Shares Standar','9.000 Shares','Rp18.000')">
+       <div class="paket-jumlah">🔁 9.000</div>
+       <div class="paket-harga">Rp18.000</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Shares Standar','11.000 Shares','Rp22.000')">
+       <div class="paket-jumlah">🔁 11.000</div>
+       <div class="paket-harga">Rp22.000</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Shares Standar','19.000 Shares','Rp38.000')">
+       <div class="paket-jumlah">🔁 19.000</div>
+       <div class="paket-harga">Rp38.000</div>
+     </div>
+   </div>
+ </div>
+ <div id="likestory" class="page">
+   <button class="back-btn" onclick="openPage('tiktok')">← Kembali</button>
+   <h2 class="page-title">💕 Like Story</h2>
+   <div class="grid-1">
+     <div class="paket-item" onclick="orderWA('Like Story','100 Likes','Rp200')">
+       <div class="paket-jumlah">💕 100</div>
+       <div class="paket-harga">Rp200</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Like Story','200 Likes','Rp400')">
+       <div class="paket-jumlah">💕 200</div>
+       <div class="paket-harga">Rp400</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Like Story','300 Likes','Rp600')">
+       <div class="paket-jumlah">💕 300</div>
+       <div class="paket-harga">Rp600</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Like Story','1.000 Likes','Rp2.000')">
+       <div class="paket-jumlah">💕 1.000</div>
+       <div class="paket-harga">Rp2.000</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Like Story','7.000 Likes','Rp14.000')">
+       <div class="paket-jumlah">💕 7.000</div>
+       <div class="paket-harga">Rp14.000</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Like Story','9.000 Likes','Rp18.000')">
+       <div class="paket-jumlah">💕 9.000</div>
+       <div class="paket-harga">Rp18.000</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Like Story','11.000 Likes','Rp22.000')">
+       <div class="paket-jumlah">💕 11.000</div>
+       <div class="paket-harga">Rp22.000</div>
+     </div>
+     <div class="paket-item" onclick="orderWA('Like Story','19.000 Likes','Rp38.000')">
+       <div class="paket-jumlah">💕 19.000</div>
+       <div class="paket-harga">Rp38.000</div>
+     </div>
+   </div>
 <div id="instagram" class="page">
 
 <button class="back-btn"
