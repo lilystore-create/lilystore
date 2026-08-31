@@ -579,24 +579,41 @@ onclick="openPage('sosmed')">
     
 </div>
     
-<div class="card"
-onclick="openPage('igfollowers')">
-<h2>👥 Followers</h2>
-<p>Lihat Paket</p>
-</div>
+<div id="Instagram" class="page">
+  <button class="back-btn" onclick="openPage('sosmed')">← Kembali</button>
+  <h2 class="page-title">🎵 Instagram</h2>
 
-<div class="card"
-onclick="openPage('iglikes')">
-<h2>❤️ Likes</h2>
-<p>Lihat Paket</p>
-</div>
+  <h3 class="section-title">👥 FOLLOWERS</h3>
+  <div class="grid-2">
+    <button class="btn-white" onclick="openPage('foll-indo')">🇮🇩 Indonesia</button>
+    <button class="btn-pink" onclick="openPage('foll-indo-premium')">💎 Premium Indo</button>
+    <button class="btn-white" onclick="openPage('foll-luar')">🌍 Luar Negeri</button>
+    <button class="btn-pink" onclick="openPage('foll-luar-premium')">💎 Premium Luar</button>
+  </div>
 
-<div class="card"
-onclick="openPage('igviews')">
-<h2>👀 Views</h2>
-<p>Lihat Paket</p>
-</div>
+  <h3 class="section-title">❤️ LIKES</h3>
+  <div class="grid-2">
+    <button class="btn-white" onclick="openPage('likes-indo')">🇮🇩 Biasa</button>
+    <button class="btn-pink" onclick="openPage('likes-indo-premium')">💎 Premium</button>
+    <button class="btn-white" onclick="openPage('likes-luar')">🌍 Luar Negeri</button>
+    <button class="btn-pink" onclick="openPage('likes-luar-premium')">💎 Premium Luar</button>
+  </div>
 
+  <h3 class="section-title">👀 VIEWS</h3>
+  <div class="grid-2">
+    <button class="btn-white" onclick="openPage('views-standar')">⚡ Standar</button>
+    <button class="btn-pink" onclick="openPage('views-premium')">💎 Premium</button>
+  </div>
+
+  <h3 class="section-title">🔁 SHARES</h3>
+  <div class="grid-1">
+    <button class="btn-white" onclick="openPage('shares-standar')">🔁 Standar</button>
+  </div>
+
+  <h3 class="section-title">💕 LIKE STORY</h3>
+  <div class="grid-1">
+    <button class="btn-white" onclick="openPage('likestory')">💕 Standar</button>
+  </div>
 </div>
 
 <div id="igfollowers" class="page">
