@@ -3166,8 +3166,6 @@ onclick="orderWA('Bstation Sharing 1 Tahun')">
 
 </div>
 
-<!-- TEMPEL DI SINI -->
-
 <div id="rahasia" class="page">
 
 <button class="back-btn" onclick="openPage('home')">
@@ -3263,3 +3261,19 @@ onclick="window.open('https://wa.me/6281337415395?text=Halo%20Admin%20LilyStore,
 </div>
 
 </div>
+
+<script>
+function openPage(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function pesanWA(layanan, jumlah, harga){
+  let pesan = `Halo Admin LilyStore%0A%0ASaya mau order:%0A${layanan}%0A${jumlah}%0A${harga}%0A%0ANama IG:`;
+  window.open(`https://wa.me/6281337415395?text=${pesan}`,'_blank');
+}
+</script>
+
+</body> 
+</html>
