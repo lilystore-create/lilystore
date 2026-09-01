@@ -3044,7 +3044,13 @@ function openPage(id){
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
 }
+function showTab(id){
+    let parent = document.getElementById(id).closest('.page');
+    parent.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
 
+function pesanWA(layanan, jumlah, har...
 function pesanWA(layanan, jumlah, harga){
   let pesan = `Halo Admin LilyStore%0A%0ASaya mau order:%0A${layanan}%0A${jumlah}%0A${harga}%0A%0ANama IG:`;
   window.open(`https://wa.me/6281337415395?text=${pesan}`,'_blank');
