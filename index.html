@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MomsCily ♥️🌶️ - Premium Apps & Sosmed Services</title>
+    <title>MomsCily ❤️🌶️ - Premium Apps & Sosmed Services</title>
     <style>
         :root {
-            --bg-color: #1a0b2e;
-            --card-bg: #2d1b4e;
-            --card-hover: #3d2568;
-            --accent-purple: #9b51e0;
+            --bg-color: #0f051d;
+            --card-bg: #220c38;
+            --card-hover: #341456;
+            --accent-purple: #a100ff;
             --light-purple: #d1b3ff;
             --text-main: #ffffff;
             --text-muted: #d0c2e8;
@@ -30,25 +30,26 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
 
         .phone-container {
             width: 100%;
-            max-width: 420px;
-            background: linear-gradient(135deg, #24103d 0%, #150624 100%);
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(155, 81, 224, 0.3);
+            max-width: 400px;
+            background: linear-gradient(180deg, #18092e 0%, #0c0418 100%);
+            border-radius: 28px;
+            box-shadow: 0 0 25px rgba(161, 0, 255, 0.35);
             overflow: hidden;
-            border: 2px solid rgba(155, 81, 224, 0.3);
+            border: 2px solid rgba(161, 0, 255, 0.4);
             position: relative;
+            min-height: 580px;
         }
 
         .page {
             display: none;
             padding: 20px;
-            animation: fadeIn 0.3s ease-in-out;
-            max-height: 85vh;
+            animation: fadeIn 0.25s ease-in-out;
+            max-height: 82vh;
             overflow-y: auto;
         }
 
@@ -65,35 +66,35 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* Header Style */
         .header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             padding-top: 10px;
         }
 
         .logo-box {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 26px;
+            font-weight: 800;
             color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            margin-bottom: 5px;
+            gap: 6px;
+            margin-bottom: 6px;
         }
 
         .logo-box span {
-            color: #d1b3ff;
-            text-shadow: 0 0 10px rgba(209, 179, 255, 0.5);
+            color: #ffffff;
+            text-shadow: 0 0 12px rgba(209, 179, 255, 0.8);
         }
 
         .subtitle {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
         }
 
@@ -102,54 +103,52 @@
             width: 100%;
             padding: 12px 16px;
             background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(155, 81, 224, 0.4);
+            border: 1px solid rgba(161, 0, 255, 0.5);
             border-radius: 12px;
             color: var(--white);
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 15px;
             outline: none;
-            transition: 0.2s;
         }
 
         .search-box:focus {
             border-color: var(--light-purple);
             background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 0 10px rgba(155, 81, 224, 0.3);
         }
 
         .search-box::placeholder {
             color: var(--text-muted);
         }
 
-        /* Buttons & Cards */
+        /* Menu Button Style */
         .menu-btn {
-            background: linear-gradient(135deg, #8a2be2 0%, #b000ff 100%);
+            background: linear-gradient(135deg, #a100ff 0%, #7000ff 100%);
             color: var(--white);
             border: none;
             width: 100%;
-            padding: 16px 20px;
-            border-radius: 15px;
+            padding: 15px 18px;
+            border-radius: 16px;
             margin-bottom: 12px;
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             text-align: left;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(161, 0, 255, 0.4);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 3px;
         }
 
-        .menu-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+        .menu-btn:active {
+            transform: scale(0.98);
         }
 
         .menu-btn small {
-            font-size: 12px;
-            font-weight: normal;
-            color: #f3e5f5;
+            font-size: 11px;
+            font-weight: 400;
+            color: #ece0fd;
+            opacity: 0.9;
         }
 
         /* Back Button */
@@ -157,87 +156,108 @@
             background: rgba(255, 255, 255, 0.1);
             color: var(--white);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
+            padding: 7px 14px;
             border-radius: 10px;
-            font-size: 13px;
+            font-size: 12px;
             cursor: pointer;
             margin-bottom: 15px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            transition: background 0.2s;
-        }
-
-        .back-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
         }
 
         /* Section Title */
         .section-title {
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 17px;
+            font-weight: 700;
             color: var(--light-purple);
             text-align: center;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
         }
 
-        /* Notice Box */
         .notice-box {
-            background: rgba(255, 204, 0, 0.15);
-            border: 1px solid rgba(255, 204, 0, 0.4);
-            padding: 12px;
+            background: rgba(255, 204, 0, 0.12);
+            border: 1px solid rgba(255, 204, 0, 0.35);
+            padding: 10px 12px;
             border-radius: 12px;
-            font-size: 12px;
+            font-size: 11px;
             color: #ffe680;
             margin-bottom: 15px;
             line-height: 1.4;
         }
 
-        /* Apps Grid */
+        /* Grid Services & Apps */
         .apps-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 10px;
+            gap: 9px;
         }
 
         .app-item {
             background: var(--card-bg);
-            border: 1px solid rgba(155, 81, 224, 0.3);
-            padding: 12px 16px;
+            border: 1px solid rgba(161, 0, 255, 0.3);
+            padding: 12px 15px;
             border-radius: 12px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: 0.2s;
             color: var(--white);
         }
 
-        .app-item:hover {
+        .app-item:active {
             background: var(--card-hover);
-            border-color: var(--accent-purple);
         }
 
-        /* Rekber Card Box */
+        .sub-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+            margin-bottom: 15px;
+        }
+
+        .sub-btn {
+            background: var(--card-bg);
+            color: var(--white);
+            border: 1px solid rgba(161, 0, 255, 0.3);
+            padding: 11px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .sub-btn:active {
+            background: var(--card-hover);
+        }
+
+        .sub-btn.full-width {
+            grid-column: span 2;
+        }
+
+        .category-heading {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--light-purple);
+            margin: 12px 0 6px 0;
+            letter-spacing: 0.5px;
+        }
+
         .rekber-card {
             background: var(--card-bg);
-            border: 1px solid rgba(155, 81, 224, 0.4);
-            padding: 25px 20px;
-            border-radius: 20px;
+            border: 1px solid rgba(161, 0, 255, 0.4);
+            padding: 22px 18px;
+            border-radius: 18px;
             text-align: center;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
         .rekber-card p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             line-height: 1.5;
         }
 
@@ -246,70 +266,23 @@
             color: white;
             border: none;
             width: 100%;
-            padding: 14px;
+            padding: 13px;
             border-radius: 12px;
-            font-size: 15px;
-            font-weight: bold;
+            font-size: 14px;
+            font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: 0.2s;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
-        .wa-btn:hover {
-            background: #20ba5a;
-        }
-
-        /* Sub-items list (Sosmed) */
-        .sub-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .sub-btn {
-            background: var(--card-bg);
-            color: var(--white);
-            border: 1px solid rgba(155, 81, 224, 0.3);
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .sub-btn:hover {
-            background: var(--card-hover);
-            border-color: var(--accent-purple);
-        }
-
-        .sub-btn.full-width {
-            grid-column: span 2;
-        }
-
-        .category-heading {
-            font-size: 13px;
-            font-weight: bold;
-            color: var(--light-purple);
-            margin: 15px 0 8px 0;
-        }
-
-        /* Footer Copyright */
         .footer {
             text-align: center;
             font-size: 11px;
             color: var(--text-muted);
-            margin-top: 25px;
+            margin-top: 20px;
             padding-bottom: 5px;
         }
 
-        /* Modal / Pop-up Style */
+        /* Modal Style */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -317,7 +290,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 999;
             justify-content: center;
             align-items: center;
@@ -325,31 +298,23 @@
         }
 
         .modal-content {
-            background: #2d1b4e;
-            border: 1px solid #9b51e0;
+            background: #220c38;
+            border: 1px solid #a100ff;
             border-radius: 20px;
-            padding: 20px;
+            padding: 18px;
             width: 100%;
-            max-width: 360px;
+            max-width: 350px;
             text-align: center;
         }
 
         .modal-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            max-height: 300px;
+            gap: 8px;
+            max-height: 280px;
             overflow-y: auto;
-            margin: 15px 0;
-            padding-right: 5px;
-        }
-
-        .modal-grid::-webkit-scrollbar {
-            width: 4px;
-        }
-        .modal-grid::-webkit-scrollbar-thumb {
-            background: var(--accent-purple);
-            border-radius: 4px;
+            margin: 14px 0;
+            padding-right: 4px;
         }
     </style>
 </head>
@@ -361,7 +326,7 @@
         <div id="page-home" class="page active">
             <div class="header">
                 <div class="logo-box">
-                    <span>MomsCily ♥️🌶️</span>
+                    <span>MomsCily ❤️🌶️</span>
                 </div>
                 <div class="subtitle">Premium Apps & Sosmed Services Terpercaya</div>
             </div>
@@ -381,7 +346,7 @@
                 <small>Transaksi aman dan terpercaya</small>
             </button>
 
-            <button class="menu-btn" onclick="window.open('https://wa.me/6281337415395', '_blank')">
+            <button class="menu-btn" onclick="orderWA('Hubungi Admin')">
                 💬 Hubungi Admin
                 <small>0813-3741-5395 • Fast Response</small>
             </button>
@@ -391,7 +356,7 @@
             </div>
         </div>
 
-        <!-- 2. HALAMAN DAFTAR UTAMA SOSMED -->
+        <!-- 2. PILIHAN SOSMED -->
         <div id="page-sosmed" class="page">
             <button class="back-btn" onclick="switchPage('page-home')">← Kembali</button>
             <div class="section-title">📊 Sosmed Services</div>
@@ -403,8 +368,8 @@
                 <button class="menu-btn sosmed-item" onclick="switchPage('page-instagram')">📸 Instagram Services</button>
                 <button class="menu-btn sosmed-item" onclick="switchPage('page-facebook')">📘 Facebook Services</button>
                 <button class="menu-btn sosmed-item" onclick="switchPage('page-telegram')">✈️ Telegram Services</button>
-                <button class="menu-btn sosmed-item" onclick="alertMenu('YouTube')">▶️ YouTube Services</button>
-                <button class="menu-btn sosmed-item" onclick="alertMenu('X (Twitter)')">🛒 X Services</button>
+                <button class="menu-btn sosmed-item" onclick="alert('Menu YouTube akan segera hadir!')">▶️ YouTube Services</button>
+                <button class="menu-btn sosmed-item" onclick="alert('Menu X (Twitter) akan segera hadir!')">🛒 X Services</button>
             </div>
         </div>
 
@@ -415,34 +380,34 @@
 
             <div class="category-heading">👥 FOLLOWERS</div>
             <div class="sub-grid">
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Followers Indonesia', 60000)">🇮🇩 Indonesia</button>
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Followers Premium Indo', 70000)">💎 Premium Indo</button>
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Followers Luar Negeri', 28000)">🌍 Luar Negeri</button>
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Followers Premium Luar', 35000)">💎 Premium Luar</button>
+                <button class="sub-btn" onclick="openQty('TikTok Followers Indonesia', 60000)">🇮🇩 Indonesia</button>
+                <button class="sub-btn" onclick="openQty('TikTok Followers Premium Indo', 70000)">💎 Premium Indo</button>
+                <button class="sub-btn" onclick="openQty('TikTok Followers Luar Negeri', 28000)">🌍 Luar Negeri</button>
+                <button class="sub-btn" onclick="openQty('TikTok Followers Premium Luar', 35000)">💎 Premium Luar</button>
             </div>
 
             <div class="category-heading">❤️ LIKES</div>
             <div class="sub-grid">
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Likes Indo', 5000)">🇮🇩 Biasa</button>
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Likes Premium Indo', 8000)">💎 Premium</button>
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Likes Luar Negeri', 4000)">🌍 Luar Negeri</button>
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Likes Premium Luar', 6000)">💎 Premium Luar</button>
+                <button class="sub-btn" onclick="openQty('TikTok Likes Indo', 5000)">🇮🇩 Biasa</button>
+                <button class="sub-btn" onclick="openQty('TikTok Likes Premium Indo', 8000)">💎 Premium</button>
+                <button class="sub-btn" onclick="openQty('TikTok Likes Luar Negeri', 4000)">🌍 Luar Negeri</button>
+                <button class="sub-btn" onclick="openQty('TikTok Likes Premium Luar', 6000)">💎 Premium Luar</button>
             </div>
 
             <div class="category-heading">👁️ VIEWS</div>
             <div class="sub-grid">
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Views Standar', 2000)">⚡ Standar</button>
-                <button class="sub-btn" onclick="openQuantityModal('TikTok Views Premium', 3000)">💎 Premium</button>
+                <button class="sub-btn" onclick="openQty('TikTok Views Standar', 2000)">⚡ Standar</button>
+                <button class="sub-btn" onclick="openQty('TikTok Views Premium', 3000)">💎 Premium</button>
             </div>
 
             <div class="category-heading">🔄 SHARES</div>
             <div class="sub-grid">
-                <button class="sub-btn full-width" onclick="openQuantityModal('TikTok Shares Standar', 2000)">🔄 Standar</button>
+                <button class="sub-btn full-width" onclick="openQty('TikTok Shares Standar', 2000)">🔄 Standar</button>
             </div>
 
             <div class="category-heading">💖 LIKE STORY</div>
             <div class="sub-grid">
-                <button class="sub-btn full-width" onclick="openQuantityModal('TikTok Like Story', 2000)">💖 Standar</button>
+                <button class="sub-btn full-width" onclick="openQty('TikTok Like Story', 2000)">💖 Standar</button>
             </div>
         </div>
 
@@ -454,26 +419,20 @@
 
             <div class="category-heading">👥 FOLLOWERS</div>
             <div class="sub-grid">
-                <button class="sub-btn" onclick="orderItem('IG Followers Standar')">🇮🇩 Standar</button>
-                <button class="sub-btn" onclick="orderItem('IG Followers Premium')">💎 Premium</button>
+                <button class="sub-btn" onclick="orderWA('IG Followers Standar')">🇮🇩 Standar</button>
+                <button class="sub-btn" onclick="orderWA('IG Followers Premium')">💎 Premium</button>
             </div>
 
             <div class="category-heading">❤️ LIKES</div>
             <div class="sub-grid">
-                <button class="sub-btn" onclick="orderItem('IG Likes Standar')">⚡ Standar</button>
-                <button class="sub-btn" onclick="orderItem('IG Likes Premium')">💎 Premium</button>
+                <button class="sub-btn" onclick="orderWA('IG Likes Standar')">⚡ Standar</button>
+                <button class="sub-btn" onclick="orderWA('IG Likes Premium')">💎 Premium</button>
             </div>
 
             <div class="category-heading">👁️ VIEWS</div>
             <div class="sub-grid">
-                <button class="sub-btn" onclick="orderItem('IG Views Standar')">⚡ Standar</button>
-                <button class="sub-btn" onclick="orderItem('IG Views Premium')">💎 Premium</button>
-            </div>
-
-            <div class="category-heading">🔄 SHARES</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="orderItem('IG Shares Standar')">🔄 Standar</button>
-                <button class="sub-btn" onclick="orderItem('IG Shares Premium')">💎 Premium</button>
+                <button class="sub-btn" onclick="orderWA('IG Views Standar')">⚡ Standar</button>
+                <button class="sub-btn" onclick="orderWA('IG Views Premium')">💎 Premium</button>
             </div>
         </div>
 
@@ -485,26 +444,14 @@
 
             <div class="category-heading">👥 FOLLOWERS PROFIL</div>
             <div class="sub-grid">
-                <button class="sub-btn" onclick="orderItem('FB Followers Standar')">🇮🇩 Standar</button>
-                <button class="sub-btn" onclick="orderItem('FB Followers Premium')">💎 Premium</button>
+                <button class="sub-btn" onclick="orderWA('FB Followers Standar')">🇮🇩 Standar</button>
+                <button class="sub-btn" onclick="orderWA('FB Followers Premium')">💎 Premium</button>
             </div>
 
             <div class="category-heading">❤️ LIKES POSTINGAN</div>
             <div class="sub-grid">
-                <button class="sub-btn" onclick="orderItem('FB Likes Standar')">⚡ Standar</button>
-                <button class="sub-btn" onclick="orderItem('FB Likes Premium')">💎 Premium</button>
-            </div>
-
-            <div class="category-heading">📄 FANPAGE / LIKE HALAMAN</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="orderItem('FB Fanpage Standar')">🇮🇩 Standar</button>
-                <button class="sub-btn" onclick="orderItem('FB Fanpage Premium')">💎 Premium</button>
-            </div>
-
-            <div class="category-heading">👁️ VIEWS VIDEO / REELS</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="orderItem('FB Views Standar')">⚡ Standar</button>
-                <button class="sub-btn" onclick="orderItem('FB Views Premium')">💎 Premium</button>
+                <button class="sub-btn" onclick="orderWA('FB Likes Standar')">⚡ Standar</button>
+                <button class="sub-btn" onclick="orderWA('FB Likes Premium')">💎 Premium</button>
             </div>
         </div>
 
@@ -515,23 +462,12 @@
             <div class="notice-box">
                 ℹ️ <b>Informasi Penting:</b><br>
                 • Garansi berlaku untuk pesanan minimal Rp100.000.<br>
-                • Refill maksimal 20% dari total pesanan.<br>
-                • Penurunan/kenaikan layanan dapat terjadi sewaktu-waktu.
+                • Refill maksimal 20% dari total pesanan.
             </div>
 
             <div class="category-heading">👥 MEMBERS</div>
             <div class="sub-grid">
-                <button class="sub-btn full-width" onclick="orderItem('Telegram Members')">📦 Lihat Paket Members</button>
-            </div>
-
-            <div class="category-heading">👁️ VIEWS</div>
-            <div class="sub-grid">
-                <button class="sub-btn full-width" onclick="orderItem('Telegram Views')">👁️ Lihat Paket Views</button>
-            </div>
-
-            <div class="category-heading">❤️ REACTIONS</div>
-            <div class="sub-grid">
-                <button class="sub-btn full-width" onclick="orderItem('Telegram Reactions')">❤️ Lihat Paket Reactions</button>
+                <button class="sub-btn full-width" onclick="orderWA('Telegram Members')">📦 Lihat Paket Members</button>
             </div>
         </div>
 
@@ -543,9 +479,62 @@
             <input type="text" id="searchApp" class="search-box" placeholder="🔍 Cari aplikasi (contoh: Netflix, Canva)..." onkeyup="filterApps()">
 
             <div class="apps-grid" id="appList">
-                <div class="app-item" onclick="orderItem('Adobe')"><span>🎨 Adobe</span> <span>›</span></div>
-                <div class="app-item" onclick="orderItem('Alight Motion')"><span>✨ Alight Motion</span> <span>›</span></div>
-                <div class="app-item" onclick="orderItem('Antigravity')"><span>🚀 Antigravity</span> <span>›</span></div>
-                <div class="app-item" onclick="orderItem('Apple Music')"><span>🎵 Apple Music</span> <span>›</span></div>
-                <div class="app-item" onclick="orderItem('Brainly')"><span>🧠 Brainly</span> <span>›</span></div>
-                <div class="app-item" onclick="orderItem('Bstation')"><span>📺 Bstation</sp
+                <div class="app-item" onclick="orderWA('Adobe')"><span>🎨 Adobe</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Alight Motion')"><span>✨ Alight Motion</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Apple Music')"><span>🎵 Apple Music</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Brainly')"><span>🧠 Brainly</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Bstation')"><span>📺 Bstation</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Canva')"><span>🎨 Canva</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('CapCut')"><span>🎬 CapCut</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('ChatGPT')"><span>🤖 ChatGPT</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Disney+')"><span>✨ Disney+</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Netflix')"><span>🎬 Netflix</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Spotify')"><span>🎧 Spotify</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Vidio')"><span>⚽ Vidio</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('YouTube Premium')"><span>▶️ YouTube Premium</span> <span>›</span></div>
+                <div class="app-item" onclick="orderWA('Zoom')"><span>📹 Zoom</span> <span>›</span></div>
+            </div>
+        </div>
+
+        <!-- 8. REKENING BERSAMA (REKBER) -->
+        <div id="page-rekber" class="page">
+            <button class="back-btn" onclick="switchPage('page-home')">← Kembali</button>
+            <div class="section-title">🤝 Rekening Bersama</div>
+
+            <div class="rekber-card">
+                <p>Mau transaksi aman tanpa takut kena tipu? Gunakan layanan Rekening Bersama (Rekber) <b>MomsCily</b> sekarang juga!</p>
+                <button class="wa-btn" onclick="orderWA('Rekening Bersama (Rekber)')">
+                    💬 Chat Admin via WhatsApp
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- POP-UP QUANTITY & HARGA -->
+    <div id="qtyModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 id="modalTitle" style="color:#d1b3ff; font-size:15px;">Pilih Jumlah Order</h3>
+            <p style="font-size: 11px; color: #d0c2e8; margin-top: 3px;">Pilih nominal kuantitas:</p>
+            
+            <div id="modalQtyList" class="modal-grid"></div>
+
+            <button onclick="closeQty()" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.2); width:100%; padding:9px; border-radius:10px; cursor:pointer;">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi Utama Navigasi Pindah Halaman
+        function switchPage(pageId) {
+            var pages = document.querySelectorAll('.page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].classList.remove('active');
+            }
+            var target = document.getElementById(pageId);
+            if (target) {
+                target.classList.add('active');
+            }
+            window.scrollTo(0, 0);
+        }
+
+        // Order via Wh
