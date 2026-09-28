@@ -3,595 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MomsCily ❤️🌶️ - Premium Apps & Sosmed Services</title>
+    <title>MomsCily ❤️🌶️</title>
     <style>
-        :root {
-            --bg-color: #0f051d;
-            --card-bg: #220c38;
-            --card-hover: #341456;
-            --accent-purple: #a100ff;
-            --light-purple: #d1b3ff;
-            --text-main: #ffffff;
-            --text-muted: #d0c2e8;
-            --white: #ffffff;
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background-color: #0f051d; color: #fff; display: flex; justify-content: center; padding: 20px; min-height: 100vh; }
+        .container { width: 100%; max-width: 400px; background: #18092e; border-radius: 20px; padding: 20px; border: 2px solid #a100ff; height: fit-content; }
+        .page { display: none; }
+        .page.active { display: block; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .logo { font-size: 24px; font-weight: bold; color: #fff; }
+        .sub { font-size: 12px; color: #d0c2e8; margin-top: 4px; }
+        
+        .btn {
+            background: linear-gradient(135deg, #a100ff, #7000ff);
+            color: #fff; border: none; width: 100%; padding: 15px;
+            border-radius: 12px; margin-bottom: 10px; font-size: 15px;
+            font-weight: bold; text-align: left; cursor: pointer; display: block;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 15px;
-        }
-
-        .phone-container {
-            width: 100%;
-            max-width: 400px;
-            background: linear-gradient(180deg, #18092e 0%, #0c0418 100%);
-            border-radius: 28px;
-            box-shadow: 0 0 25px rgba(161, 0, 255, 0.35);
-            overflow: hidden;
-            border: 2px solid rgba(161, 0, 255, 0.4);
-            position: relative;
-            min-height: 580px;
-        }
-
-        .page {
-            display: none;
-            padding: 20px;
-            animation: fadeIn 0.25s ease-in-out;
-            max-height: 82vh;
-            overflow-y: auto;
-        }
-
-        .page::-webkit-scrollbar {
-            width: 4px;
-        }
-        .page::-webkit-scrollbar-thumb {
-            background: var(--accent-purple);
-            border-radius: 4px;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Header Style */
-        .header {
-            text-align: center;
-            margin-bottom: 22px;
-            padding-top: 10px;
-        }
-
-        .logo-box {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            margin-bottom: 6px;
-        }
-
-        .logo-box span {
-            color: #ffffff;
-            text-shadow: 0 0 12px rgba(209, 179, 255, 0.8);
-        }
-
-        .subtitle {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* Search Bar Style */
-        .search-box {
-            width: 100%;
-            padding: 12px 16px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(161, 0, 255, 0.5);
-            border-radius: 12px;
-            color: var(--white);
-            font-size: 13px;
-            margin-bottom: 15px;
-            outline: none;
-        }
-
-        .search-box:focus {
-            border-color: var(--light-purple);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .search-box::placeholder {
-            color: var(--text-muted);
-        }
-
-        /* Menu Button Style */
-        .menu-btn {
-            background: linear-gradient(135deg, #a100ff 0%, #7000ff 100%);
-            color: var(--white);
-            border: none;
-            width: 100%;
-            padding: 15px 18px;
-            border-radius: 16px;
-            margin-bottom: 12px;
-            font-size: 15px;
-            font-weight: 700;
-            text-align: left;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(161, 0, 255, 0.4);
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .menu-btn:active {
-            transform: scale(0.98);
-        }
-
-        .menu-btn small {
-            font-size: 11px;
-            font-weight: 400;
-            color: #ece0fd;
-            opacity: 0.9;
-        }
-
-        /* Back Button */
-        .back-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 7px 14px;
-            border-radius: 10px;
-            font-size: 12px;
-            cursor: pointer;
-            margin-bottom: 15px;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        /* Section Title */
-        .section-title {
-            font-size: 17px;
-            font-weight: 700;
-            color: var(--light-purple);
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .notice-box {
-            background: rgba(255, 204, 0, 0.12);
-            border: 1px solid rgba(255, 204, 0, 0.35);
-            padding: 10px 12px;
-            border-radius: 12px;
-            font-size: 11px;
-            color: #ffe680;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        /* Grid Services & Apps */
-        .apps-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 9px;
-        }
-
-        .app-item {
-            background: var(--card-bg);
-            border: 1px solid rgba(161, 0, 255, 0.3);
-            padding: 12px 15px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: var(--white);
-        }
-
-        .app-item:active {
-            background: var(--card-hover);
-        }
-
-        .sub-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 9px;
-            margin-bottom: 15px;
-        }
-
-        .sub-btn {
-            background: var(--card-bg);
-            color: var(--white);
-            border: 1px solid rgba(161, 0, 255, 0.3);
-            padding: 11px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .sub-btn:active {
-            background: var(--card-hover);
-        }
-
-        .sub-btn.full-width {
-            grid-column: span 2;
-        }
-
-        .category-heading {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--light-purple);
-            margin: 12px 0 6px 0;
-            letter-spacing: 0.5px;
-        }
-
-        .rekber-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(161, 0, 255, 0.4);
-            padding: 22px 18px;
-            border-radius: 18px;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .rekber-card p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-            line-height: 1.5;
-        }
-
-        .wa-btn {
-            background: #25d366;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 13px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-        }
-
-        .footer {
-            text-align: center;
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 20px;
-            padding-bottom: 5px;
-        }
-
-        /* Modal Style */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 999;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: #220c38;
-            border: 1px solid #a100ff;
-            border-radius: 20px;
-            padding: 18px;
-            width: 100%;
-            max-width: 350px;
-            text-align: center;
-        }
-
-        .modal-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            max-height: 280px;
-            overflow-y: auto;
-            margin: 14px 0;
-            padding-right: 4px;
-        }
+        .btn small { display: block; font-size: 11px; font-weight: normal; color: #ece0fd; margin-top: 3px; }
+        
+        .back-btn { background: #333; color: #fff; border: none; padding: 8px 12px; border-radius: 8px; margin-bottom: 15px; cursor: pointer; }
+        .title { text-align: center; font-size: 18px; margin-bottom: 15px; color: #d1b3ff; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        .sub-btn { background: #220c38; color: #fff; border: 1px solid #a100ff; padding: 12px; border-radius: 10px; text-align: center; cursor: pointer; font-size: 13px; }
+        
+        /* Modal Popup */
+        .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:99; justify-content:center; align-items:center; padding:20px; }
+        .modal-body { background:#220c38; border:1px solid #a100ff; padding:20px; border-radius:15px; width:100%; max-width:340px; text-align:center; }
+        .modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; max-height:250px; overflow-y:auto; margin:15px 0; }
     </style>
 </head>
 <body>
 
-    <div class="phone-container">
+    <div class="container">
 
-        <!-- 1. HALAMAN UTAMA (HOME) -->
+        <!-- 1. HOME -->
         <div id="page-home" class="page active">
             <div class="header">
-                <div class="logo-box">
-                    <span>MomsCily ❤️🌶️</span>
-                </div>
-                <div class="subtitle">Premium Apps & Sosmed Services Terpercaya</div>
+                <div class="logo">MomsCily ❤️🌶️</div>
+                <div class="sub">Premium Apps & Sosmed Services Terpercaya</div>
             </div>
 
-            <button class="menu-btn" onclick="switchPage('page-sosmed')">
+            <button class="btn" onclick="showPage('page-sosmed')">
                 📊 Sosmed Services
                 <small>TikTok • IG • FB • YouTube • Telegram • X</small>
             </button>
 
-            <button class="menu-btn" onclick="switchPage('page-premium')">
+            <button class="btn" onclick="showPage('page-premium')">
                 👑 Premium Apps
                 <small>Netflix • Spotify • Canva • ChatGPT • dll</small>
             </button>
 
-            <button class="menu-btn" onclick="switchPage('page-rekber')">
+            <button class="btn" onclick="showPage('page-rekber')">
                 🤝 Rekening Bersama (Rekber)
                 <small>Transaksi aman dan terpercaya</small>
             </button>
 
-            <button class="menu-btn" onclick="orderWA('Hubungi Admin')">
+            <button class="btn" onclick="openWA('Hubungi Admin MomsCily')">
                 💬 Hubungi Admin
                 <small>0813-3741-5395 • Fast Response</small>
             </button>
-
-            <div class="footer">
-                © 2020 MomsCily Official
-            </div>
         </div>
 
+        <!-- 2. SOSMED MENU -->
         <div id="page-sosmed" class="page">
-            <button class="back-btn" onclick="switchPage('page-home')">← Kembali</button>
-            <div class="section-title">📊 Sosmed Services</div>
-            
-            <input type="text" id="searchSosmed" class="search-box" placeholder="🔍 Cari layanan sosmed..." onkeyup="filterSosmed()">
+            <button class="back-btn" onclick="showPage('page-home')">← Kembali</button>
+            <div class="title">📊 Sosmed Services</div>
 
-            <div id="sosmedList">
-                <button class="menu-btn sosmed-item" onclick="switchPage('page-tiktok')">🎵 TikTok Services</button>
-                <button class="menu-btn sosmed-item" onclick="switchPage('page-instagram')">📸 Instagram Services</button>
-                <button class="menu-btn sosmed-item" onclick="switchPage('page-facebook')">📘 Facebook Services</button>
-                <button class="menu-btn sosmed-item" onclick="switchPage('page-telegram')">✈️ Telegram Services</button>
-                <button class="menu-btn sosmed-item" onclick="alert('Menu YouTube akan segera hadir!')">▶️ YouTube Services</button>
-                <button class="menu-btn sosmed-item" onclick="alert('Menu X (Twitter) akan segera hadir!')">🛒 X Services</button>
-            </div>
+            <button class="btn" onclick="showPage('page-tiktok')">🎵 TikTok Services</button>
+            <button class="btn" onclick="showPage('page-instagram')">📸 Instagram Services</button>
+            <button class="btn" onclick="showPage('page-facebook')">📘 Facebook Services</button>
+            <button class="btn" onclick="showPage('page-telegram')">✈️ Telegram Services</button>
         </div>
 
-    
+        <!-- 3. TIKTOK SERVICES -->
         <div id="page-tiktok" class="page">
-            <button class="back-btn" onclick="switchPage('page-sosmed')">← Kembali</button>
-            <div class="section-title">🎵 TikTok Services</div>
+            <button class="back-btn" onclick="showPage('page-sosmed')">← Kembali</button>
+            <div class="title">🎵 TikTok Services</div>
 
-            <div class="category-heading">👥 FOLLOWERS</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="openQty('TikTok Followers Indonesia', 60000)">🇮🇩 Indonesia</button>
-                <button class="sub-btn" onclick="openQty('TikTok Followers Premium Indo', 70000)">💎 Premium Indo</button>
-                <button class="sub-btn" onclick="openQty('TikTok Followers Luar Negeri', 28000)">🌍 Luar Negeri</button>
-                <button class="sub-btn" onclick="openQty('TikTok Followers Premium Luar', 35000)">💎 Premium Luar</button>
+            <div style="font-size:12px; margin:10px 0 5px; color:#d1b3ff; font-weight:bold;">👥 FOLLOWERS</div>
+            <div class="grid">
+                <div class="sub-btn" onclick="openQtyModal('TikTok Followers Indonesia', 60000)">🇮🇩 Indonesia</div>
+                <div class="sub-btn" onclick="openQtyModal('TikTok Followers Premium Indo', 70000)">💎 Premium Indo</div>
+                <div class="sub-btn" onclick="openQtyModal('TikTok Followers Luar Negeri', 28000)">🌍 Luar Negeri</div>
+                <div class="sub-btn" onclick="openQtyModal('TikTok Followers Premium Luar', 35000)">💎 Premium Luar</div>
             </div>
 
-            <div class="category-heading">❤️ LIKES</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="openQty('TikTok Likes Indo', 5000)">🇮🇩 Biasa</button>
-                <button class="sub-btn" onclick="openQty('TikTok Likes Premium Indo', 8000)">💎 Premium</button>
-                <button class="sub-btn" onclick="openQty('TikTok Likes Luar Negeri', 4000)">🌍 Luar Negeri</button>
-                <button class="sub-btn" onclick="openQty('TikTok Likes Premium Luar', 6000)">💎 Premium Luar</button>
-            </div>
-
-            <div class="category-heading">👁️ VIEWS</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="openQty('TikTok Views Standar', 2000)">⚡ Standar</button>
-                <button class="sub-btn" onclick="openQty('TikTok Views Premium', 3000)">💎 Premium</button>
-            </div>
-
-            <div class="category-heading">🔄 SHARES</div>
-            <div class="sub-grid">
-                <button class="sub-btn full-width" onclick="openQty('TikTok Shares Standar', 2000)">🔄 Standar</button>
-            </div>
-
-            <div class="category-heading">💖 LIKE STORY</div>
-            <div class="sub-grid">
-                <button class="sub-btn full-width" onclick="openQty('TikTok Like Story', 2000)">💖 Standar</button>
+            <div style="font-size:12px; margin:10px 0 5px; color:#d1b3ff; font-weight:bold;">❤️ LIKES</div>
+            <div class="grid">
+                <div class="sub-btn" onclick="openQtyModal('TikTok Likes Indo', 5000)">🇮🇩 Biasa</div>
+                <div class="sub-btn" onclick="openQtyModal('TikTok Likes Premium Indo', 8000)">💎 Premium</div>
+                <div class="sub-btn" onclick="openQtyModal('TikTok Likes Luar Negeri', 4000)">🌍 Luar Negeri</div>
+                <div class="sub-btn" onclick="openQtyModal('TikTok Likes Premium Luar', 6000)">💎 Premium Luar</div>
             </div>
         </div>
 
+        <!-- 4. INSTAGRAM SERVICES -->
         <div id="page-instagram" class="page">
-            <button class="back-btn" onclick="switchPage('page-sosmed')">← Kembali</button>
-            <div class="section-title">📸 Instagram Services</div>
-            <div class="notice-box">⚠️ Harga dapat berubah mengikuti pasar. Garansi sesuai ketentuan berlaku.</div>
-
-            <div class="category-heading">👥 FOLLOWERS</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="orderWA('IG Followers Standar')">🇮🇩 Standar</button>
-                <button class="sub-btn" onclick="orderWA('IG Followers Premium')">💎 Premium</button>
-            </div>
-
-            <div class="category-heading">❤️ LIKES</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="orderWA('IG Likes Standar')">⚡ Standar</button>
-                <button class="sub-btn" onclick="orderWA('IG Likes Premium')">💎 Premium</button>
-            </div>
-
-            <div class="category-heading">👁️ VIEWS</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="orderWA('IG Views Standar')">⚡ Standar</button>
-                <button class="sub-btn" onclick="orderWA('IG Views Premium')">💎 Premium</button>
+            <button class="back-btn" onclick="showPage('page-sosmed')">← Kembali</button>
+            <div class="title">📸 Instagram Services</div>
+            <div class="grid">
+                <div class="sub-btn" onclick="openWA('IG Followers Standar')">🇮🇩 Followers</div>
+                <div class="sub-btn" onclick="openWA('IG Likes Standar')">⚡ Likes</div>
             </div>
         </div>
 
-        
+        <!-- 5. FACEBOOK SERVICES -->
         <div id="page-facebook" class="page">
-            <button class="back-btn" onclick="switchPage('page-sosmed')">← Kembali</button>
-            <div class="section-title">📘 Facebook Services</div>
-            <div class="notice-box">⚠️ Harga dapat berubah mengikuti pasar. Garansi sesuai ketentuan berlaku.</div>
-
-            <div class="category-heading">👥 FOLLOWERS PROFIL</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="orderWA('FB Followers Standar')">🇮🇩 Standar</button>
-                <button class="sub-btn" onclick="orderWA('FB Followers Premium')">💎 Premium</button>
-            </div>
-
-            <div class="category-heading">❤️ LIKES POSTINGAN</div>
-            <div class="sub-grid">
-                <button class="sub-btn" onclick="orderWA('FB Likes Standar')">⚡ Standar</button>
-                <button class="sub-btn" onclick="orderWA('FB Likes Premium')">💎 Premium</button>
+            <button class="back-btn" onclick="showPage('page-sosmed')">← Kembali</button>
+            <div class="title">📘 Facebook Services</div>
+            <div class="grid">
+                <div class="sub-btn" onclick="openWA('FB Followers Profil')">👥 Followers</div>
+                <div class="sub-btn" onclick="openWA('FB Likes Postingan')">❤️ Likes</div>
             </div>
         </div>
 
-        
+        <!-- 6. TELEGRAM SERVICES -->
         <div id="page-telegram" class="page">
-            <button class="back-btn" onclick="switchPage('page-sosmed')">← Kembali</button>
-            <div class="section-title">✈️ Telegram Services</div>
-            <div class="notice-box">
-                ℹ️ <b>Informasi Penting:</b><br>
-                • Garansi berlaku untuk pesanan minimal Rp100.000.<br>
-                • Refill maksimal 20% dari total pesanan.
-            </div>
-
-            <div class="category-heading">👥 MEMBERS</div>
-            <div class="sub-grid">
-                <button class="sub-btn full-width" onclick="orderWA('Telegram Members')">📦 Lihat Paket Members</button>
+            <button class="back-btn" onclick="showPage('page-sosmed')">← Kembali</button>
+            <div class="title">✈️ Telegram Services</div>
+            <div class="grid">
+                <div class="sub-btn" onclick="openWA('Telegram Members')">👥 Members</div>
             </div>
         </div>
 
-        
+        <!-- 7. PREMIUM APPS -->
         <div id="page-premium" class="page">
-            <button class="back-btn" onclick="switchPage('page-home')">← Kembali</button>
-            <div class="section-title">👑 Premium Apps</div>
-
-            <input type="text" id="searchApp" class="search-box" placeholder="🔍 Cari aplikasi (contoh: Netflix, Canva)..." onkeyup="filterApps()">
-
-            <div class="apps-grid" id="appList">
-                <div class="app-item" onclick="orderWA('Adobe')"><span>🎨 Adobe</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Alight Motion')"><span>✨ Alight Motion</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Apple Music')"><span>🎵 Apple Music</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Brainly')"><span>🧠 Brainly</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Bstation')"><span>📺 Bstation</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Canva')"><span>🎨 Canva</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('CapCut')"><span>🎬 CapCut</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('ChatGPT')"><span>🤖 ChatGPT</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Disney+')"><span>✨ Disney+</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Netflix')"><span>🎬 Netflix</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Spotify')"><span>🎧 Spotify</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Vidio')"><span>⚽ Vidio</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('YouTube Premium')"><span>▶️ YouTube Premium</span> <span>›</span></div>
-                <div class="app-item" onclick="orderWA('Zoom')"><span>📹 Zoom</span> <span>›</span></div>
+            <button class="back-btn" onclick="showPage('page-home')">← Kembali</button>
+            <div class="title">👑 Premium Apps</div>
+            <div class="grid" style="grid-template-columns:1fr;">
+                <div class="sub-btn" onclick="openWA('Canva Premium')">🎨 Canva</div>
+                <div class="sub-btn" onclick="openWA('Netflix Premium')">🎬 Netflix</div>
+                <div class="sub-btn" onclick="openWA('Spotify Premium')">🎧 Spotify</div>
+                <div class="sub-btn" onclick="openWA('ChatGPT Premium')">🤖 ChatGPT</div>
+                <div class="sub-btn" onclick="openWA('YouTube Premium')">▶️ YouTube Premium</div>
             </div>
         </div>
 
+        <!-- 8. REKBER -->
         <div id="page-rekber" class="page">
-            <button class="back-btn" onclick="switchPage('page-home')">← Kembali</button>
-            <div class="section-title">🤝 Rekening Bersama</div>
-
-            <div class="rekber-card">
-                <p>Mau transaksi aman tanpa takut kena tipu? Gunakan layanan Rekening Bersama (Rekber) <b>MomsCily</b> sekarang juga!</p>
-                <button class="wa-btn" onclick="orderWA('Rekening Bersama (Rekber)')">
-                    💬 Chat Admin via WhatsApp
-                </button>
-            </div>
+            <button class="back-btn" onclick="showPage('page-home')">← Kembali</button>
+            <div class="title">🤝 Rekening Bersama</div>
+            <p style="font-size:13px; text-align:center; color:#d0c2e8; margin-bottom:15px;">Gunakan layanan Rekening Bersama (Rekber) MomsCily agar transaksi aman.</p>
+            <button class="btn" style="background:#25d366; text-align:center;" onclick="openWA('Rekening Bersama (Rekber)')">💬 Chat Admin via WhatsApp</button>
         </div>
 
     </div>
 
-      <div id="qtyModal" class="modal-overlay">
-        <div class="modal-content">
-            <h3 id="modalTitle" style="color:#d1b3ff; font-size:15px;">Pilih Jumlah Order</h3>
-            <p style="font-size: 11px; color: #d0c2e8; margin-top: 3px;">Pilih nominal kuantitas:</p>
-            
-            <div id="modalQtyList" class="modal-grid"></div>
-
-            <button onclick="closeQty()" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.2); width:100%; padding:9px; border-radius:10px; cursor:pointer;">Tutup</button>
+    <!-- MODAL QUANTITY -->
+    <div id="modalQty" class="modal">
+        <div class="modal-body">
+            <div id="modalTitle" style="font-weight:bold; color:#d1b3ff; margin-bottom:10px;">Pilih Jumlah Order</div>
+            <div id="modalList" class="modal-grid"></div>
+            <button onclick="closeModal()" class="back-btn" style="width:100%; margin-top:10px;">Tutup</button>
         </div>
     </div>
 
-        
-        function switchPage(pageId) {
+    <script>
+        function showPage(pageId) {
             var pages = document.querySelectorAll('.page');
             for (var i = 0; i < pages.length; i++) {
                 pages[i].classList.remove('active');
             }
-            var target = document.getElementById(pageId);
-            if (target) {
-                target.classList.add('active');
-            }
-            window.scrollTo(0, 0);
+            document.getElementById(pageId).classList.add('active');
         }
 
-        
-        function orderWA(itemName) {
-            var hp = "6281337415395";
-            var pesan = "Halo Admin MomsCily, saya ingin memesan/bertanya tentang layanan: " + itemName;
-            window.open("https://wa.me/" + hp + "?text=" + encodeURIComponent(pesan), "_blank");
+        function openWA(item) {
+            var phone = "6281337415395";
+            var text = "Halo Admin MomsCily, saya ingin memesan/bertanya tentang layanan: " + item;
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(text), "_blank");
         }
 
-        
-        var qtyList = [100, 300, 500, 800, 1000, 2000, 3000, 5000, 8000, 10000, 20000, 50000, 100000];
+        var qtyArr = [100, 300, 500, 800, 1000, 2000, 5000, 10000];
 
-        function openQty(serviceName, pricePer1000) {
-            document.getElementById('modalTitle').innerText = serviceName;
-            var container = document.getElementById('modalQtyList');
-            container.innerHTML = "";
+        function openQtyModal(service, price1000) {
+            document.getElementById('modalTitle').innerText = service;
+            var list = document.getElementById('modalList');
+            list.innerHTML = "";
 
-            qtyList.forEach(function(qty) {
-                var totalPrice = (qty / 1000) * pricePer1000;
-                var formattedPrice = "Rp " + totalPrice.toLocaleString('id-ID');
-                var formattedQty = qty.toLocaleString('id-ID');
+            qtyArr.forEach(function(q) {
+                var total = (q / 1000) * price1000;
+                var pFormatted = "Rp " + total.toLocaleString('id-ID');
+                var qFormatted = q.toLocaleString('id-ID');
 
-                var btn = document.createElement('button');
+                var btn = document.createElement('div');
                 btn.className = 'sub-btn';
-                btn.style.display = 'flex';
-                btn.style.flexDirection = 'column';
-                btn.style.alignItems = 'center';
-                btn.style.padding = '8px 4px';
-                btn.innerHTML = '<span style="font-size:13px; font-weight:bold;">' + formattedQty + '</span><span style="font-size:10px; color:#d1b3ff;">' + formattedPrice + '</span>';
-                
+                btn.innerHTML = '<b>' + qFormatted + '</b><br><small style="color:#d1b3ff;">' + pFormatted + '</small>';
                 btn.onclick = function() {
-                    var hp = "6281337415395";
-                    var msg = "Halo Admin MomsCily, saya ingin memesan:\n• Layanan: " + serviceName + "\n• Jumlah: " + formattedQty + "\n• Total Harga: " + formattedPrice + "\n\nMohon diproses ya, terima kasih!";
-                    window.open("https://wa.me/" + hp + "?text=" + encodeURIComponent(msg), "_blank");
+                    var phone = "6281337415395";
+                    var msg = "Halo Admin MomsCily, saya ingin memesan:\n• Layanan: " + service + "\n• Jumlah: " + qFormatted + "\n• Total Harga: " + pFormatted;
+                    window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
                 };
-                container.appendChild(btn);
+                list.appendChild(btn);
             });
 
-            document.getElementById('qtyModal').style.display = 'flex';
+            document.getElementById('modalQty').style.display = 'flex';
         }
 
-        function closeQty() {
-            document.getElementById('qtyModal').style.display = 'none';
-        }
-
-        
-        function filterApps() {
-            var input = document.getElementById('searchApp').value.toLowerCase();
-            var items = document.getElementsByClassName('app-item');
-            for (var i = 0; i < items.length; i++) {
-                var text = items[i].textContent || items[i].innerText;
-                items[i].style.display = text.toLowerCase().indexOf(input) > -1 ? "flex" : "none";
-            }
-        }
-
-        function filterSosmed() {
-            var input = document.getElementById('searchSosmed').value.toLowerCase();
-            var items = document.getElementsByClassName('sosmed-item');
-            for (var i = 0; i < items.length; i++) {
-                var text = items[i].textContent || items[i].innerText;
-                items[i].style.display = text.toLowerCase().indexOf(input) > -1 ? "block" : "none";
-            }
+        function closeModal() {
+            document.getElementById('modalQty').style.display = 'none';
         }
     </script>
 </body>
