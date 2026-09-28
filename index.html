@@ -352,11 +352,10 @@
             </button>
 
             <div class="footer">
-                © 2026 MomsCily Official
+                © 2020 MomsCily Official
             </div>
         </div>
 
-        <!-- 2. PILIHAN SOSMED -->
         <div id="page-sosmed" class="page">
             <button class="back-btn" onclick="switchPage('page-home')">← Kembali</button>
             <div class="section-title">📊 Sosmed Services</div>
@@ -373,7 +372,7 @@
             </div>
         </div>
 
-        <!-- 3. TIKTOK SERVICES -->
+    
         <div id="page-tiktok" class="page">
             <button class="back-btn" onclick="switchPage('page-sosmed')">← Kembali</button>
             <div class="section-title">🎵 TikTok Services</div>
@@ -411,7 +410,6 @@
             </div>
         </div>
 
-        <!-- 4. INSTAGRAM SERVICES -->
         <div id="page-instagram" class="page">
             <button class="back-btn" onclick="switchPage('page-sosmed')">← Kembali</button>
             <div class="section-title">📸 Instagram Services</div>
@@ -436,7 +434,7 @@
             </div>
         </div>
 
-        <!-- 5. FACEBOOK SERVICES -->
+        
         <div id="page-facebook" class="page">
             <button class="back-btn" onclick="switchPage('page-sosmed')">← Kembali</button>
             <div class="section-title">📘 Facebook Services</div>
@@ -455,7 +453,7 @@
             </div>
         </div>
 
-        <!-- 6. TELEGRAM SERVICES -->
+        
         <div id="page-telegram" class="page">
             <button class="back-btn" onclick="switchPage('page-sosmed')">← Kembali</button>
             <div class="section-title">✈️ Telegram Services</div>
@@ -471,7 +469,7 @@
             </div>
         </div>
 
-        <!-- 7. PREMIUM APPS -->
+        
         <div id="page-premium" class="page">
             <button class="back-btn" onclick="switchPage('page-home')">← Kembali</button>
             <div class="section-title">👑 Premium Apps</div>
@@ -496,7 +494,6 @@
             </div>
         </div>
 
-        <!-- 8. REKENING BERSAMA (REKBER) -->
         <div id="page-rekber" class="page">
             <button class="back-btn" onclick="switchPage('page-home')">← Kembali</button>
             <div class="section-title">🤝 Rekening Bersama</div>
@@ -511,8 +508,7 @@
 
     </div>
 
-    <!-- POP-UP QUANTITY & HARGA -->
-    <div id="qtyModal" class="modal-overlay">
+      <div id="qtyModal" class="modal-overlay">
         <div class="modal-content">
             <h3 id="modalTitle" style="color:#d1b3ff; font-size:15px;">Pilih Jumlah Order</h3>
             <p style="font-size: 11px; color: #d0c2e8; margin-top: 3px;">Pilih nominal kuantitas:</p>
@@ -524,7 +520,7 @@
     </div>
 
     <script>
-        // Fungsi Utama Navigasi Pindah Halaman
+        
         function switchPage(pageId) {
             var pages = document.querySelectorAll('.page');
             for (var i = 0; i < pages.length; i++) {
@@ -537,4 +533,67 @@
             window.scrollTo(0, 0);
         }
 
-        // Order via Wh
+        
+        function orderWA(itemName) {
+            var hp = "6281337415395";
+            var pesan = "Halo Admin MomsCily, saya ingin memesan/bertanya tentang layanan: " + itemName;
+            window.open("https://wa.me/" + hp + "?text=" + encodeURIComponent(pesan), "_blank");
+        }
+
+        
+        var qtyList = [100, 300, 500, 800, 1000, 2000, 3000, 5000, 8000, 10000, 20000, 50000, 100000];
+
+        function openQty(serviceName, pricePer1000) {
+            document.getElementById('modalTitle').innerText = serviceName;
+            var container = document.getElementById('modalQtyList');
+            container.innerHTML = "";
+
+            qtyList.forEach(function(qty) {
+                var totalPrice = (qty / 1000) * pricePer1000;
+                var formattedPrice = "Rp " + totalPrice.toLocaleString('id-ID');
+                var formattedQty = qty.toLocaleString('id-ID');
+
+                var btn = document.createElement('button');
+                btn.className = 'sub-btn';
+                btn.style.display = 'flex';
+                btn.style.flexDirection = 'column';
+                btn.style.alignItems = 'center';
+                btn.style.padding = '8px 4px';
+                btn.innerHTML = '<span style="font-size:13px; font-weight:bold;">' + formattedQty + '</span><span style="font-size:10px; color:#d1b3ff;">' + formattedPrice + '</span>';
+                
+                btn.onclick = function() {
+                    var hp = "6281337415395";
+                    var msg = "Halo Admin MomsCily, saya ingin memesan:\n• Layanan: " + serviceName + "\n• Jumlah: " + formattedQty + "\n• Total Harga: " + formattedPrice + "\n\nMohon diproses ya, terima kasih!";
+                    window.open("https://wa.me/" + hp + "?text=" + encodeURIComponent(msg), "_blank");
+                };
+                container.appendChild(btn);
+            });
+
+            document.getElementById('qtyModal').style.display = 'flex';
+        }
+
+        function closeQty() {
+            document.getElementById('qtyModal').style.display = 'none';
+        }
+
+        
+        function filterApps() {
+            var input = document.getElementById('searchApp').value.toLowerCase();
+            var items = document.getElementsByClassName('app-item');
+            for (var i = 0; i < items.length; i++) {
+                var text = items[i].textContent || items[i].innerText;
+                items[i].style.display = text.toLowerCase().indexOf(input) > -1 ? "flex" : "none";
+            }
+        }
+
+        function filterSosmed() {
+            var input = document.getElementById('searchSosmed').value.toLowerCase();
+            var items = document.getElementsByClassName('sosmed-item');
+            for (var i = 0; i < items.length; i++) {
+                var text = items[i].textContent || items[i].innerText;
+                items[i].style.display = text.toLowerCase().indexOf(input) > -1 ? "block" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
