@@ -126,13 +126,6 @@
             margin-bottom: 6px;
         }
 
-        .section-subtext {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-align: center;
-            margin-bottom: 16px;
-        }
-
         .category-title {
             font-size: 0.85rem;
             color: var(--text-muted);
@@ -163,7 +156,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 4px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
@@ -175,29 +168,47 @@
 
         .item-card .title {
             font-weight: 600;
-            font-size: 0.85rem;
-            line-height: 1.2;
+            font-size: 0.9rem;
         }
 
-        .item-card .sub-text {
-            font-size: 0.75rem;
-            color: var(--price-color);
-            font-weight: bold;
-        }
-
+        /* MODAL POPUP */
         .order-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
             background: var(--card-bg);
-            border: 1px solid var(--purple-btn);
+            border: 2px solid var(--purple-btn);
             padding: 20px;
-            border-radius: 18px;
-            margin-top: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+            z-index: 200;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .modal-subtitle {
+            font-size: 0.8rem;
+            color: var(--price-color);
+            text-align: center;
+            margin-bottom: 12px;
+            font-weight: bold;
         }
 
         .input-qty {
             width: 100%;
             padding: 12px;
-            margin: 12px 0;
+            margin: 10px 0;
             background: var(--bg-color);
             border: 1px solid var(--border-color);
             color: #fff;
@@ -250,6 +261,13 @@
             cursor: pointer;
             font-size: 0.9rem;
             margin-top: 8px;
+        }
+
+        .backdrop {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 150;
         }
 
         .cart-sticky {
@@ -355,14 +373,13 @@
         </button>
     </div>
 
-    <!-- 1. SOSMED SERVICES VIEW (KETIK MANUAL BEBAS) -->
+    <!-- 1. SOSMED SERVICES VIEW -->
     <div id="view-sosmed" class="hidden">
         <div class="page-header-box">
             <div class="top-nav">
                 <button class="btn-back" onclick="showView('view-home')">← Menu Utama</button>
             </div>
-            <div class="section-heading" id="sosmed-main-title">📊 Sosmed Services</div>
-            <div class="section-subtext">Pilih layanan, lalu ketik jumlah manual yang diinginkan</div>
+            <div class="section-heading" id="sosmed-main-title">🎵 TikTok Services</div>
         </div>
         
         <div id="sosmed-platform-list" class="main-menu">
@@ -377,48 +394,44 @@
         <div id="sosmed-detail-box" class="hidden">
             <div id="sosmed-grid-container"></div>
         </div>
-
-        <!-- POPUP INPUT KETIK MANUAL JUMLAH -->
-        <div id="qty-box" class="order-modal hidden">
-            <div style="font-weight: bold; font-size:1rem; text-align:center; color:#fff;" id="selected-service-name">Nama Layanan</div>
-            <div style="font-size: 0.8rem; color: var(--price-color); text-align:center; margin-top:6px; font-weight:bold;" id="selected-service-price">Harga: Rp 0 / 1.000</div>
-            
-            <input type="number" id="input-qty-val" class="input-qty" placeholder="Ketik jumlah (contoh: 100 atau 1000000)" oninput="calcSosmedPrice()">
-            
-            <div style="margin-bottom: 14px; font-weight: bold; text-align:center; color: #22c55e; font-size:1.1rem;" id="total-price-preview">Total: Rp 0</div>
-            
-            <button class="btn-add-cart" onclick="addSosmedToCart()">+ Tambah ke Keranjang</button>
-            <button class="btn-back" style="width:100%; margin-top:10px; background:#180a2a;" onclick="closeSosmedQty()">Batal</button>
-        </div>
     </div>
 
-    <!-- 2. APPS PREMIUM VIEW (DENGAN SYARAT & PILIHAN DURASI) -->
+    <!-- BACKDROP & MODAL POPUP SOSMED (KALKULATOR KETIK MANUAL) -->
+    <div id="modal-backdrop" class="backdrop hidden" onclick="closeModals()"></div>
+    
+    <div id="sosmed-qty-modal" class="order-modal hidden">
+        <div class="modal-title" id="modal-service-name">TikTok Likes Indo</div>
+        <div class="modal-subtitle" id="modal-service-price">Harga: Rp 0 / 1.000</div>
+        
+        <input type="number" id="input-qty-val" class="input-qty" placeholder="Ketik jumlah (contoh: 500 atau 1000000)" oninput="calcSosmedPrice()">
+        
+        <div style="margin-bottom: 14px; font-weight: bold; text-align:center; color: #22c55e; font-size:1.1rem;" id="total-price-preview">Total: Rp 0</div>
+        
+        <button class="btn-add-cart" onclick="addSosmedToCart()">+ Tambah ke Keranjang</button>
+        <button class="btn-back" style="width:100%; margin-top:8px; background:#2e1065;" onclick="closeModals()">Batal</button>
+    </div>
+
+    <!-- 2. APPS PREMIUM VIEW (DENGAN SYARAT & KETENTUAN + PILIHAN VARIAN) -->
     <div id="view-apps" class="hidden">
         <div class="page-header-box">
             <div class="top-nav">
                 <button class="btn-back" onclick="showView('view-home')">← Menu Utama</button>
             </div>
             <div class="section-heading">👑 PILIH APLIKASI PREMIUM</div>
-            <div class="section-subtext">Klik aplikasi untuk melihat syarat & pilihan durasi paket</div>
         </div>
         
-        <!-- GRID 39 APPS -->
         <div class="services-grid" id="apps-container"></div>
 
-        <!-- POPUP SYARAT & PILIHAN DURASI PAKET -->
         <div id="app-modal" class="order-modal hidden">
-            <div style="font-size:1rem; font-weight:bold; color:#fff; margin-bottom:4px;" id="app-modal-title">Nama Aplikasi</div>
-            
+            <div class="modal-title" id="app-modal-title">Nama Aplikasi</div>
             <div class="terms-box" id="app-modal-terms">
                 📌 <b>Syarat & Ketentuan:</b><br>
                 • Garansi Full sesuai durasi yang dipilih.<br>
                 • Wajib mengikuti panduan penggunaan dari admin.
             </div>
-
             <div style="font-size:0.8rem; font-weight:bold; color:var(--text-muted); margin-bottom:8px;">PILIH DURASI / PAKET:</div>
             <div id="app-variants-list"></div>
-
-            <button class="btn-back" style="width:100%; margin-top:10px; background:#180a2a;" onclick="closeAppModal()">Tutup</button>
+            <button class="btn-back" style="width:100%; margin-top:10px; background:#2e1065;" onclick="closeModals()">Tutup</button>
         </div>
     </div>
 
@@ -429,7 +442,6 @@
                 <button class="btn-back" onclick="showView('view-home')">← Menu Utama</button>
             </div>
             <div class="section-heading">🤝 REKENING BERSAMA (REKBER)</div>
-            <div class="section-subtext">Skema tarif fee transaksi aman terpercaya</div>
         </div>
         
         <div style="background:var(--card-bg); border:1px solid var(--border-color); padding:16px; border-radius:16px;">
@@ -460,7 +472,7 @@
 </div>
 
 <script>
-    // DATA 39 APPS PREMIUM LENGKAP DENGAN SYARAT & VARIAN HARGA
+    // DATA APPS PREMIUM LENGKAP DENGAN SYARAT & KETENTUAN + VARIAN DURASI
     const appsData = [
         { name: "🎬 Netflix Premium", terms: "📌 Garansi Full 30 Hari. Anti Limit Screen, Dilarang ubah PIN/Email.", variants: [{ plan: "1 Bulan (1 User 1 Screen)", price: 30000 }, { plan: "1 Bulan (Private Account)", price: 120000 }] },
         { name: "🤖 ChatGPT Plus", terms: "📌 Akses GPT-4o & DALL-E 3. Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Shared", price: 35000 }, { plan: "1 Bulan Private Account", price: 290000 }] },
@@ -506,64 +518,69 @@
     const sosmedData = {
         'TikTok': [
             { category: '👥 FOLLOWERS', items: [
-                { name: 'TikTok Followers Indo', price: 30000 },
-                { name: 'TikTok Followers Premium Indo', price: 80000 },
-                { name: 'TikTok Followers Luar Negeri', price: 15000 },
-                { name: 'TikTok Followers Premium Luar', price: 30000 }
+                { name: 'TikTok Followers Indonesia', shortName: '🇮🇩 Indonesia', pricePerThousand: 30000 },
+                { name: 'TikTok Followers Premium Indo', shortName: '💎 Premium Indo', pricePerThousand: 80000 },
+                { name: 'TikTok Followers Luar Negeri', shortName: '🌍 Luar Negeri', pricePerThousand: 15000 },
+                { name: 'TikTok Followers Premium Luar', shortName: '💎 Premium Luar', pricePerThousand: 30000 }
             ]},
             { category: '❤️ LIKES', items: [
-                { name: 'TikTok Likes Biasa', price: 6000 },
-                { name: 'TikTok Likes Premium', price: 10000 },
-                { name: 'TikTok Likes Luar Negeri', price: 4000 }
+                { name: 'TikTok Likes Biasa', shortName: '🇮🇩 Biasa', pricePerThousand: 6000 },
+                { name: 'TikTok Likes Premium', shortName: '💎 Premium', pricePerThousand: 10000 },
+                { name: 'TikTok Likes Luar Negeri', shortName: '🌍 Luar Negeri', pricePerThousand: 4000 }
             ]},
             { category: '👁️ VIEWS', items: [
-                { name: 'TikTok Views Standar', price: 2500 },
-                { name: 'TikTok Views Premium', price: 3500 }
+                { name: 'TikTok Views Standar', shortName: '⚡ Standar', pricePerThousand: 2500 },
+                { name: 'TikTok Views Premium', shortName: '💎 Premium', pricePerThousand: 3500 }
+            ]},
+            { category: '🔄 SHARES', items: [
+                { name: 'TikTok Shares Standar', shortName: '🔄 Standar', pricePerThousand: 3000 }
+            ]},
+            { category: '💖 LIKE STORY', items: [
+                { name: 'TikTok Like Story Standar', shortName: '💖 Standar', pricePerThousand: 5000 }
             ]}
         ],
         'Instagram': [
             { category: '👥 FOLLOWERS', items: [
-                { name: 'IG Followers Indo Standar', price: 30000 },
-                { name: 'IG Followers Premium Indo', price: 80000 },
-                { name: 'IG Followers Luar Negeri', price: 15000 },
-                { name: 'IG Followers Premium Luar', price: 30000 }
+                { name: 'IG Followers Indo Standar', shortName: '🇮🇩 Standar', pricePerThousand: 30000 },
+                { name: 'IG Followers Premium Indo', shortName: '💎 Premium Indo', pricePerThousand: 80000 },
+                { name: 'IG Followers Luar Negeri', shortName: '🌍 Luar Negeri', pricePerThousand: 15000 },
+                { name: 'IG Followers Premium Luar', shortName: '💎 Premium Luar', pricePerThousand: 30000 }
             ]},
             { category: '❤️ LIKES', items: [
-                { name: 'IG Likes Indo Standar', price: 6000 },
-                { name: 'IG Likes Indo Premium', price: 10000 },
-                { name: 'IG Likes Luar Negeri', price: 4000 }
+                { name: 'IG Likes Indo Standar', shortName: '🇮🇩 Standar', pricePerThousand: 6000 },
+                { name: 'IG Likes Indo Premium', shortName: '💎 Premium', pricePerThousand: 10000 },
+                { name: 'IG Likes Luar Negeri', shortName: '🌍 Luar Negeri', pricePerThousand: 4000 }
             ]},
             { category: '👁️ VIEWS', items: [
-                { name: 'IG Views Reels Indo', price: 2500 },
-                { name: 'IG Story Views', price: 5000 }
+                { name: 'IG Views Reels Indo', shortName: '🎬 Reels Indo', pricePerThousand: 2500 },
+                { name: 'IG Story Views', shortName: '👁️ Story Views', pricePerThousand: 5000 }
             ]}
         ],
         'Facebook': [
             { category: '👥 FOLLOWERS & LIKES', items: [
-                { name: 'FB Fanpage Followers', price: 25000 },
-                { name: 'FB Profile Followers', price: 25000 },
-                { name: 'FB Post Likes', price: 10000 }
+                { name: 'FB Fanpage Followers', shortName: '📘 Fanpage Followers', pricePerThousand: 25000 },
+                { name: 'FB Profile Followers', shortName: '👤 Profile Followers', pricePerThousand: 25000 },
+                { name: 'FB Post Likes', shortName: '❤️ Post Likes', pricePerThousand: 10000 }
             ]}
         ],
         'Telegram': [
             { category: '👥 MEMBERS & VIEWS', items: [
-                { name: 'Telegram Channel Members', price: 10000 },
-                { name: 'Telegram Members Premium', price: 17000 },
-                { name: 'Telegram Post View', price: 2000 }
+                { name: 'Telegram Channel Members', shortName: '✈️ Members', pricePerThousand: 10000 },
+                { name: 'Telegram Members Premium', shortName: '⭐ Members Premium', pricePerThousand: 17000 },
+                { name: 'Telegram Post View', shortName: '👁️️ Post View', pricePerThousand: 2000 }
             ]}
         ],
         'YouTube': [
             { category: '📺 SUBSCRIBERS & VIEWS', items: [
-                { name: 'YouTube Subscribers', price: 90000 },
-                { name: 'YouTube Views Standar', price: 15000 }
+                { name: 'YouTube Subscribers', shortName: '📺 Subscribers', pricePerThousand: 90000 },
+                { name: 'YouTube Views Standar', shortName: '▶️ Views Standar', pricePerThousand: 15000 }
             ]}
         ],
         'X': [
             { category: '✖️ X SERVICES', items: [
-                { name: 'X Followers Standar', price: 20000 },
-                { name: 'X Followers Premium', price: 21000 },
-                { name: 'X Likes Standar', price: 8000 },
-                { name: 'X Views Standar', price: 2000 }
+                { name: 'X Followers Standar', shortName: '✖️ Followers', pricePerThousand: 20000 },
+                { name: 'X Likes Standar', shortName: '❤️ Likes', pricePerThousand: 8000 },
+                { name: 'X Views Standar', shortName: '👁️ Views', pricePerThousand: 2000 }
             ]}
         ]
     };
@@ -578,12 +595,11 @@
             container.innerHTML += `
                 <div class="item-card" onclick="openAppModal(${index})">
                     <div class="title">${app.name}</div>
-                    <div class="sub-text">Pilih Paket ➔</div>
+                    <div class="sub-text" style="color:var(--price-color);">Pilih Paket ➔</div>
                 </div>
             `;
         });
-    }
-
+         }
     function openAppModal(index) {
         const app = appsData[index];
         document.getElementById('app-modal-title').innerText = app.name;
@@ -600,16 +616,19 @@
             `;
         });
 
+        document.getElementById('modal-backdrop').classList.remove('hidden');
         document.getElementById('app-modal').classList.remove('hidden');
     }
 
-    function closeAppModal() {
+    function closeModals() {
+        document.getElementById('modal-backdrop').classList.add('hidden');
         document.getElementById('app-modal').classList.add('hidden');
+        document.getElementById('sosmed-qty-modal').classList.add('hidden');
     }
 
     function addAppVariantToCart(appName, plan, price) {
         cart.push({ name: `${appName} (${plan})`, qty: 1, total: price, isApp: true });
-        closeAppModal();
+        closeModals();
         renderCart();
     }
 
@@ -635,9 +654,9 @@
             let itemsHtml = '';
             sec.items.forEach(item => {
                 itemsHtml += `
-                    <div class="item-card" onclick="selectSosmedService('${item.name}', ${item.price})">
-                        <div class="title">${item.name}</div>
-                        <div class="sub-text">Rp ${item.price.toLocaleString('id-ID')} / 1k</div>
+                    <div class="item-card" onclick="openSosmedQtyModal('${item.name}', ${item.pricePerThousand})">
+                        <div class="title">${item.shortName}</div>
+                        <div class="sub-text" style="color:var(--price-color);">Rp ${item.pricePerThousand.toLocaleString('id-ID')} / 1k</div>
                     </div>
                 `;
             });
@@ -649,17 +668,15 @@
         });
     }
 
-    function selectSosmedService(name, pricePerThousand) {
+    function openSosmedQtyModal(name, pricePerThousand) {
         activeSosmed = { name, pricePerThousand };
-        document.getElementById('selected-service-name').innerText = name;
-        document.getElementById('selected-service-price').innerText = `Harga: Rp ${pricePerThousand.toLocaleString('id-ID')} / 1.000 unit`;
+        document.getElementById('modal-service-name').innerText = name;
+        document.getElementById('modal-service-price').innerText = `Harga: Rp ${pricePerThousand.toLocaleString('id-ID')} / 1.000 unit`;
         document.getElementById('input-qty-val').value = '';
         document.getElementById('total-price-preview').innerText = 'Total: Rp 0';
-        document.getElementById('qty-box').classList.remove('hidden');
-    }
 
-    function closeSosmedQty() {
-        document.getElementById('qty-box').classList.add('hidden');
+        document.getElementById('modal-backdrop').classList.remove('hidden');
+        document.getElementById('sosmed-qty-modal').classList.remove('hidden');
     }
 
     function calcSosmedPrice() {
@@ -675,7 +692,7 @@
         let itemTotal = (qty / 1000) * activeSosmed.pricePerThousand;
         cart.push({ name: activeSosmed.name, qty: qty, total: Math.round(itemTotal), isApp: false });
 
-        closeSosmedQty();
+        closeModals();
         renderCart();
     }
 
@@ -723,7 +740,7 @@
     function checkoutWA() {
         if (cart.length === 0) return;
 
-        let text = "Halo Admin MomsCily ❤️️🌶️, Saya mau order pesanan berikut:\n\n";
+        let text = "Halo Admin MomsCily ❤️🌶️️, Saya mau order pesanan berikut:\n\n";
         let grandTotal = 0;
 
         cart.forEach((item, index) => {
