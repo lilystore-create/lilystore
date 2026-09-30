@@ -52,10 +52,6 @@
             font-size: 1.5rem;
             color: #fff;
             margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
         }
 
         .header p {
@@ -115,9 +111,6 @@
             text-transform: uppercase;
             margin: 18px 0 10px 0;
             letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .services-grid {
@@ -157,20 +150,10 @@
             line-height: 1.2;
         }
 
-        .item-card .price {
-            font-size: 0.75rem;
+        .item-card .sub-text {
+            font-size: 0.7rem;
             color: var(--price-color);
             font-weight: bold;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 14px;
-            border-radius: 16px;
-            margin-bottom: 12px;
-            font-size: 0.85rem;
-            line-height: 1.4;
         }
 
         .order-modal {
@@ -180,6 +163,38 @@
             border-radius: 18px;
             margin-top: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+
+        .variant-btn {
+            width: 100%;
+            background: #2e1065;
+            color: white;
+            border: 1px solid #4c1d95;
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .variant-btn:hover {
+            border-color: var(--purple-btn);
+            background: #3b147e;
+        }
+
+        .terms-box {
+            background: #0c0714;
+            border: 1px dashed var(--purple-btn);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 10px 0;
+            line-height: 1.4;
         }
 
         .input-qty {
@@ -290,30 +305,20 @@
         <p>Apps Premium, Sosmed Services & Rekber Center</p>
     </div>
 
-    <!-- MAIN HOME MENU -->
+    <!-- MAIN HOME MENU (1: SOSMED, 2: APPS PREMIUM) -->
     <div id="view-home" class="main-menu">
-        <button class="menu-btn" onclick="showView('view-apps')">
-            <span>📱 Apps Premium (39 Apps)</span> <span>➔</span>
-        </button>
         <button class="menu-btn" onclick="showView('view-sosmed')">
             <span>📊 Sosmed Services (Cart System)</span> <span>➔</span>
+        </button>
+        <button class="menu-btn" onclick="showView('view-apps')">
+            <span>📱 Apps Premium (39 Apps)</span> <span>➔</span>
         </button>
         <button class="menu-btn" onclick="showView('view-rekber')">
             <span>🛡️ Fee Rekber & Aturan Toko</span> <span>➔</span>
         </button>
     </div>
 
-    <!-- 1. APPS PREMIUM VIEW -->
-    <div id="view-apps" class="hidden">
-        <div class="top-nav">
-            <button class="btn-back" onclick="showView('view-home')">← Kembali</button>
-        </div>
-        <div class="category-title">📱 PILIH APLIKASI PREMIUM</div>
-        
-        <div class="services-grid" id="apps-container"></div>
-    </div>
-
-    <!-- 2. SOSMED SERVICES VIEW -->
+    <!-- 1. SOSMED SERVICES VIEW -->
     <div id="view-sosmed" class="hidden">
         <div class="top-nav">
             <button class="btn-back" onclick="showView('view-home')">← Kembali</button>
@@ -333,7 +338,7 @@
             <div id="sosmed-grid-container"></div>
         </div>
 
-        <!-- POPUP INPUT JUMLAH UNIT -->
+        <!-- POPUP INPUT JUMLAH UNIT SOSMED -->
         <div id="qty-box" class="order-modal hidden">
             <div style="font-weight: bold; font-size:0.95rem;" id="selected-service-name">Nama Layanan</div>
             <div style="font-size: 0.8rem; color: var(--text-muted);" id="selected-service-price">Harga: Rp 0 / 1.000</div>
@@ -343,14 +348,41 @@
         </div>
     </div>
 
+    <!-- 2. APPS PREMIUM VIEW -->
+    <div id="view-apps" class="hidden">
+        <div class="top-nav">
+            <button class="btn-back" onclick="showView('view-home')">← Kembali</button>
+        </div>
+        <div class="category-title">📱 PILIH APLIKASI PREMIUM</div>
+        
+        <!-- GRID KARTU APPS -->
+        <div class="services-grid" id="apps-container"></div>
+
+        <!-- POPUP PILIH DURASI / SYARAT APPS -->
+        <div id="app-modal" class="order-modal hidden">
+            <div style="font-size:1rem; font-weight:bold; color:#fff; margin-bottom:4px;" id="app-modal-title">Nama Aplikasi</div>
+            
+            <div class="terms-box" id="app-modal-terms">
+                📌 <b>Syarat & Ketentuan:</b><br>
+                • Garansi Full sesuai durasi yang dipilih.<br>
+                • Wajib mengikuti panduan penggunaan akun dari admin.
+            </div>
+
+            <div style="font-size:0.8rem; font-weight:bold; color:var(--text-muted); margin-bottom:8px;">PILIH DURASI / PAKET:</div>
+            <div id="app-variants-list"></div>
+
+            <button class="btn-back" style="width:100%; margin-top:10px;" onclick="closeAppModal()">Batal</button>
+        </div>
+    </div>
+
     <!-- 3. REKBER & RULES VIEW -->
     <div id="view-rekber" class="hidden">
         <div class="top-nav">
             <button class="btn-back" onclick="showView('view-home')">← Kembali</button>
         </div>
         
-        <div class="category-title">🛡️ ATURAN & SKEMA FEE REKBER</div>
-        <div class="info-card">
+        <div class="category-title">🛡️️ ATURAN & SKEMA FEE REKBER</div>
+        <div style="background:var(--card-bg); border:1px solid var(--border-color); padding:14px; border-radius:16px;">
             <b>Tarif Fee Rekber Moms Cily 🌶️♥️:</b>
             <table class="fee-table">
                 <tr><th>Nominal Transaksi</th><th>Fee Rekber</th></tr>
@@ -378,50 +410,108 @@
 </div>
 
 <script>
-    // DATA 39 APPS PREMIUM Beserta Harga Default
+    // DATA 39 APPS PREMIUM Beserta Durasi/Paket & Syaratnya
     const appsData = [
-        { name: "🎨 Adobe Express", price: 15000 },
-        { name: "🚀 AI Antigravity", price: 20000 },
-        { name: "✨ Alight Motion", price: 10000 },
-        { name: "🎵 Apple Music", price: 15000 },
-        { name: "📺 Bstation VIP", price: 12000 },
-        { name: "🎨 Canva Pro", price: 10000 },
-        { name: "🎬 CapCut Pro", price: 12000 },
-        { name: "🤖 ChatGPT Plus", price: 35000 },
-        { name: "🍥 Crunchyroll", price: 12000 },
-        { name: "🎬 Disney+ Hotstar", price: 25000 },
-        { name: "⛩️ Duolingo Super", price: 15000 },
-        { name: "📖 Fizzo Premium", price: 10000 },
-        { name: "🌊 Flow AI", price: 20000 },
-        { name: "🌈 GagaOOLala", price: 15000 },
-        { name: "🤖 Gemini AI Pro", price: 30000 },
-        { name: "📞 Getcontact Premium", price: 10000 },
-        { name: "💼 GSuite x Paysafe", price: 25000 },
-        { name: "🎬 HBO Max", price: 25000 },
-        { name: "🎨 Ibis Paint X", price: 10000 },
-        { name: "🎬 iQIYI VIP", price: 12000 },
-        { name: "🎬 Loklok VIP", price: 10000 },
-        { name: "📸 Meitu VIP", price: 12000 },
-        { name: "💻 Microsoft 365", price: 20000 },
-        { name: "🎬 Netflix Premium", price: 30000 },
-        { name: "🤖 Perplexity AI", price: 25000 },
-        { name: "🎨 Picsart Gold", price: 10000 },
-        { name: "🎬 Prime Video", price: 15000 },
-        { name: "🎬 ReelShort VIP", price: 15000 },
-        { name: "📸 Remini Pro", price: 12000 },
-        { name: "📚 Scribd / Everand", price: 15000 },
-        { name: "🎵 Spotify Premium", price: 15000 },
-        { name: "📺 Vidio Platinum", price: 15000 },
-        { name: "📺 Vision+ VIP", price: 12000 },
-        { name: "🎬 Viu Premium", price: 12000 },
-        { name: "📖 Wattpad Premium", price: 10000 },
-        { name: "🎬 WeTV VIP", price: 12000 },
-        { name: "📸 Wink Pro", price: 12000 },
-        { name: "🎬 Youku VIP", price: 12000 },
-        { name: "📺 YouTube Premium", price: 15000 }
+        { 
+            name: "🎬 Netflix Premium", 
+            terms: "📌 Garansi Full 30 Hari. Anti Limit Screen, Dilarang ubah PIN/Email.",
+            variants: [
+                { plan: "1 Bulan (1 User 1 Screen)", price: 30000 },
+                { plan: "1 Bulan (Private Account)", price: 120000 },
+                { plan: "3 Bulan (Shared VIP)", price: 85000 }
+            ]
+        },
+        { 
+            name: "🤖 ChatGPT Plus", 
+            terms: "📌 Akses GPT-4o & DALL-E 3. Garansi 1 Bulan Full.",
+            variants: [
+                { plan: "1 Bulan Shared", price: 35000 },
+                { plan: "1 Bulan Private Account", price: 290000 }
+            ]
+        },
+        { 
+            name: "🎨 Canva Pro", 
+            terms: "📌 Pakai Email Sendiri / Invite Member. Garansi Full.",
+            variants: [
+                { plan: "1 Bulan Member", price: 10000 },
+                { plan: "1 Tahun Member", price: 25000 },
+                { plan: "1 Tahun Head Designer / Admin", price: 50000 }
+            ]
+        },
+        { 
+            name: "🎵 Spotify Premium", 
+            terms: "📌 Akun Individual / Plan Family. Region Indonesia.",
+            variants: [
+                { plan: "1 Bulan Plan Individual", price: 15000 },
+                { plan: "2 Bulan Plan Individual", price: 28000 },
+                { plan: "1 Bulan Plan Family Invite", price: 10000 }
+            ]
+        },
+        { 
+            name: "📺 YouTube Premium", 
+            terms: "📌 Bebas Iklan + YouTube Music. Via Invite Email Kamu.",
+            variants: [
+                { plan: "1 Bulan Invite Family", price: 10000 },
+                { plan: "3 Bulan Invite Family", price: 25000 }
+            ]
+        },
+        { 
+            name: "🎬 CapCut Pro", 
+            terms: "📌 Unlock All Pro Effect & Transitions. Garansi Full.",
+            variants: [
+                { plan: "1 Bulan Shared", price: 12000 },
+                { plan: "1 Bulan Private", price: 40000 }
+            ]
+        },
+        { 
+            name: "📸 Remini Pro", 
+            terms: "📌 Web & Mobile AI Photo Enhancer Unli.",
+            variants: [
+                { plan: "1 Bulan Private Web/App", price: 15000 }
+            ]
+        },
+        { 
+            name: "🚀 AI Antigravity", 
+            terms: "📌 Platform AI Code & Agent Development.",
+            variants: [
+                { plan: "1 Bulan Pro Access", price: 25000 }
+            ]
+        },
+        // Sisa Aplikasi Lainnya
+        { name: "🎨 Adobe Express", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Pro", price: 15000 }] },
+        { name: "✨ Alight Motion", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Tahun Premium", price: 10000 }] },
+        { name: "🎵 Apple Music", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Shared", price: 15000 }] },
+        { name: "📺 Bstation VIP", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 12000 }] },
+        { name: "🍥 Crunchyroll", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Mega Fan", price: 12000 }] },
+        { name: "🎬 Disney+ Hotstar", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Basic", price: 25000 }] },
+        { name: "⛩️ Duolingo Super", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Super", price: 15000 }] },
+        { name: "📖 Fizzo Premium", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 10000 }] },
+        { name: "🌊 Flow AI", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Access", price: 20000 }] },
+        { name: "🌈 GagaOOLala", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 15000 }] },
+        { name: "🤖 Gemini AI Pro", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Advanced", price: 30000 }] },
+        { name: "📞 Getcontact Premium", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Premium", price: 10000 }] },
+        { name: "💼 GSuite x Paysafe", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan License", price: 25000 }] },
+        { name: "🎬 HBO Max", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Standard", price: 25000 }] },
+        { name: "🎨 Ibis Paint X", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Prime", price: 10000 }] },
+        { name: "🎬 iQIYI VIP", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Standard VIP", price: 12000 }] },
+        { name: "🎬 Loklok VIP", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 10000 }] },
+        { name: "📸 Meitu VIP", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 12000 }] },
+        { name: "💻 Microsoft 365", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Tahun Personal", price: 20000 }] },
+        { name: "🤖 Perplexity AI", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Pro", price: 25000 }] },
+        { name: "🎨 Picsart Gold", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Gold", price: 10000 }] },
+        { name: "🎬 Prime Video", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Shared", price: 15000 }] },
+        { name: "🎬 ReelShort VIP", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 15000 }] },
+        { name: "📚 Scribd / Everand", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Premium", price: 15000 }] },
+        { name: "📺 Vidio Platinum", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Platinum", price: 15000 }] },
+        { name: "📺 Vision+ VIP", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Premium", price: 12000 }] },
+        { name: "🎬 Viu Premium", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Private", price: 12000 }] },
+        { name: "📖 Wattpad Premium", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan Premium", price: 10000 }] },
+        { name: "🎬 WeTV VIP", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 12000 }] },
+        { name: "📸 Wink Pro", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 12000 }] },
+        { name: "🎬 Youku VIP", terms: "📌 Garansi 1 Bulan", variants: [{ plan: "1 Bulan VIP", price: 12000 }] }
     ];
 
-    // DATA SOSMED SERVICES TIKTOK, INSTAGRAM, DLL
+    // DATA SOSMED SERVICES
     const sosmedData = {
         'TikTok': [
             { category: '👥 FOLLOWERS', items: [
@@ -497,14 +587,43 @@
     function initApps() {
         const container = document.getElementById('apps-container');
         container.innerHTML = '';
-        appsData.forEach(app => {
+        appsData.forEach((app, index) => {
             container.innerHTML += `
-                <div class="item-card" onclick="addAppToCart('${app.name}', ${app.price})">
+                <div class="item-card" onclick="openAppModal(${index})">
                     <div class="title">${app.name}</div>
-                    <div class="price">Rp ${app.price.toLocaleString('id-ID')}</div>
+                    <div class="sub-text">Pilih Paket ➔</div>
                 </div>
             `;
         });
+    }
+
+    function openAppModal(index) {
+        const app = appsData[index];
+        document.getElementById('app-modal-title').innerText = app.name;
+        document.getElementById('app-modal-terms').innerHTML = app.terms;
+        
+        const listEl = document.getElementById('app-variants-list');
+        listEl.innerHTML = '';
+        app.variants.forEach(v => {
+            listEl.innerHTML += `
+                <button class="variant-btn" onclick="addAppVariantToCart('${app.name}', '${v.plan}', ${v.price})">
+                    <span>${v.plan}</span>
+                    <span style="color:#38bdf8; font-weight:bold;">Rp ${v.price.toLocaleString('id-ID')}</span>
+                </button>
+            `;
+        });
+
+        document.getElementById('app-modal').classList.remove('hidden');
+    }
+
+    function closeAppModal() {
+        document.getElementById('app-modal').classList.add('hidden');
+    }
+
+    function addAppVariantToCart(appName, plan, price) {
+        cart.push({ name: `${appName} (${plan})`, qty: 1, total: price, isApp: true });
+        closeAppModal();
+        renderCart();
     }
 
     function showView(viewId) {
@@ -516,11 +635,6 @@
             document.getElementById('sosmed-platform-list').classList.remove('hidden');
             document.getElementById('sosmed-detail-box').classList.add('hidden');
         }
-    }
-
-    function addAppToCart(appName, appPrice) {
-        cart.push({ name: appName, qty: 1, total: appPrice, isApp: true });
-        renderCart();
     }
 
     function openSosmedPlatform(platform) {
@@ -536,7 +650,7 @@
                 itemsHtml += `
                     <div class="item-card" onclick="selectSosmedService('${item.name}', ${item.price})">
                         <div class="title">${item.name}</div>
-                        <div class="price">Rp ${item.price.toLocaleString('id-ID')} / 1k</div>
+                        <div class="sub-text">Rp ${item.price.toLocaleString('id-ID')} / 1k</div>
                     </div>
                 `;
             });
