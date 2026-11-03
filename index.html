@@ -103,8 +103,9 @@
         .top-nav {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 8px;
             margin-bottom: 16px;
+            flex-wrap: wrap;
         }
 
         .btn-back {
@@ -206,29 +207,12 @@
             overflow-y: auto;
         }
 
-        .modal-header-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
         .modal-title {
             font-weight: bold;
             font-size: 1.1rem;
             text-align: center;
             color: #fff;
-            flex: 1;
-        }
-
-        .btn-close-modal {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-            padding: 0 5px;
+            margin-bottom: 8px;
         }
 
         .modal-subtitle {
@@ -320,6 +304,49 @@
             color: white;
         }
 
+        /* GRID KARTU KECIL DURASI INVESTASI */
+        .invest-dur-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .dur-card {
+            background: #4a1537;
+            border: 1px solid #831843;
+            padding: 10px 8px;
+            border-radius: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .dur-card:hover {
+            border-color: var(--pink-btn);
+            background: #701a4d;
+        }
+
+        .dur-card.active-dur {
+            background: var(--pink-btn);
+            border-color: #fff;
+            box-shadow: 0 0 10px var(--pink-glow);
+        }
+
+        .dur-card .dur-title {
+            font-weight: bold;
+            font-size: 0.85rem;
+            color: #fff;
+        }
+
+        .dur-card .dur-sub {
+            font-size: 0.7rem;
+            color: #fbcfe8;
+        }
+
         .hidden { display: none !important; }
     </style>
 </head>
@@ -347,6 +374,13 @@
             <span>🤝 Rekening Bersama (Rekber)</span>
             <span class="sub-desc">Transaksi aman dan terpercaya</span>
         </button>
+
+        <!-- MENU INVESTASI (POP-UP LANGSUNG) -->
+        <button class="menu-btn" onclick="openInvestModal()">
+            <span>📈 Investasi MomsCily</span>
+            <span class="sub-desc">Program modal & bagi hasil terpercaya</span>
+        </button>
+
         <button class="menu-btn" onclick="openAdminWA()">
             <span>💬 Hubungi Admin</span>
             <span class="sub-desc">0813-3741-5395 • Fast Response</span>
@@ -356,13 +390,12 @@
     <!-- 1. SOSMED SERVICES VIEW -->
     <div id="view-sosmed" class="hidden">
         <div class="page-header-box">
-            <div class="top-nav">
+            <div class="top-nav" id="sosmed-top-nav">
                 <button class="btn-back" onclick="showView('view-home')">← Menu Utama</button>
             </div>
             <div class="section-heading" id="sosmed-main-title">📊 Pilih Platform Sosmed</div>
         </div>
         
-        <!-- DAFTAR PLATFORM (TINGKAT 2) -->
         <div id="sosmed-platform-list" class="main-menu">
             <button class="menu-btn" onclick="openSosmedPlatform('TikTok')"><span>🎵 TikTok Services</span></button>
             <button class="menu-btn" onclick="openSosmedPlatform('Instagram')"><span>📸 Instagram Services</span></button>
@@ -372,7 +405,6 @@
             <button class="menu-btn" onclick="openSosmedPlatform('X')"><span>🛒 X Services</span></button>
         </div>
 
-        <!-- DETAIL LAYANAN (TINGKAT 3) -->
         <div id="sosmed-detail-box" class="hidden">
             <div id="sosmed-grid-container"></div>
         </div>
@@ -383,10 +415,7 @@
     
     <!-- MODAL POPUP SOSMED KALKULATOR (TENGAH LAYAR) -->
     <div id="sosmed-qty-modal" class="order-modal hidden">
-        <div class="modal-header-row">
-            <div class="modal-title" id="modal-service-name">Layanan Sosmed</div>
-            <button class="btn-close-modal" onclick="closeModals()">✕</button>
-        </div>
+        <div class="modal-title" id="modal-service-name">Layanan Sosmed</div>
         <div class="modal-subtitle" id="modal-service-price">Harga: Rp 0</div>
         
         <input type="number" id="input-qty-val" class="input-qty" placeholder="Ketik jumlah order..." oninput="calcSosmedPrice()">
@@ -395,6 +424,46 @@
         
         <button class="btn-direct-wa" onclick="checkoutSosmedWA()">📲 Pesan via WhatsApp</button>
         <button class="btn-back" style="width:100%; margin-top:8px;" onclick="closeModals()">← Batal / Kembali</button>
+    </div>
+
+    <!-- MODAL POPUP INVESTASI (KARTU KECIL HARI, MINGGU, BULAN, TAHUN) -->
+    <div id="invest-modal" class="order-modal hidden">
+        <div class="modal-title">📈 Kalkulator Investasi MomsCily</div>
+        
+        <input type="number" id="invest-amount" class="input-qty" placeholder="Ketik nominal (contoh: 100000)" oninput="calcInvestProfit()">
+        
+        <div style="font-size:0.75rem; font-weight:bold; color:var(--text-muted); margin-top:8px;">PILIH DURASI INVESTASI:</div>
+        <div class="invest-dur-grid">
+            <div class="dur-card active-dur" id="dur-3d" onclick="selectDuration('3 Hari', 0.1, 'Paling cepat 3 hari', this)">
+                <span class="dur-title">⚡ 3 Hari</span>
+                <span class="dur-sub">Paling cepat 3 hari</span>
+            </div>
+            <div class="dur-card" id="dur-1w" onclick="selectDuration('1 Minggu', 0.2, 'Cair 1 Minggu', this)">
+                <span class="dur-title">📅 1 Minggu</span>
+                <span class="dur-sub">Cair 1 minggu</span>
+            </div>
+            <div class="dur-card" id="dur-1m" onclick="selectDuration('1 Bulan', 0.5, 'Cair 1 Bulan', this)">
+                <span class="dur-title">🌙 1 Bulan</span>
+                <span class="dur-sub">Cair 1 bulan</span>
+            </div>
+            <div class="dur-card" id="dur-1y" onclick="selectDuration('1 Tahun', 1.2, 'Cair 1 Tahun', this)">
+                <span class="dur-title">🏆 1 Tahun</span>
+                <span class="dur-sub">Cair 1 tahun</span>
+            </div>
+        </div>
+
+        <!-- TAMPILAN PROFIT & TOTAL REAL-TIME -->
+        <div style="margin: 14px 0 10px 0; font-size: 1rem; font-weight: bold; color: #fff; text-align: center;">
+            Profit + Profit: <span id="invest-profit-display" style="color: #22c55e;">Rp 0</span>
+        </div>
+
+        <!-- BUTTON DIRECT WA & TANYA -->
+        <div style="display: flex; gap: 8px;">
+            <button class="btn-direct-wa" style="flex: 1; margin-top: 0;" onclick="checkoutInvestWA()">📲 Deposit / Join</button>
+            <button class="btn-back" style="width: 45px; padding: 0; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;" onclick="alert('Info Investasi: Ketik nominal dan pilih durasi kartu di atas untuk melihat estimasi hasil.')">❓</button>
+        </div>
+        
+        <button class="btn-back" style="width:100%; margin-top:10px;" onclick="closeModals()">← Batal / Kembali</button>
     </div>
 
     <!-- 2. APPS PREMIUM VIEW -->
@@ -410,10 +479,7 @@
 
         <!-- MODAL POPUP APPS VARIANT (TENGAH LAYAR) -->
         <div id="app-modal" class="order-modal hidden">
-            <div class="modal-header-row">
-                <div class="modal-title" id="app-modal-title">Nama Aplikasi</div>
-                <button class="btn-close-modal" onclick="closeModals()">✕</button>
-            </div>
+            <div class="modal-title" id="app-modal-title">Nama Aplikasi</div>
             <div class="terms-box" id="app-modal-terms">
                 📌 <b>Syarat & Ketentuan:</b><br>
                 • Garansi Full sesuai durasi yang dipilih.<br>
@@ -492,7 +558,7 @@
         { name: "🎬 Youku VIP", terms: "📌 Garansi Full 30 Hari.", variants: [{ plan: "1 Bulan VIP", price: 12000 }] }
     ];
 
-// DATA SOSMED SERVICES
+    // DATA SOSMED SERVICES
     const sosmedData = {
         'TikTok': [
             { category: '👥 FOLLOWERS', items: [
@@ -579,6 +645,8 @@
     };
 
     let activeSosmedItem = null;
+    let selectedInvestDur = '3 Hari';
+    let selectedProfitRate = 0.1; // 10% untuk 3 hari
 
     // FUNGSI GANTI HALAMAN NAVIGASI
     function showView(viewId) {
@@ -596,16 +664,60 @@
         }
     }
 
+    // FUNGSI MODAL INVESTASI (DIRECT POP-UP)
+    function openInvestModal() {
+        document.getElementById('modal-backdrop').classList.remove('hidden');
+        document.getElementById('invest-modal').classList.remove('hidden');
+        document.getElementById('invest-amount').value = '';
+        document.getElementById('invest-profit-display').innerText = 'Rp 0';
+    }
+
+    function selectDuration(durName, rate, desc, element) {
+        selectedInvestDur = durName;
+        selectedProfitRate = rate;
+
+        // Reset semua status aktif kartu
+        const cards = document.querySelectorAll('.dur-card');
+        cards.forEach(c => c.classList.remove('active-dur'));
+
+        // Aktifkan kartu yang diklik
+        element.classList.add('active-dur');
+
+        calcInvestProfit();
+    }
+
+    function calcInvestProfit() {
+        let nominal = parseInt(document.getElementById('invest-amount').value) || 0;
+        let totalReturn = nominal + (nominal * selectedProfitRate);
+        document.getElementById('invest-profit-display').innerText = 'Rp ' + Math.round(totalReturn).toLocaleString('id-ID');
+    }
+
+    function checkoutInvestWA() {
+        let nominal = parseInt(document.getElementById('invest-amount').value) || 0;
+        if (nominal <= 0) {
+            alert('Masukkan nominal investasi terlebih dahulu!');
+            return;
+        }
+        let totalReturn = Math.round(nominal + (nominal * selectedProfitRate));
+        
+        let msg = `Halo Admin MomsCily 🌶️❤️,\nSaya mau ikutan program *Investasi MomsCily*:\n• *Modal:* Rp ${nominal.toLocaleString('id-ID')}\n• *Pilihan Durasi:* ${selectedInvestDur}\n• *Estimasi Total Cair:* Rp ${totalReturn.toLocaleString('id-ID')}\n\nMohon petunjuk selanjutnya ya admin, terima kasih!`;
+        window.open(`https://wa.me/6281337415395?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
     // 1. RENDER SOSMED SERVICES (BERTINGKAT)
     function openSosmedPlatform(platform) {
         document.getElementById('sosmed-main-title').innerText = platform + ' Services';
         document.getElementById('sosmed-platform-list').classList.add('hidden');
         document.getElementById('sosmed-detail-box').classList.remove('hidden');
 
+        const topNav = document.getElementById('sosmed-top-nav');
+        topNav.innerHTML = `
+            <button class="btn-back" onclick="showView('view-home')">← Menu Utama</button>
+            <button class="btn-back" onclick="closeSosmedDetail()">← Pilih Platform Lain</button>
+        `;
+
         const container = document.getElementById('sosmed-grid-container');
-        
-        // TOMBOL BACK HANYA MUNDUR KE DAFTAR PLATFORM (BUKAN HOME)
-        container.innerHTML = '<button class="btn-back" style="margin-bottom:16px;" onclick="closeSosmedDetail()">← Pilih Platform Lain</button>';
+        container.innerHTML = '';
 
         if (sosmedData[platform]) {
             sosmedData[platform].forEach(catBlock => {
@@ -634,6 +746,9 @@
         document.getElementById('sosmed-detail-box').classList.add('hidden');
         document.getElementById('sosmed-platform-list').classList.remove('hidden');
         document.getElementById('sosmed-main-title').innerText = '📊 Pilih Platform Sosmed';
+        
+        const topNav = document.getElementById('sosmed-top-nav');
+        topNav.innerHTML = `<button class="btn-back" onclick="showView('view-home')">← Menu Utama</button>`;
     }
 
     // MODAL POPUP SOSMED
@@ -642,11 +757,11 @@
         document.getElementById('modal-service-name').innerText = item.name;
         
         if (item.fixedPrice) {
-            document.getElementById('modal-service-price').innerText = `Harga Paket: Rp ${item.price.toLocaleString('id-ID')}`;
+            document.getElementById('modal-service-price').innerText = `Harga: Rp ${item.price.toLocaleString('id-ID')}`;
             document.getElementById('input-qty-val').classList.add('hidden');
             document.getElementById('total-price-preview').innerText = 'Total: Rp ' + item.price.toLocaleString('id-ID');
         } else {
-            document.getElementById('modal-service-price').innerText = `Harga Clean: Rp ${item.price.toLocaleString('id-ID')}`;
+            document.getElementById('modal-service-price').innerText = `Harga: Rp ${item.price.toLocaleString('id-ID')}`;
             document.getElementById('input-qty-val').classList.remove('hidden');
             document.getElementById('input-qty-val').value = '';
             document.getElementById('total-price-preview').innerText = 'Total: Rp 0';
@@ -719,6 +834,7 @@
         document.getElementById('modal-backdrop').classList.add('hidden');
         document.getElementById('sosmed-qty-modal').classList.add('hidden');
         document.getElementById('app-modal').classList.add('hidden');
+        document.getElementById('invest-modal').classList.add('hidden');
     }
 
     function openAdminWA(customText) {
