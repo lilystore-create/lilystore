@@ -518,44 +518,314 @@
 </div>
 
 <script>
-    // DATA APPS PREMIUM LENGKAP
+        // DATA APPS PREMIUM LENGKAP (URUT ABJAD A-Z)
     const appsData = [
-        { name: "🎬 Netflix Premium", terms: "📌 Garansi Full 30 Hari. Anti Limit Screen, Dilarang ubah PIN/Email.", variants: [{ plan: "1 Bulan (1 User 1 Screen)", price: 30000 }, { plan: "1 Bulan (Private Account)", price: 120000 }] },
-        { name: "🤖 ChatGPT Plus", terms: "📌 Akses GPT-4o & DALL-E 3. Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Shared", price: 35000 }, { plan: "1 Bulan Private Account", price: 290000 }] },
-        { name: "🎨 Canva Pro", terms: "📌 Pakai Email Sendiri / Invite Member. Garansi Full.", variants: [{ plan: "1 Bulan Member", price: 10000 }, { plan: "1 Tahun Member", price: 25000 }, { plan: "1 Tahun Head Designer / Admin", price: 50000 }] },
-        { name: "🎵 Spotify Premium", terms: "📌 Akun Individual / Plan Family. Region Indonesia.", variants: [{ plan: "1 Bulan Plan Individual", price: 15000 }, { plan: "1 Bulan Plan Family Invite", price: 10000 }] },
-        { name: "📺 YouTube Premium", terms: "📌 Bebas Iklan + YouTube Music. Via Invite Email Kamu.", variants: [{ plan: "1 Bulan Invite Family", price: 15000 }, { plan: "3 Bulan Invite Family", price: 35000 }] },
-        { name: "🎬 CapCut Pro", terms: "📌 Unlock All Pro Effect & Transitions. Garansi Full.", variants: [{ plan: "1 Bulan Shared", price: 12000 }, { plan: "1 Bulan Private", price: 40000 }] },
-        { name: "📸 Remini Pro", terms: "📌 Web & Mobile AI Photo Enhancer Unli.", variants: [{ plan: "1 Bulan Private Web/App", price: 12000 }] },
-        { name: "🚀 AI Antigravity", terms: "📌 Platform AI Code & Agent Development.", variants: [{ plan: "1 Bulan Pro Access", price: 20000 }] },
-        { name: "🎨 Adobe Express", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Pro", price: 15000 }] },
-        { name: "✨ Alight Motion", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Tahun Premium", price: 10000 }] },
-        { name: "🎵 Apple Music", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Shared", price: 15000 }] },
-        { name: "📺 Bstation VIP", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan VIP", price: 12000 }] },
-        { name: "🍥 Crunchyroll", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Mega Fan", price: 12000 }] },
-        { name: "🎬 Disney+ Hotstar", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Basic", price: 25000 }] },
-        { name: "⛩️ Duolingo Super", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Super", price: 15000 }] },
-        { name: "📖 Fizzo Premium", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan VIP", price: 10000 }] },
-        { name: "🌊 Flow AI", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Access", price: 20000 }] },
-        { name: "🌈 GagaOOLala", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan VIP", price: 15000 }] },
-        { name: "🤖 Gemini AI Pro", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Advanced", price: 30000 }] },
-        { name: "📞 Getcontact Premium", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Premium", price: 10000 }] },
-        { name: "💼 GSuite x Paysafe", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan License", price: 25000 }] },
-        { name: "🎬 HBO Max", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Standard", price: 25000 }] },
-        { name: "🎨 Ibis Paint X", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Prime", price: 10000 }] },
-        { name: "🎬 iQIYI VIP", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Standard VIP", price: 12000 }] },
-        { name: "🎬 Loklok VIP", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan VIP", price: 10000 }] },
-        { name: "📸 Meitu VIP", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan VIP", price: 12000 }] },
-        { name: "💻 Microsoft 365", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Tahun Personal", price: 20000 }] },
-        { name: "🤖 Perplexity AI", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Pro", price: 25000 }] },
-        { name: "🎨 Picsart Gold", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Gold", price: 10000 }] },
-        { name: "🎬 Prime Video", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan Shared", price: 15000 }] },
-        { name: "🎬 ReelShort VIP", terms: "📌 Garansi 1 Bulan Full.", variants: [{ plan: "1 Bulan VIP", price: 15000 }] },
-        { name: "📚 Scribd / Everand", terms: "📌 Garansi Full 30 Hari.", variants: [{ plan: "1 Bulan VIP", price: 10000 }] },
-        { name: "🎬 ShortMax VIP", terms: "📌 Garansi Full 30 Hari.", variants: [{ plan: "1 Bulan VIP", price: 15000 }] },
-        { name: "🎬 Viu Premium", terms: "📌 Garansi Full 30 Hari.", variants: [{ plan: "1 Bulan VIP", price: 10000 }] },
-        { name: "🎬 WeTV VIP", terms: "📌 Garansi Full 30 Hari.", variants: [{ plan: "1 Bulan VIP", price: 12000 }] },
-        { name: "🎬 Youku VIP", terms: "📌 Garansi Full 30 Hari.", variants: [{ plan: "1 Bulan VIP", price: 12000 }] }
+        { 
+            name: "🚀 AI Antigravity", 
+            terms: "📌 Platform AI Code & Agent Development.", 
+            variants: [] 
+        },
+        { 
+            name: "🎨 Adobe Express", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "✨ Alight Motion", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🎵 Apple Music", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akses ke jutaan lagu tanpa iklan.<br>• Unduh lagu & dengarkan suara kualitas tinggi.<br>• Khusus iOS loginkan dulu di Android terus invite email yang ada di iOS.<br>• Head bisa invite 5 orang.", 
+            variants: [
+                { plan: "FAMHEAD (1 Bulan)", price: 10500 }
+            ] 
+        },
+        { 
+            name: "📺 Bstation VIP", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• 25-30 hari terhitung 1 bulan.<br>• Akun dari seller & Bergaransi.", 
+            variants: [
+                { plan: "Sharing (1 Bulan)", price: 12500 },
+                { plan: "Sharing (1 Tahun)", price: 30000 },
+                { plan: "Private (1 Bulan)", price: 33500 }
+            ] 
+        },
+        { 
+            name: "📷 CamScanner Premium", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller.<br>• Private Account.", 
+            variants: [
+                { plan: "Private (1 Bulan)", price: 11000 }
+            ] 
+        },
+        { 
+            name: "🎨 Canva Pro", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Lifetime = durasi selamanya.<br>• Bergaransi & tidak perlu re-invite tiap bulan.<br>• Fitur yang di-lock dapat digunakan.<br>• Bisa menambahkan/upload font & brandkit.<br>• Bisa All Device.<br>• Famhead bisa invite hingga 100 member.", 
+            variants: [
+                { plan: "Head (1 Bulan)", price: 10000 },
+                { plan: "Invite Member (Lifetime)", price: 15000 }
+            ] 
+        },
+        { 
+            name: "🎬 CapCut Pro", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Garansi 15 hari no mix seat.<br>• Akun dari seller & bisa All Device.<br>• Akun private bukan sharing.<br>• CapCut Pro bukan standar, auto renew setiap 7 hari.", 
+            variants: [
+                { plan: "Private Team (7 Hari)", price: 8000 },
+                { plan: "Private Team (30 Hari)", price: 20500 }
+            ] 
+        },
+        { 
+            name: "🤖 ChatGPT Plus", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Wajib patuhi SnK yang diberikan.<br>• 25-30 hari terhitung 1 bulan.<br>• Akun dari seller.", 
+            variants: [
+                { plan: "ChatGPT GO Sharing (3 Bulan)", price: 26000 },
+                { plan: "ChatGPT GO Private (3 Bulan)", price: 110000 },
+                { plan: "ChatGPT PLUS Sharing (1 Bulan)", price: 35000 },
+                { plan: "ChatGPT PLUS Private (1 Bulan)", price: 141500 }
+            ] 
+        },
+        { 
+            name: "🤖 Claude AI", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller & Bergaransi.<br>• Private Account.", 
+            variants: [
+                { plan: "Pro Private (1 Bulan)", price: 280000 }
+            ] 
+        },
+        { 
+            name: "🍥 Crunchyroll", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller & Bergaransi.", 
+            variants: [
+                { plan: "Mega Fan Sharing (1 Bulan)", price: 10000 },
+                { plan: "Mega Fan Private (1 Bulan)", price: 20000 }
+            ] 
+        },
+        { 
+            name: "🎬 Disney+ Hotstar", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "⛩️ Duolingo Super", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Bergaransi & Private.<br>• Head bisa invite member.<br>• Akun dari seller.", 
+            variants: [
+                { plan: "Head (2 Bulan)", price: 15000 },
+                { plan: "Individual (1 Tahun)", price: 38000 }
+            ] 
+        },
+        { 
+            name: "📖 Fizzo Premium", 
+            terms: "📌 Garansi Full sesuai durasi.", 
+            variants: [
+                { plan: "Sharing (1 Bulan)", price: 10000 }
+            ] 
+        },
+        { 
+            name: "🌊 Flow AI", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🌈 GagaOOLala", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🤖 Gemini AI Pro", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Gemini Pro 3.1, Head bisa invite max 5.<br>• Private akun akses Google.<br>• Include Google Drive 5TB & Veo3.<br>• Bill strong jadi aman.<br>• Produk berupa link claim (1 link = 1 akun).<br>• Langsung claim tanpa metode pembayaran.", 
+            variants: [
+                { plan: "Head (3 Bulan)", price: 25000 }
+            ] 
+        },
+        { 
+            name: "📞 Getcontact Premium", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "📝 Grammarly Pro", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller.", 
+            variants: [
+                { plan: "Sharing (1 Bulan)", price: 10000 },
+                { plan: "Private (1 Bulan)", price: 20500 }
+            ] 
+        },
+        { 
+            name: "💼 GSuite x Paysafe", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🎬 HBO Max", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Bergaransi.<br>• Wajib SS 1x24 jam no send void.<br>• Akun dari seller.", 
+            variants: [
+                { plan: "Standar Sharing (1 Bulan)", price: 15000 },
+                { plan: "Standar Private (1 Bulan)", price: 25000 },
+                { plan: "Premium Private (1 Bulan)", price: 41000 },
+                { plan: "Ultimate Sharing (1 Bulan)", price: 20000 },
+                { plan: "Ultimate Private (1 Bulan)", price: 70000 }
+            ] 
+        },
+        { 
+            name: "🎨 Ibis Paint X", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "📄 iLovePDF", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Login via email (bukan Google/FB/TikTok/Apple ID).<br>• Akun dari seller.", 
+            variants: [
+                { plan: "Sharing (1 Bulan)", price: 12000 }
+            ] 
+        },
+        { 
+            name: "🎬 iQIYI VIP", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🎬 Loklok VIP", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "📸 Meitu VIP", 
+            terms: "📌 Garansi Full sesuai durasi.", 
+            variants: [
+                { plan: "Private (14 Hari)", price: 14000 }
+            ] 
+        },
+        { 
+            name: "📺 Melolo", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Bergaransi.<br>• Akun dari seller.", 
+            variants: [
+                { plan: "Sharing (1 Bulan)", price: 11500 }
+            ] 
+        },
+        { 
+            name: "💻 Microsoft 365", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🤖 Muse AI", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller.<br>• Private Account (1 Miliar Token).", 
+            variants: [
+                { plan: "Private (1 Miliar Token)", price: 28500 }
+            ] 
+        },
+        { 
+            name: "🎬 Netflix Premium", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Wajib SS login & setor device (1 device).<br>• 1p1u diisi 5 user/device masing-masing 1 profil.<br>• Full garansi selama durasi & support All Device.<br>• Semi private bisa login 2 device.", 
+            variants: [
+                { plan: "1P 1U Profile (1 Bulan)", price: 27000 },
+                { plan: "Method Cookies Trial (1 Bulan)", price: 45000 },
+                { plan: "Semi Private (1 Bulan)", price: 45500 }
+            ] 
+        },
+        { 
+            name: "🤖 Perplexity AI", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🎨 Picsart Gold", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🎬 Prime Video", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "🎬 ReelShort VIP", 
+            terms: "📌 Garansi 1 Bulan Full.", 
+            variants: [] 
+        },
+        { 
+            name: "📸 Remini Pro", 
+            terms: "📌 Web & Mobile AI Photo Enhancer Unli.", 
+            variants: [] 
+        },
+        { 
+            name: "📚 Scribd / Everand", 
+            terms: "📌 Garansi Full 30 Hari.", 
+            variants: [] 
+        },
+        { 
+            name: "🎬 ShortMax VIP", 
+            terms: "📌 Garansi Full 30 Hari.", 
+            variants: [] 
+        },
+        { 
+            name: "🎵 Spotify Premium", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller.<br>• Bisa login All Device.", 
+            variants: [
+                { plan: "Individu (2 Bulan)", price: 20000 }
+            ] 
+        },
+        { 
+            name: "🏃 Strava Premium", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller & Bergaransi.<br>• Private Account.", 
+            variants: [
+                { plan: "Private (1 Bulan)", price: 13000 }
+            ] 
+        },
+        { 
+            name: "🔒 VPN Premium", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun private & support all device.<br>• Kecepatan lebih tinggi & unlimited data.<br>• Fitur kill switch otomatis & perlindungan kebocoran DNS.", 
+            variants: [
+                { plan: "Surfshark (7 Hari)", price: 7000 },
+                { plan: "ExpressVPN (3 Hari)", price: 8000 },
+                { plan: "Avira VPN (3 Bulan)", price: 15000 },
+                { plan: "HMA VPN (1 Bulan)", price: 16500 },
+                { plan: "NordVPN (3 Bulan)", price: 60000 }
+            ] 
+        },
+        { 
+            name: "📺 Vidio Premium", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller & Bergaransi.<br>• Mobile hanya untuk HP/Tab.<br>• All Device bisa untuk semua perangkat.", 
+            variants: [
+                { plan: "Platinum Mobile Sharing (1 Bulan)", price: 20000 },
+                { plan: "Platinum All Dev Sharing (1 Bulan)", price: 25000 },
+                { plan: "Platinum Mobile Private (1 Bulan)", price: 30000 }
+            ] 
+        },
+        { 
+            name: "🎬 Viu Premium", 
+            terms: "📌 Garansi Full 30 Hari.", 
+            variants: [] 
+        },
+        { 
+            name: "🎬 WeTV VIP", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Max screen limit 6 user. Lebih dari itu = No Garansi.<br>• Jika limit screen nonton di app, silakan nonton via web.<br>• Order Sharing wajib info nama device & dilarang login di TV.", 
+            variants: [
+                { plan: "Sharing (1 Bulan)", price: 15000 },
+                { plan: "Private (1 Bulan)", price: 36000 }
+            ] 
+        },
+        { 
+            name: "🎬 Youku VIP", 
+            terms: "📌 Garansi Full 30 Hari.", 
+            variants: [] 
+        },
+        { 
+            name: "📺 YouTube Premium", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Email Pembeli (Indplan/Head/Mixplan/Invite).<br>• Sudah include YT Music (2in1).<br>• Fresh made proses no rush.<br>• Head bisa invite maks 5 orang.<br>• YT Invite 1 akun maks 2x invite per tahun.", 
+            variants: [
+                { plan: "Invite Email Kamu (1 Bulan)", price: 9000 },
+                { plan: "Indplan Email Kamu (1 Bulan)", price: 10500 },
+                { plan: "Head Email Kamu (1 Bulan)", price: 9000 },
+                { plan: "Mixplan Email Kamu (3 Bulan)", price: 17500 }
+            ] 
+        },
+        { 
+            name: "📹 Zoom Pro", 
+            terms: "📌 <b>Syarat & Ketentuan:</b><br>• Akun dari seller & Bergaransi.<br>• Dilarang ganti email & dilarang otak-atik bill.<br>• Max 100 peserta.", 
+            variants: [
+                { plan: "Private Account (14 Hari)", price: 9500 }
+            ] 
+        }
     ];
 
     // DATA SOSMED SERVICES
