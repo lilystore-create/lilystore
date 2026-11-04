@@ -397,13 +397,14 @@
         </div>
         
         <div id="sosmed-platform-list" class="main-menu">
-            <button class="menu-btn" onclick="openSosmedPlatform('TikTok')"><span>🎵 TikTok Services</span></button>
-            <button class="menu-btn" onclick="openSosmedPlatform('Instagram')"><span>📸 Instagram Services</span></button>
-            <button class="menu-btn" onclick="openSosmedPlatform('Facebook')"><span>📘 Facebook Services</span></button>
-            <button class="menu-btn" onclick="openSosmedPlatform('Telegram')"><span>✈️ Telegram Services</span></button>
-            <button class="menu-btn" onclick="openSosmedPlatform('YouTube')"><span>📺 YouTube Services</span></button>
-            <button class="menu-btn" onclick="openSosmedPlatform('X')"><span>🛒 X Services</span></button>
-        </div>
+    <button class="menu-btn" onclick="openSosmedPlatform('TikTok')"><span>🎵 TikTok Services</span></button>
+    <button class="menu-btn" onclick="openSosmedPlatform('Instagram')"><span>📸 Instagram Services</span></button>
+    <button class="menu-btn" onclick="openSosmedPlatform('Facebook')"><span>📘 Facebook Services</span></button>
+    <button class="menu-btn" onclick="openSosmedPlatform('Telegram')"><span>✈️ Telegram Services</span></button>
+    <button class="menu-btn" onclick="openSosmedPlatform('WhatsApp')"><span>💬 WhatsApp Services</span></button>
+    <button class="menu-btn" onclick="openSosmedPlatform('YouTube')"><span>📺 YouTube Services</span></button>
+    <button class="menu-btn" onclick="openSosmedPlatform('X')"><span>🛒 X Services</span></button>
+  </div>
 
         <div id="sosmed-detail-box" class="hidden">
             <div id="sosmed-grid-container"></div>
@@ -828,91 +829,140 @@
         }
     ];
 
-    // DATA SOSMED SERVICES
+        // DATA SOSMED SERVICES LENGKAP SESUAI CATATAN TERBARU
     const sosmedData = {
         'TikTok': [
             { category: '👥 FOLLOWERS', items: [
-                { name: 'TikTok Followers Indonesia', shortName: '🇮🇩 Indonesia', price: 65000 },
-                { name: 'TikTok Followers Premium Indo', shortName: '💎 Premium Indo', price: 90000 },
-                { name: 'TikTok Followers Luar Negeri', shortName: '🌍 Luar Negeri', price: 28000 },
-                { name: 'TikTok Followers Premium Luar', shortName: '💎 Premium Luar', price: 35000 }
+                { name: 'TikTok Followers Indo Standar', shortName: '🇮🇩 Indo Standar', price: 65000 },
+                { name: 'TikTok Followers Indo Premium', shortName: '💎 Indo Premium', price: 90000 },
+                { name: 'TikTok Followers Luar Standar', shortName: '🌍 Luar Standar', price: 28000 },
+                { name: 'TikTok Followers Luar Premium', shortName: '💎 Luar Premium', price: 35000 }
             ]},
             { category: '❤️ LIKES', items: [
-                { name: 'TikTok Likes Biasa', shortName: '🇮🇩 Biasa', price: 35000 },
-                { name: 'TikTok Likes Premium', shortName: '💎 Premium', price: 38000 },
-                { name: 'TikTok Likes Luar Negeri', shortName: '🌍 Luar Negeri', price: 8000 }
-           ]},
+                { name: 'TikTok Like Indo Standar', shortName: '🇮🇩 Like Standar', price: 35000 },
+                { name: 'TikTok Like Indo Premium', shortName: '💎 Like Premium', price: 38000 },
+                { name: 'TikTok Like Luar Standar', shortName: '🌍 Like Standar', price: 10000 },
+                { name: 'TikTok Like Luar Premium', shortName: '💎 Like Premium', price: 15000 }
+            ]},
             { category: '👁️ VIEWS', items: [
-                { name: 'TikTok Views Standar', shortName: '⚡ Standar', price: 3000 },
-                { name: 'TikTok Views Premium', shortName: '💎 Premium', price: 3500 }
+                { name: 'TikTok View Standar', shortName: '⚡ View Standar', price: 1500 },
+                { name: 'TikTok View Premium', shortName: '💎 View Premium', price: 3000 }
             ]},
-            { category: '🔄 SHARES', items: [
-                { name: 'TikTok Shares Standar', shortName: '🔄 Standar', price: 3000 }      
-            ]},
-            { category: '💖 LIKE STORY', items: [
-                { name: 'TikTok Like Story Standar', shortName: '💖 Standar', price: 8000 }
+            { category: '📖 STORY, SHARE & SAVE', items: [
+                { name: 'TikTok Story Standar', shortName: '📖 Story Standar', price: 8000 },
+                { name: 'TikTok Story Premium', shortName: '💎 Story Premium', price: 11000 },
+                { name: 'TikTok Share Standar', shortName: '🔄 Share Standar', price: 3000 },
+                { name: 'TikTok Share Premium', shortName: '💎 Share Premium', price: 5000 },
+                { name: 'TikTok Save / Favorit Standar', shortName: '⭐ Save Standar', price: 1500 },
+                { name: 'TikTok Save / Favorit Premium', shortName: '💎 Save Premium', price: 2500 }
             ]}
         ],
         'Instagram': [
             { category: '👥 FOLLOWERS', items: [
-                { name: 'IG Followers Indo Standar', shortName: '🇮🇩 Standar', price: 33000 },
-                { name: 'IG Followers Premium Indo', shortName: '💎 Premium Indo', price: 80000 },
-                { name: 'IG Followers Luar Negeri', shortName: '🌍 Luar Negeri', price: 18000 },
-                { name: 'IG Followers Premium Luar', shortName: '💎 Premium Luar', price: 30000 }
+                { name: 'IG Followers Indo Standar', shortName: '🇮🇩 Indo Standar', price: 30000 },
+                { name: 'IG Followers Indo Premium', shortName: '💎 Indo Premium', price: 80000 },
+                { name: 'IG Followers Luar Standar', shortName: '🌍 Luar Standar', price: 15000 },
+                { name: 'IG Followers Luar Premium', shortName: '💎 Luar Premium', price: 30000 }
             ]},
             { category: '❤️ LIKES', items: [
-                { name: 'IG Likes Indo Standar', shortName: '🇮🇩 Standar', price: 8000 },
-                { name: 'IG Likes Indo Premium', shortName: '💎 Premium', price: 10000 },
-                { name: 'IG Likes Luar Negeri', shortName: '🌍 Luar Negeri', price: 4000 }
+                { name: 'IG Like Indo Standar', shortName: '🇮🇩 Like Standar', price: 6000 },
+                { name: 'IG Like Indo Premium', shortName: '💎 Like Premium', price: 10000 },
+                { name: 'IG Like Luar Standar', shortName: '🌍 Like Standar', price: 4000 },
+                { name: 'IG Like Luar Premium', shortName: '💎 Like Premium', price: 5500 }
             ]},
-            { category: '👁️ VIEWS', items: [
-                { name: 'IG Views Reels Indo', shortName: '🎬 Reels Indo', price: 5500 },
-                { name: 'IG Story Views', shortName: '👁️ Story Views', price: 7000 }
+            { category: '💬 CHANNEL & KOMENTAR', items: [
+                { name: 'IG Channel Member Standar', shortName: '📢 Channel Standar', price: 30000 },
+                { name: 'IG Channel Member Premium', shortName: '💎 Channel Premium', price: 33000 },
+                { name: 'IG Comen / Komentar Custom Standar', shortName: '💬 Komen Standar', price: 20000 },
+                { name: 'IG Comen / Komentar Custom Premium', shortName: '💎 Komen Premium', price: 22000 }
+            ]},
+            { category: '🎬 REELS & REPOST', items: [
+                { name: 'IG Reels Standar', shortName: '🎬 Reels Standar', price: 3000 },
+                { name: 'IG Reels Premium', shortName: '💎 Reels Premium', price: 4000 },
+                { name: 'IG Repost Standar', shortName: '🔄 Repost Standar', price: 15000 },
+                { name: 'IG Repost Premium', shortName: '💎 Repost Premium', price: 17000 },
+                { name: 'IG Share Standar', shortName: '📤 Share Standar', price: 2000 }
+            ]},
+            { category: '👁️ IMPRESSIONS & VIEWS', items: [
+                { name: 'IG Save Standar', shortName: '⭐ Save Standar', price: 3000 },
+                { name: 'IG Impressions + Reach Standar', shortName: '📊 Reach Standar', price: 3000 },
+                { name: 'IG Story View Standar', shortName: '👁️ Story View', price: 5000 },
+                { name: 'IG View Reels/Video Indo Standar', shortName: '🇮🇩 View Standar', price: 2500 },
+                { name: 'IG View Reels/Video Indo Premium', shortName: '💎 View Premium', price: 3500 },
+                { name: 'IG View Reels/Video Luar Standar', shortName: '🌍 View Standar', price: 2000 },
+                { name: 'IG View Reels/Video Luar Premium', shortName: '💎 View Premium', price: 3000 }
             ]}
         ],
         'Facebook': [
-            { category: '👥 FOLLOWERS & FANPAGE', items: [
-                { name: 'FB Fanpage Premium', shortName: '🚩 Fanpage Premium', price: 11000 },
-                { name: 'FB Fanpage Standar', shortName: '🚩 Fanpage Standar', price: 9000 },
-                { name: 'FB Followers/Friends Standar', shortName: '👥 Followers Standar', price: 9000 },
-                { name: 'FB Followers/Friends Premium', shortName: '👥 Followers Premium', price: 11000 }
+            { category: '🚩 FANPAGE & FOLLOWERS', items: [
+                { name: 'FB Fanpage / Halaman Premium', shortName: '🚩 Fanpage Premium', price: 10000 },
+                { name: 'FB Fanpage / Halaman Standar', shortName: '🚩 Fanpage Standar', price: 8000 },
+                { name: 'FB Followers / Friends Standar', shortName: '👥 Followers Standar', price: 8000 },
+                { name: 'FB Followers / Friends Premium', shortName: '💎 Followers Premium', price: 10000 }
             ]},
-            { category: '👨‍👩‍👧‍👦 GROUP MEMBERS', items: [
+            { category: '👨‍👩‍👧‍👦 GROUP & LIVE STREAM', items: [
                 { name: 'FB Group Member Standar', shortName: '👨‍👩‍👧‍👦 Group Standar', price: 8500 },
-                { name: 'FB Group Member Premium', shortName: '👨‍👩‍👧‍👦 Group Premium', price: 11000 }
+                { name: 'FB Group Member Premium', shortName: '💎 Group Premium', price: 11000 },
+                { name: 'FB Live Stream 15 Menit', shortName: '⏱️ Live 15m', price: 12000, fixedPrice: true },
+                { name: 'FB Live Stream 30 Menit', shortName: '⏱️ Live 30m', price: 23000, fixedPrice: true },
+                { name: 'FB Live Stream 60 Menit', shortName: '⏱️ Live 60m', price: 45000, fixedPrice: true },
+                { name: 'FB Live Stream 90 Menit', shortName: '⏱️ Live 90m', price: 67000, fixedPrice: true },
+                { name: 'FB Live Stream 120 Menit', shortName: '⏱️ Live 120m', price: 80000, fixedPrice: true },
+                { name: 'FB Live Stream 180 Menit', shortName: '⏱️ Live 180m', price: 110000, fixedPrice: true },
+                { name: 'FB Live Stream 240 Menit', shortName: '⏱️ Live 240m', price: 170000, fixedPrice: true },
+                { name: 'FB Live Stream 300 Menit', shortName: '⏱️ Live 300m', price: 250000, fixedPrice: true }
             ]},
-            { category: '🎥 LIVE STREAM', items: [
-                { name: 'FB Live Stream 15 Menit', shortName: '⏱️ 15 Menit', price: 12500, fixedPrice: true },
-                { name: 'FB Live Stream 30 Menit', shortName: '⏱️ 30 Menit', price: 23500, fixedPrice: true },
-                { name: 'FB Live Stream 60 Menit', shortName: '⏱️ 60 Menit', price: 45500, fixedPrice: true },
-                { name: 'FB Live Stream 90 Menit', shortName: '⏱️ 90 Menit', price: 67500, fixedPrice: true },
-                { name: 'FB Live Stream 120 Menit', shortName: '⏱️ 120 Menit', price: 80500, fixedPrice: true },
-                { name: 'FB Live Stream 180 Menit', shortName: '⏱️ 180 Menit', price: 110500, fixedPrice: true },
-                { name: 'FB Live Stream 240 Menit', shortName: '⏱️ 240 Menit', price: 170000, fixedPrice: true },
-                { name: 'FB Live Stream 300 Menit', shortName: '⏱️ 300 Menit', price: 250000, fixedPrice: true }
+            { category: '👍 EMOTIKON & POST INTERACTION', items: [
+                { name: 'FB Post Like Emotikon (Like/Love/Wow/Care/Haha/Sad/Angry)', shortName: '😍 Emotikon All', price: 5000 },
+                { name: 'FB Post Like Standar', shortName: '👍 Like Standar', price: 4000 },
+                { name: 'FB Post Like Premium', shortName: '💎 Like Premium', price: 7000 },
+                { name: 'FB Post Shares Standar', shortName: '🔄 Shares Standar', price: 20000 },
+                { name: 'FB Post Shares Premium', shortName: '💎 Shares Premium', price: 22000 },
+                { name: 'FB Video Views Standar', shortName: '👁️ Video Standar', price: 5000 },
+                { name: 'FB Video Views Premium', shortName: '💎 Video Premium', price: 7000 }
             ]}
         ],
         'Telegram': [
             { category: '👥 MEMBERS & VIEWS', items: [
-                { name: 'Telegram Channel Members', shortName: '✈️ Members', price: 15000 },
-                { name: 'Telegram Members Premium', shortName: '⭐ Members Premium', price: 19000 },
-                { name: 'Telegram Post View', shortName: '👁 Post View', price: 6000 }
+                { name: 'Telegram Channel / Group Member Standar', shortName: '✈️ Member Standar', price: 10000 },
+                { name: 'Telegram Channel / Group Member Premium', shortName: '💎 Member Premium', price: 17000 },
+                { name: 'Telegram Post View (Last 1 Post)', shortName: '👁️ Last 1 Post', price: 2000 },
+                { name: 'Telegram Post View (Last 5 Post)', shortName: '👁️ Last 5 Post', price: 5000 },
+                { name: 'Telegram Post View (Last 10 Post)', shortName: '👁️ Last 10 Post', price: 8000 }
+            ]},
+            { category: '😍 REACTIONS & STORY', items: [
+                { name: 'Telegram Post Reactions + Views (Positive)', shortName: '👍 Post Reaction', price: 2000 },
+                { name: 'Telegram Heart Reactions + Views', shortName: '❤️ Heart Reaction', price: 4000 },
+                { name: 'Telegram Story Views Standar', shortName: '📖 Story Standar', price: 10000 },
+                { name: 'Telegram Story Views Premium', shortName: '💎 Story Premium', price: 13000 }
+            ]}
+        ],
+        'WhatsApp': [
+            { category: '📢 CHANNEL MEMBERS & REACTIONS', items: [
+                { name: 'WhatsApp Channel Member Standar', shortName: '👥 Member Standar', price: 10000 },
+                { name: 'WhatsApp Channel Member Premium', shortName: '💎 Member Premium', price: 50000 },
+                { name: 'WhatsApp Channel Emoji Reactions Premium (Tertawa/Wow/Sedih/Maaf)', shortName: '💎 Emoji Premium', price: 75000 },
+                { name: 'WhatsApp Channel Emoji Reactions Standar (Wow/Maaf/Menangis/Tertawa/Love/Oke)', shortName: '😍 Emoji Standar', price: 2000 }
             ]}
         ],
         'YouTube': [
             { category: '📺 SUBSCRIBERS & VIEWS', items: [
-                { name: 'YouTube Subscribers', shortName: '📺 Subscribers', price: 90000 },
+                { name: 'YouTube Subscribers Standar', shortName: '📺 Subscribers', price: 90000 },
                 { name: 'YouTube Views Standar', shortName: '▶️ Views Standar', price: 15000 }
             ]}
         ],
         'X': [
-            { category: '✖️ X SERVICES', items: [
-                { name: 'X Followers Standar', shortName: '✖️ Followers', price: 20000 },
-                { name: 'X Likes Standar', shortName: '❤️ Likes', price: 8000 },
-                { name: 'X Views Standar', shortName: '👁️ Views', price: 2000 }
+            { category: '✖️ FOLLOWERS, LIKES & VIEWS', items: [
+                { name: 'X Followers Standar', shortName: '✖️ Followers Standar', price: 20000 },
+                { name: 'X Followers Premium', shortName: '💎 Followers Premium', price: 21000 },
+                { name: 'X Favorite Like Standar', shortName: '❤️ Like Standar', price: 8000 },
+                { name: 'X Favorite Like Premium', shortName: '💎 Like Premium', price: 60000 },
+                { name: 'X View Standar', shortName: '👁️ View Standar', price: 2000 },
+                { name: 'X View Premium', shortName: '💎 View Premium', price: 3000 }
             ]}
         ]
     };
+    
 
     let activeSosmedItem = null;
     let selectedInvestDur = '3 Hari';
