@@ -664,7 +664,7 @@
         }
     }
 
-    // FUNGSI MODAL INVESTASI (DIRECT POP-UP)
+        // FUNGSI MODAL INVESTASI (DIRECT POP-UP)
     function openInvestModal() {
         document.getElementById('modal-backdrop').classList.remove('hidden');
         document.getElementById('invest-modal').classList.remove('hidden');
@@ -672,7 +672,7 @@
         document.getElementById('invest-profit-display').innerText = 'Rp 0';
     }
 
-    function selectDuration(durName, rate, desc, element) {
+    function selectDuration(durName, rate, element) {
         selectedInvestDur = durName;
         selectedProfitRate = rate;
 
@@ -703,6 +703,7 @@
         let msg = `Halo Admin MomsCily 🌶️❤️,\nSaya mau ikutan program *Investasi MomsCily*:\n• *Modal:* Rp ${nominal.toLocaleString('id-ID')}\n• *Pilihan Durasi:* ${selectedInvestDur}\n• *Estimasi Total Cair:* Rp ${totalReturn.toLocaleString('id-ID')}\n\nMohon petunjuk selanjutnya ya admin, terima kasih!`;
         window.open(`https://wa.me/6281337415395?text=${encodeURIComponent(msg)}`, '_blank');
     }
+    
 
     // 1. RENDER SOSMED SERVICES (BERTINGKAT)
     function openSosmedPlatform(platform) {
