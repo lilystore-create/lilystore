@@ -383,7 +383,7 @@
 
         <button class="menu-btn" onclick="openAdminWA()">
             <span>💬 Hubungi Admin</span>
-            <span class="sub-desc">0813-3741-5395 • Fast Response</span>
+            <span class="sub-desc">0877-3817-6402 • Fast Response</span>
         </button>
     </div>
 
@@ -1021,7 +1021,7 @@
         let totalReturn = Math.round(nominal + (nominal * selectedProfitRate));
         
         let msg = `Halo Admin MomsCily 🌶️❤️,\nSaya mau ikutan program *TipDan*:\n• *Modal:* Rp ${nominal.toLocaleString('id-ID')}\n• *Pilihan Durasi:* ${selectedInvestDur}\n• *Estimasi Total Cair:* Rp ${totalReturn.toLocaleString('id-ID')}\n\nMohon petunjuk selanjutnya ya admin, terima kasih!`;
-        window.open(`https://wa.me/6281337415395?text=${encodeURIComponent(msg)}`, '_blank');
+        window.open(`https://wa.me/6287738176402?text=${encodeURIComponent(msg)}`, '_blank');
     }
     
 
@@ -1112,7 +1112,7 @@
             let total = Math.round((qty / 1000) * activeSosmedItem.price);
             msg = `Halo Admin MomsCily 🌶️❤️,\nSaya mau order:\n• *Layanan:* ${activeSosmedItem.name}\n• *Jumlah:* ${qty.toLocaleString('id-ID')} pcs\n• *Total Bayar:* Rp ${total.toLocaleString('id-ID')}\n\nMohon diproses ya admin, terima kasih!`;
         }
-        window.open(`https://wa.me/6281337415395?text=${encodeURIComponent(msg)}`, '_blank');
+        window.open(`https://wa.me/6287738176402?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     // 2. RENDER APPS PREMIUM
@@ -1141,7 +1141,7 @@
             btn.innerHTML = `<span>${v.plan}</span> <b>Rp ${v.price.toLocaleString('id-ID')}</b>`;
             btn.onclick = () => {
                 let msg = `Halo Admin MomsCily 🌶️❤️,\nSaya mau order aplikasi:\n• *Aplikasi:* ${app.name}\n• *Paket:* ${v.plan}\n• *Total Bayar:* Rp ${v.price.toLocaleString('id-ID')}\n\nMohon diproses ya admin, terima kasih!`;
-                window.open(`https://wa.me/6281337415395?text=${encodeURIComponent(msg)}`, '_blank');
+                window.open(`https://wa.me/6287738176402?text=${encodeURIComponent(msg)}`, '_blank');
             };
             varList.appendChild(btn);
         });
@@ -1160,7 +1160,7 @@
 
     function openAdminWA(customText) {
         let text = customText || 'Halo%20Admin%20MomsCily%20🌶️❤️';
-        window.open(`https://wa.me/6281337415395?text=${text}`, '_blank');
+        window.open(`https://wa.me/6287738176402?text=${text}`, '_blank');
     }
 </script>
 </body>
